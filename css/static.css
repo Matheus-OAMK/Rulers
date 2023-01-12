@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Geo";
+  src: url(/Geo/Geo-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #f3f2f2;
+  /* background-color: rgb(36, 36, 36); */
+  transition: 0.5s;
+}
+
+body {
+  margin: 66px 66px;
+}
+
+.page {
+  max-width: 1800px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  box-sizing: border-box;
+  width: 50px;
+  height: 52px;
+  background-color: transparent;
+  border: solid 2px #000;
+  /* box-shadow: 0px 0px 4px #000000; */
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 2px #000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 0.3s;
+}
+
+.line {
+  width: 32px;
+  height: 2.2px;
+  background-color: #000;
+  box-sizing: border-box;
+  margin: 0 7px;
+}
+
+/* Clicking effect of the menu button */
+
+.menu-btn:active {
+  /* box-shadow: none; */
+  transform: translate(2px, 2px);
+  /* box-shadow: inset 0px 0px 2px #000; */
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 360px;
+}
+
+.logo-card {
+  width: 48px;
+  height: 67.2px;
+  background: linear-gradient(
+    180deg,
+    /* #000000 7.61%,
+    transparent,
+    #000000 92.39% */ #000 -10%,
+    transparent,
+    #000 110%
+  );
+  border: 0.5px solid #ffffff;
+  filter: drop-shadow(0px 1px 4px #000000);
+  border-radius: 5px;
+}
+
+.logo-cards {
+  position: relative;
+  float: right;
+  left: -30px;
+  top: 10px;
+}
+
+.card-1 {
+  position: absolute;
+  /* position: relative; */
+  top: 21px;
+  left: 18px;
+}
+
+.card-2 {
+  position: absolute;
+}
+
+.logo-name {
+  font-size: 50px;
+  font-family: "Geo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 112px;
+  line-height: 107px;
+  text-shadow: 0px 2px 4px #000000;
+  float: left;
+}
+
+.login {
+  border: 2px solid #000;
+  border-radius: 35px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: space-around;
+  /* box-shadow: 0px 0px 4px #000000; */
+  cursor: pointer;
+  box-shadow: inset 0px 0px 2px #000;
+  transition: 0.3s;
+}
+
+.login:active {
+  /* box-shadow: none; */
+  transform: translate(-2px, 2px);
+  /* box-shadow: inset 0px 0px 2px #000; */
+}
+
+.login img {
+  height: 42.75px;
+  width: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login:hover {
+  transform: scale(1.1);
+}
+
+.huh {
+  height: 79px;
+  font-family: "Geo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 79px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cards {
+  top: 40px;
+  position: relative;
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  transition: all 2s;
+  overflow: hidden;
+}
+/* 
+.card:hover {
+  scale: 1.05;
+} */
+
+.darius {
+  box-shadow: 0px 0px 7px #731616;
+}
+
+.garen {
+  box-shadow: 0px 0px 7px #cf6416;
+}
+.diana {
+  box-shadow: 0px 0px 7px #420a4b;
+}
+.katarina {
+  box-shadow: 0px 0px 7px #6c0000;
+}
+.tyrandemere {
+  box-shadow: 0px 0px 7px #2ec7c7;
+}
+.elise {
+  box-shadow: 0px 0px 7px #e454e9;
+}
+.jaximus {
+  box-shadow: 0px 0px 7px #16153b;
+}
+
+img {
+  width: 100%;
+}
+
+/* First layer */
+
+.ps-4 {
+  height: 350px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 350px) / 2);
+  z-index: 4;
+}
+
+/* Second layer */
+
+.ps-3 {
+  height: 300px;
+  width: 214.28px;
+  left: 40%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 2;
+  opacity: 0.9;
+}
+.ps-5 {
+  height: 300px;
+  width: 214.28px;
+  left: 60%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 3;
+  opacity: 0.9;
+}
+
+/* Third layer */
+
+.ps-6 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 67%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 2;
+  opacity: 0.8;
+}
+.ps-2 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 33%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Forth layer */
+
+.ps-1 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 29.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 0;
+  opacity: 0.75;
+}
+.ps-7 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 70.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 1;
+  opacity: 0.75;
+}

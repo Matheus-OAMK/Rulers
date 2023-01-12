@@ -1,0 +1,581 @@
+.cards {
+  top: 40px;
+  position: relative;
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  transition: all 1s;
+  overflow: hidden;
+  /* background-color: #f3f2f2; */
+}
+
+.darius {
+  box-shadow: 0px 0px 7px #731616;
+  animation-delay: -16s;
+}
+
+.garen {
+  box-shadow: 0px 0px 7px #cf6416;
+  animation-delay: -20s;
+}
+
+.diana {
+  box-shadow: 0px 0px 7px #420a4b;
+  animation-delay: -24s;
+}
+
+.katarina {
+  box-shadow: 0px 0px 7px #6c0000;
+  /* animation-delay: -3s; */
+}
+
+.tyrandemere {
+  box-shadow: 0px 0px 7px #2ec7c7;
+  animation-delay: -4s;
+}
+
+.elise {
+  box-shadow: 0px 0px 7px #e454e9;
+  animation-delay: -8s;
+}
+
+.jaximus {
+  box-shadow: 0px 0px 7px #16153b;
+  animation-delay: -12s;
+}
+
+img {
+  width: 100%;
+}
+
+.card-p1 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 29.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 0;
+  /* opacity: 0.75; */
+  animation-name: cardSwitch-p1;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p2 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 33%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 1;
+  /* opacity: 0.8; */
+  animation-name: cardSwitch-p2;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p3 {
+  height: 300px;
+  width: 214.28px;
+  left: 40%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 2;
+  /* opacity: 0.9; */
+  animation-name: cardSwitch-p3;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p4 {
+  height: 350px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 350px) / 2);
+  z-index: 4;
+  animation-name: cardSwitch-p4;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p5 {
+  height: 300px;
+  width: 214.28px;
+  left: 60%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 3;
+  animation-name: cardSwitch-p5;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+  /* opacity: 0.9; */
+}
+
+.card-p6 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 67%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 2;
+  animation-name: cardSwitch-p6;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+  /* opacity: 0.8; */
+}
+
+.card-p7 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 70.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 1;
+  animation-name: cardSwitch-p7;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+  /* opacity: 0.75; */
+}
+
+.appeared {
+  display: block;
+}
+
+/* @keyframes cardSwitch-p1 {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  62.5% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  87.5% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p2 {
+  0% {
+    opacity: 0;
+  }
+  13.5% {
+    opacity: 0;
+  }
+  26% {
+    opacity: 0;
+  }
+  38.5% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0;
+  }
+  63.5% {
+    opacity: 0;
+  }
+  76% {
+    opacity: 0.8;
+  }
+  88.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p3 {
+  0% {
+    opacity: 0;
+  }
+  14.5% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+  }
+  39.5% {
+    opacity: 0;
+  }
+  52% {
+    opacity: 0;
+  }
+  64.5% {
+    opacity: 0.9;
+  }
+  77% {
+    opacity: 0;
+  }
+  89.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p4 {
+  0% {
+    opacity: 0;
+  }
+  15.5% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 0;
+  }
+  40.5% {
+    opacity: 0;
+  }
+  53% {
+    opacity: 1;
+  }
+  65.5% {
+    opacity: 0;
+  }
+  78% {
+    opacity: 0;
+  }
+  90.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p5 {
+  0% {
+    opacity: 0;
+  }
+  16.5% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  41.5% {
+    opacity: 0.9;
+  }
+  54% {
+    opacity: 0;
+  }
+  66.5% {
+    opacity: 0;
+  }
+  79% {
+    opacity: 0;
+  }
+  91.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p6 {
+  0% {
+    opacity: 0;
+  }
+  17.5% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  42.5% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  67.5% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  92.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p7 {
+  0% {
+    opacity: 0;
+  }
+  18.5% {
+    opacity: 0.75;
+  }
+  31% {
+    opacity: 0;
+  }
+  43.5% {
+    opacity: 0;
+  }
+  56% {
+    opacity: 0;
+  }
+  68.5% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 0;
+  }
+  93.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+
+/* V2////////////////////////////////////////////////////////////////////////////// */
+
+@keyframes cardSwitch-p1 {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0.75;
+  }
+  25% {
+    opacity: 0;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  62.5% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  87.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p2 {
+  0% {
+    opacity: 0;
+  }
+  13.5% {
+    opacity: 0;
+  }
+  26% {
+    opacity: 0.8;
+  }
+  38.5% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0;
+  }
+  63.5% {
+    opacity: 0;
+  }
+  76% {
+    opacity: 0;
+  }
+  88.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p3 {
+  0% {
+    opacity: 0;
+  }
+  14.5% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+  }
+  39.5% {
+    opacity: 0.9;
+  }
+  52% {
+    opacity: 0;
+  }
+  64.5% {
+    opacity: 0;
+  }
+  77% {
+    opacity: 0;
+  }
+  89.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p4 {
+  0% {
+    opacity: 0;
+  }
+  15.5% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 0;
+  }
+  40.5% {
+    opacity: 0;
+  }
+  53% {
+    opacity: 1;
+  }
+  65.5% {
+    opacity: 0;
+  }
+  78% {
+    opacity: 0;
+  }
+  90.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p5 {
+  0% {
+    opacity: 0;
+  }
+  16.5% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  41.5% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 0;
+  }
+  66.5% {
+    opacity: 0.9;
+  }
+  79% {
+    opacity: 0;
+  }
+  91.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p6 {
+  0% {
+    opacity: 0;
+  }
+  17.5% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  42.5% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  67.5% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  92.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p7 {
+  0% {
+    opacity: 0;
+  }
+  18.5% {
+    opacity: 0;
+  }
+  31% {
+    opacity: 0;
+  }
+  43.5% {
+    opacity: 0;
+  }
+  56% {
+    opacity: 0;
+  }
+  68.5% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 0;
+  }
+  93.5% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}

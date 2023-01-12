@@ -1,0 +1,669 @@
+@font-face {
+  font-family: "Geo";
+  src: url(/Geo/Geo-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #f3f2f2;
+  transition: 0.5s;
+}
+
+body {
+  margin: 66px 66px;
+}
+
+.page {
+  max-width: 1800px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  box-sizing: border-box;
+  width: 50px;
+  height: 52px;
+  background-color: transparent;
+  border: solid 2px #000;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 2px #000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 0.3s;
+  animation-name: elementAppear;
+  animation-duration: 2s;
+}
+
+.line {
+  width: 32px;
+  height: 2.2px;
+  background-color: #000;
+  box-sizing: border-box;
+  margin: 0 7px;
+}
+
+/* Clicking effect of the menu button */
+
+.menu-btn:active {
+  transform: translate(2px, 2px);
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  border: 2px solid #f3f2f2;
+  box-shadow: none;
+}
+
+.logo {
+  width: 380px;
+  animation-name: elementAppear;
+  animation-duration: 2s;
+}
+
+.logo-card {
+  width: 48px;
+  height: 67.2px;
+  background: linear-gradient(180deg, #000 -10%, transparent, #000 110%);
+  border: 0.5px solid #ffffff;
+  filter: drop-shadow(0px 1px 4px #000000);
+  border-radius: 5px;
+}
+
+.logo-cards {
+  position: relative;
+  float: right;
+  left: -50px;
+  top: 10px;
+}
+
+.card-1 {
+  position: absolute;
+  top: 21px;
+  left: 18px;
+}
+
+.card-2 {
+  position: absolute;
+}
+
+.logo-name {
+  font-size: 50px;
+  font-family: "Geo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 112px;
+  line-height: 107px;
+  text-shadow: 0px 2px 4px #000000;
+  float: left;
+}
+
+.login {
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 35px;
+  width: 59px;
+  height: 59px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 2px #000;
+  transition: 0.3s;
+  animation-name: elementAppear;
+  animation-duration: 2s;
+}
+
+.login:active {
+  transform: translate(-2px, 2px);
+}
+
+.login img {
+  height: 42.75px;
+  width: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login:hover {
+  transform: scale(1.1);
+  border: none;
+  box-shadow: none;
+}
+
+.logo-des {
+  height: 79px;
+  font-family: "Geo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 79px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: logo-des-appear;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+}
+
+.cards {
+  top: 50px;
+  position: relative;
+  height: 350px;
+  animation-name: cardsAppear;
+  animation-duration: 7s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0.04, 0.99);
+}
+
+/* Appearing animation for the main animated cards */
+
+@keyframes cardsAppear {
+  0% {
+    opacity: 0;
+    left: -700px;
+  }
+  23% {
+    left: 25px;
+  }
+  46% {
+    opacity: 1;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes elementAppear {
+  0% {
+    opacity: 0;
+    scale: 1.2;
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes logo-des-appear {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  60% {
+    opacity: 0;
+    top: -50px;
+  }
+  82% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+/* Animation delay for all positions in main animated cards, exsept seven'th */
+
+.darius {
+  box-shadow: 0px 0px 7px #731616;
+  animation-delay: -16s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #731616 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.garen {
+  box-shadow: 0px 0px 7px #cf6416;
+  animation-delay: -20s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #cf6416 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.diana {
+  box-shadow: 0px 0px 7px #420a4b;
+  animation-delay: -24s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #420a4b 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.katarina {
+  box-shadow: 0px 0px 7px #6c0000;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #6c0000 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.tyrandemere {
+  box-shadow: 0px 0px 7px #2ec7c7;
+  animation-delay: -4s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #2ec7c7 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.elise {
+  box-shadow: 0px 0px 7px #e454e9;
+  animation-delay: -8s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #e454e9 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.jaximus {
+  box-shadow: 0px 0px 7px #16153b;
+  animation-delay: -12s;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #16153b 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Animation delay for seven'th position in main animated cards */
+
+#p7-n1 {
+  animation-delay: -20s;
+}
+
+#p7-n2 {
+  animation-delay: -16s;
+}
+
+#p7-n3 {
+  animation-delay: -12s;
+}
+
+#p7-n4 {
+  animation-delay: -8s;
+}
+
+#p7-n5 {
+  animation-delay: -4s;
+}
+
+#p7-n6 {
+  animation-delay: 0s;
+}
+
+#p7-n7 {
+  animation-delay: -24s;
+}
+
+img {
+  width: 100%;
+}
+
+.card-p1 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 29.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 0;
+  animation-name: cardSwitch-p1;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p2 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 33%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 1;
+  animation-name: cardSwitch-p2;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p3 {
+  height: 300px;
+  width: 214.28px;
+  left: 40%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 2;
+  animation-name: cardSwitch-p3;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p4 {
+  height: 350px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 350px) / 2);
+  z-index: 4;
+  animation-name: cardSwitch-p4;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p5 {
+  height: 300px;
+  width: 214.28px;
+  left: 60%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 300px) / 2);
+  z-index: 3;
+  animation-name: cardSwitch-p5;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p6 {
+  height: 257.14px;
+  width: 183.67px;
+  left: 67%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 257.14px) / 2);
+  z-index: 2;
+  animation-name: cardSwitch-p6;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+.card-p7 {
+  height: 220.4px;
+  width: 157.42px;
+  left: 70.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: calc((350px - 220.4px) / 2);
+  z-index: 1;
+  animation-name: cardSwitch-p7;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
+}
+
+/* .hidden {
+  transition: 0.5s;
+  display: none;
+} */
+
+@keyframes cardSwitch-p1 {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  13.5% {
+    opacity: 0.75;
+    scale: 1.02;
+  }
+  25% {
+    opacity: 0;
+    scale: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  62.5% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  87.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes cardSwitch-p2 {
+  0% {
+    opacity: 0;
+  }
+  13.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  27% {
+    opacity: 0.8;
+    scale: 1.02;
+  }
+  38.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  63.5% {
+    opacity: 0;
+  }
+  76% {
+    opacity: 0;
+  }
+  88.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p3 {
+  0% {
+    opacity: 0;
+  }
+  14.5% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+    scale: 1;
+  }
+  40.5% {
+    opacity: 0.9;
+    scale: 1.02;
+  }
+  52% {
+    opacity: 0;
+    scale: 1;
+  }
+  64.5% {
+    opacity: 0;
+  }
+  77% {
+    opacity: 0;
+  }
+  89.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p4 {
+  0% {
+    opacity: 0;
+  }
+  15.5% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 0;
+  }
+  40.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  54% {
+    opacity: 1;
+    scale: 1.02;
+  }
+  65.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  78% {
+    opacity: 0;
+  }
+  90.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p5 {
+  0% {
+    opacity: 0;
+  }
+  16.5% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  41.5% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 0;
+    scale: 1;
+  }
+  67.5% {
+    opacity: 0.9;
+    scale: 1.02;
+  }
+  79% {
+    opacity: 0;
+    scale: 1;
+  }
+  91.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p6 {
+  0% {
+    opacity: 0;
+  }
+  17.5% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  42.5% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  67.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  81% {
+    opacity: 0.8;
+    scale: 1.02;
+  }
+  92.5% {
+    opacity: 0;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cardSwitch-p7 {
+  0% {
+    opacity: 0;
+  }
+  11.11% {
+    opacity: 0;
+  }
+  22.22% {
+    opacity: 0;
+  }
+  33.33% {
+    opacity: 0;
+  }
+  44.44% {
+    opacity: 0;
+  }
+  55.55% {
+    opacity: 0;
+    scale: 1;
+  }
+  66.66% {
+    opacity: 0.75;
+    scale: 1.02;
+  }
+  76.77% {
+    opacity: 0;
+    scale: 1;
+  }
+  88.88% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
