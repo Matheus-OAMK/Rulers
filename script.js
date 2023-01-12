@@ -187,7 +187,7 @@ function myLoop() {
     }
     i++; //  increment the counter
     if (i < 1000) {
-      //  if the counter < 10, call the loop function
+      //  if the counter < 1000, call the loop function
       myLoop(); //  ..  again which will trigger another
     } //  ..  setTimeout()
   }, 5000);
