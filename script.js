@@ -1,5 +1,8 @@
 "use strict";
 
+// NOTE: this code was used for main animated cards on the main page,
+// with this code cards were rotating, changing each other positions
+
 const dariusCard = document.querySelector(".darius");
 const garenCard = document.querySelector(".garen");
 const dianaCard = document.querySelector(".diana");
@@ -26,7 +29,7 @@ const p5 = 5;
 const p6 = 6;
 const p7 = 7;
 
-function myLoop() {
+function cardSwitch() {
   //  create a loop function
   setTimeout(function () {
     //  call a 5s setTimeout when the loop is called
@@ -98,7 +101,7 @@ function myLoop() {
 
       counter++;
     } else if (counter == 4) {
-      // Reemove previous class for step 3
+      // Reemove previous class for step 4
 
       dariusCard.classList.remove(`ps-${p4}`);
       garenCard.classList.remove(`ps-${p5}`);
@@ -108,7 +111,7 @@ function myLoop() {
       eliseCard.classList.remove(`ps-${p2}`);
       jaximusCard.classList.remove(`ps-${p3}`);
 
-      // Add new class for step 3
+      // Add new class for step 4
 
       dariusCard.classList.add(`ps-${p5}`);
       garenCard.classList.add(`ps-${p6}`);
@@ -120,7 +123,7 @@ function myLoop() {
 
       counter++;
     } else if (counter == 5) {
-      // Reemove previous class for step 3
+      // Reemove previous class for step 5
 
       dariusCard.classList.remove(`ps-${p5}`);
       garenCard.classList.remove(`ps-${p6}`);
@@ -130,7 +133,7 @@ function myLoop() {
       eliseCard.classList.remove(`ps-${p3}`);
       jaximusCard.classList.remove(`ps-${p4}`);
 
-      // Add new class for step 3
+      // Add new class for step 5
 
       dariusCard.classList.add(`ps-${p6}`);
       garenCard.classList.add(`ps-${p7}`);
@@ -142,7 +145,7 @@ function myLoop() {
 
       counter++;
     } else if (counter == 6) {
-      // Reemove previous class for step 3
+      // Reemove previous class for step 6
 
       dariusCard.classList.remove(`ps-${p6}`);
       garenCard.classList.remove(`ps-${p7}`);
@@ -152,7 +155,7 @@ function myLoop() {
       eliseCard.classList.remove(`ps-${p4}`);
       jaximusCard.classList.remove(`ps-${p5}`);
 
-      // Add new class for step 3
+      // Add new class for step 6
 
       dariusCard.classList.add(`ps-${p7}`);
       garenCard.classList.add(`ps-${p1}`);
@@ -164,7 +167,7 @@ function myLoop() {
 
       counter++;
     } else if (counter == 7) {
-      // Reemove previous class for step 3
+      // Reemove previous class for step 7
 
       dariusCard.classList.remove(`ps-${p7}`);
       garenCard.classList.remove(`ps-${p1}`);
@@ -174,7 +177,7 @@ function myLoop() {
       eliseCard.classList.remove(`ps-${p5}`);
       jaximusCard.classList.remove(`ps-${p6}`);
 
-      // Add new class for step 3
+      // Add new class for step 7
 
       dariusCard.classList.add(`ps-${p1}`);
       garenCard.classList.add(`ps-${p2}`);
@@ -185,12 +188,12 @@ function myLoop() {
       jaximusCard.classList.add(`ps-${p7}`);
       counter = 1;
     }
-    i++; //  increment the counter
+    i++; //  increment the counter of loop
     if (i < 1000) {
       //  if the counter < 1000, call the loop function
-      myLoop(); //  ..  again which will trigger another
+      cardSwitch(); //  ..  again which will trigger another
     } //  ..  setTimeout()
   }, 5000);
 }
 
-myLoop(); //  start the loop
+cardSwitch(); //  start the loop

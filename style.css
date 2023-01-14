@@ -225,7 +225,8 @@ header {
   overflow: hidden;
 }
 
-/* Animation delay for all positions in main animated cards, exsept seven'th */
+/*  Animation delay for all positions in main animated cards, exsept seven'th.
+    Style for all kinds of cards in the main animation*/
 
 .darius {
   box-shadow: 0px 0px 7px #731616;
@@ -330,6 +331,8 @@ img {
   width: 100%;
 }
 
+/*   Styling first positioned cards in the main animation   */
+
 .card-p1 {
   height: 220.4px;
   width: 157.42px;
@@ -343,6 +346,8 @@ img {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
+
+/*   Styling second positioned cards in the main animation   */
 
 .card-p2 {
   height: 257.14px;
@@ -358,6 +363,8 @@ img {
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
 
+/*   Styling third positiond cards in the main animation   */
+
 .card-p3 {
   height: 300px;
   width: 214.28px;
@@ -371,6 +378,8 @@ img {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
+
+/*   Styling forth positiond cards in the main animation   */
 
 .card-p4 {
   height: 350px;
@@ -386,6 +395,8 @@ img {
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
 
+/*   Styling fifht positiond cards in the main animation   */
+
 .card-p5 {
   height: 300px;
   width: 214.28px;
@@ -399,6 +410,8 @@ img {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
+
+/*   Styling sixth positiond cards in the main animation   */
 
 .card-p6 {
   height: 257.14px;
@@ -414,6 +427,8 @@ img {
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
 
+/*   Styling seventh positiond cards in the main animation   */
+
 .card-p7 {
   height: 220.4px;
   width: 157.42px;
@@ -428,10 +443,7 @@ img {
   animation-timing-function: cubic-bezier(0.81, -0.1, 0.29, 1.19);
 }
 
-/* .hidden {
-  transition: 0.5s;
-  display: none;
-} */
+/*   Animation for first positioned cards   */
 
 @keyframes cardSwitch-p1 {
   0% {
@@ -467,6 +479,8 @@ img {
   }
 }
 
+/*   Animation for second positioned cards   */
+
 @keyframes cardSwitch-p2 {
   0% {
     opacity: 0;
@@ -499,6 +513,8 @@ img {
     opacity: 0;
   }
 }
+
+/*   Animation for third positioned cards   */
 
 @keyframes cardSwitch-p3 {
   0% {
@@ -533,6 +549,8 @@ img {
   }
 }
 
+/*   Animation for forht positioned cards   */
+
 @keyframes cardSwitch-p4 {
   0% {
     opacity: 0;
@@ -565,6 +583,8 @@ img {
     opacity: 0;
   }
 }
+
+/*   Animation for fifth positioned cards   */
 
 @keyframes cardSwitch-p5 {
   0% {
@@ -599,6 +619,8 @@ img {
   }
 }
 
+/*   Animation for sixth positioned cards   */
+
 @keyframes cardSwitch-p6 {
   0% {
     opacity: 0;
@@ -631,6 +653,8 @@ img {
     opacity: 0;
   }
 }
+
+/*   Animation for seventh positioned cards   */
 
 @keyframes cardSwitch-p7 {
   0% {

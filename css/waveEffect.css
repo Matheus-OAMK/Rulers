@@ -1,3 +1,6 @@
+/*   NOTE: this is not the same code as it is in index.html and style.css, this code didn't work well,
+ because fo the delay in the animation of the seventh positioned cards */
+
 .cards {
   top: 40px;
   position: relative;
