@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Geo";
-  src: url(Geo/Geo-Regular.ttf);
+  src: url(../Fonts/Geo/Geo-Regular.ttf);
 }
 
 * {
@@ -189,10 +189,6 @@ header {
   0% {
     opacity: 0;
     scale: 1.2;
-  }
-  50% {
-    opacity: 1;
-    scale: 1;
   }
   100% {
     opacity: 1;
