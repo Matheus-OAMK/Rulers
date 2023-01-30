@@ -23,5 +23,5 @@ data = [dict(zip([key[0] for key in cursor.description], row)) for row in rows]
 cursor.close()
 cnx.close()
 # Write the data to a JSON file
-with open("../cars-data.json", "w") as outfile:
+with open("../cars-data-TEST.json", "w") as outfile:
     json.dump(data, outfile)
