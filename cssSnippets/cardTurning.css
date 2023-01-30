@@ -10,7 +10,7 @@
   justify-content: space-around;
 }
 
-img {
+.hero-card {
   height: 100%;
   width: 100%;
 }
@@ -18,23 +18,26 @@ img {
 .card-3d-wrap {
   position: relative;
   width: 250px;
-  max-width: 100%;
   height: 350px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
   margin-top: 60px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.card-3d-wrap:hover {
+  transform: rotateY(30deg) rotateX(-5deg) rotateZ(-5deg);
 }
 
 .card-3d-wrapper {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: all 1.1s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .card-back {
@@ -49,6 +52,8 @@ img {
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  box-shadow: 10px 10px 10px #000;
+  transform: rotateY(180deg);
 }
 
 .card-front {
@@ -63,17 +68,9 @@ img {
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-.card-back {
-  transform: rotateY(180deg);
+  box-shadow: 10px 10px 10px #000;
 }
 
-/* This is going to be in js code  */
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+.rotated {
   transform: rotateY(180deg);
 }
-
-/* Class for the js code for these elements: .card-3d-wrap .card-3d-wrapper */
-/* .rotated{
-  transform: rotateY(180deg);
-} */
