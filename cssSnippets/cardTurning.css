@@ -8,6 +8,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* perspective: 800px; */
+}
+
+.perspective {
+  perspective: 800px;
 }
 
 .hero-card {
@@ -21,7 +26,7 @@
   height: 350px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  perspective: 800px;
+  /* perspective: 800px; */
   margin-top: 60px;
   cursor: pointer;
   transition: all 0.5s ease-out;
