@@ -1,6 +1,0 @@
-[
-  { "IdCar": 100, "brand": "Audi", "model": "A4", "yearmodel": 1999 },
-  { "IdCar": 102, "brand": "BMW", "model": "M8", "yearmodel": 2022 },
-  { "IdCar": 201, "brand": "BMW", "model": "m4", "yearmodel": 2022 },
-  { "IdCar": 204, "brand": "Audi", "model": "RS7", "yearmodel": 2021 }
-]

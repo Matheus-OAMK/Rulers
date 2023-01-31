@@ -20,7 +20,12 @@ html {
   perspective: 1100px;
 }
 
-.hero-card-img {
+.hero-card-img-front {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-card-img-back {
   height: 100%;
   width: 100%;
 }

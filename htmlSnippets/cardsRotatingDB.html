@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../cssSnippets/cardsRotatingDB.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="cards" cards-container>
+      <template data-card-template>
+        <div class="perspective">
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper" onclick="cardRotate(this)">
+              <div class="card-front">
+                <img src="" alt="Darius card" class="hero-card-img-front" />
+              </div>
+              <div class="card-back">
+                <img src="" alt="" class="hero-card-img-back" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <script src="../scripts/cardsRotatingDB.js"></script>
+  </body>
+</html>

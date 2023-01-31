@@ -5,13 +5,13 @@ import json
 cnx = mysql.connector.connect(user='root',
                               password='1201260BHf',
                               host='127.0.0.1',
-                              database='cardb')
+                              database='rulersdb')
 
 # Create a cursor object
 cursor = cnx.cursor()
 
 # Execute a SELECT statement
-cursor.execute("SELECT * FROM car")
+cursor.execute("SELECT * FROM cards")
 
 # Fetch all rows of the result set
 rows = cursor.fetchall()
@@ -23,5 +23,5 @@ data = [dict(zip([key[0] for key in cursor.description], row)) for row in rows]
 cursor.close()
 cnx.close()
 # Write the data to a JSON file
-with open("../cars-data-TEST.json", "w") as outfile:
+with open("../cards-data-TEST.json", "w") as outfile:
     json.dump(data, outfile)

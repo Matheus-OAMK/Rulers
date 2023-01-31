@@ -14,4 +14,4 @@ fetch("cards.json")
     });
   });
 
-console.log(visualViewport.height);
+// console.log(visualViewport.height);
