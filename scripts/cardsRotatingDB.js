@@ -6,14 +6,19 @@ fetch("../cards-data-TEST.json")
   .then((data) => {
     data.forEach((card) => {
       const cardContent = userCardTemplate.content.cloneNode(true).children[0];
-      const frontImage = cardContent.querySelector(`.hero-card-img-front`);
-      const backImage = cardContent.querySelector(`.hero-card-img-back`);
+      const heroCardSides = [
+        cardContent.querySelector(`.hero-card-img-front`),
+        cardContent.querySelector(`.hero-card-img-back`),
+      ];
+      const [frontImage, backImage] = heroCardSides;
+
       frontImage.src = card.cardFront;
       backImage.src = card.cardBack;
       cardsContainer.append(cardContent);
     });
   });
 
+// Function to rotate the card element
 function cardRotate(el) {
   el.classList.toggle(`rotated`);
 }

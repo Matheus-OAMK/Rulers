@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  height: 500px;
+  width: 100vw;
+  background-color: aquamarine;
+}
+
+.box {
+  height: 250px;
+  width: 250px;
+  margin-left: 50%;
+  transform: translateY(50%) translateX(-50%);
+  background-color: aqua;
+}
+
+@media screen and (max-width: 1000px) {
+  .box {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .box {
+    height: 50px;
+    width: 50px;
+  }
+}
