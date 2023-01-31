@@ -1,3 +1,7 @@
+html {
+  /* background-color: rgb(28, 28, 28); */
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,6 +22,8 @@
 .hero-card {
   height: 100%;
   width: 100%;
+
+  filter: drop-shadow(10px 10px 10px #000);
 }
 
 .card-3d-wrap {
@@ -30,6 +36,7 @@
   margin-top: 60px;
   cursor: pointer;
   transition: all 0.5s ease-out;
+  background-color: transparent;
 }
 
 .card-3d-wrap:hover {
@@ -43,12 +50,14 @@
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: all 0.7s ease-out;
+  background-color: transparent;
 }
 
 .card-back {
   width: 100%;
   height: 100%;
-  background-color: #464975;
+  /* background-color: #464975; */
+  background-color: transparent;
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -57,14 +66,15 @@
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 10px 10px 10px #000;
+  /* box-shadow: 10px 10px 10px #000; */
   transform: rotateY(180deg);
 }
 
 .card-front {
   width: 100%;
   height: 100%;
-  background-color: #b3b4c9;
+  /* background-color: #b3b4c9; */
+  background-color: transparent;
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -73,7 +83,7 @@
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 10px 10px 10px #000;
+  /* box-shadow: 10px 10px 10px #000; */
 }
 
 .rotated {
