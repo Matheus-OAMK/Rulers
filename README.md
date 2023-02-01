@@ -4,7 +4,7 @@
 
 ### Use the "Project" section in GitHub:
 
-There're tasks that must be done, if you want to create a task using this template: "#page // task definition" example below "#mainPage // Manage the height of the first-look class box" After creating the task, leave as detailed description as it needs to be understandable.
+There're tasks that must be done, if you want to create a task using this template: "#page // task definition". Example: "#mainPage // Manage the height of the first-look class box". After creating the task, leave as detailed description as it needs to be understandable.
 
 ### Main rules:
 
