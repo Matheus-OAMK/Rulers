@@ -2,7 +2,7 @@
 
 ## Code implementation rules
 
-    Use "Project" section in GitHub:
+### Use "Project" section in GitHub:
 
 There're tasks that must be done, if you want to create a task use this template:
 "#page // task definition" example below
@@ -11,13 +11,15 @@ After creating the task, leave as detailed description as it needs to be underst
 
 <!-- Main rules -->
 
-### **_1. Each developer works on different pages at the same time!_**
+### Main rules:
 
-### **_2. If you started to work on the specific task, page, don't change anything in other files, that don't need to be changed in your specific task_**
+**_1. Each developer works on different pages at the same time!_**
 
-### **_3. Create class, id, atribute names dependingly on the page where that classes are located, examples: allcards-filter-box, collection-filter-box_**
+**_2. If you started to work on the specific task, page, don't change anything in other files, that don't need to be changed in your specific task_**
 
-    You found the task that you would like to implement, follow these steps:
+**_3. Create class, id, atribute names dependingly on the page where that classes are located, examples: allcards-filter-box, collection-filter-box_**
+
+### You found the task that you would like to implement, follow these steps:
 
 1.  Drag the task into "In progress" column in "Projects" section in GitHub.
 2.  Fetch all the changes from Rules repo. > **git fetch**
@@ -35,7 +37,7 @@ After creating the task, leave as detailed description as it needs to be underst
 
 <!-- end of the list -->
 
-    You struggled during the coding part and you need somebody to end your taken task (you are on the step 7):
+### You struggled during the coding part and you need somebody to end your taken task (you are on the step 7):
 
 8.  Save your changes, make sure you are in your task branch > **git branch** or **git status**, then run > **git add -A** and **git commit -m "#1 Short comment what you've done and where struggled"** (number in comment in commit "#1" depends on the taken task number).
 9.  Push your local changes into GitHub. > **git push -u origin tsk-1**
