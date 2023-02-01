@@ -28,7 +28,7 @@ There're tasks that must be done, if you want to create a task using this templa
 10. Open GitHub in the browser, and check for your pushed branch there.
 11. Create a new pull request from your pushed branch into the "draft" branch. (comment your pull request, create pull only). **_NOTE:_** *don't force a pull request, wait until one of the other developers makes a review of this pull*
 12. Mention in Telegram that you've created a new pull request.
-13. Only when the pull is accepted, delete your local branch for that task > **git branch -D tsk-1**. Make sure you have "draft" and "main" branches left only > **git branch**, the remote branch will be deleted by reviewer
+13. Only when the pull is accepted, delete your local branch for that task > **git branch -D tsk-1**. Make sure you have "draft", "main" and "snippets" branches left only > **git branch**, the remote branch will be deleted by reviewer
 
 <!-- end of the list -->
 
@@ -52,4 +52,4 @@ There're tasks that must be done, if you want to create a task using this templa
 8.  Open GitHub in the browser, and check for your pushed branch there.
 9.  Create a new pull request from your pushed branch into the "draft" branch. (comment your pull request, create pull only). **_NOTE:_** *don't force a pull request, wait until one of the other developers makes a review of this pull*
 10. Mention in Telegram that you've created a new pull request.
-11. Only when the pull is accepted, delete your local branch for that task > **git branch -D tsk-1**. Make sure you have "draft" and "main" branches left only > **git branch**, the remote branch will be deleted by reviewer
+11. Only when the pull is accepted, delete your local branch for that task > **git branch -D tsk-1**. Make sure you have "draft", "main" and "snippets" branches left only > **git branch**, the remote branch will be deleted by reviewer
