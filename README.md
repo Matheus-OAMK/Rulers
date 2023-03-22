@@ -1,10 +1,10 @@
 # Rulers project
 
-## Code implementation rules
+## Code implementation
 
 ### Use the "Hacknplan" tool, for **_development_**:
 
-There're tasks to be done, if you want to create a task using this template: "#page // task definition". Example: "#mainPage // Manage the height of the first-look class box". After creating the task, leave as detailed description as it needs to be understandable.
+There're tasks to be done.
 
 ### Main rules:
 
