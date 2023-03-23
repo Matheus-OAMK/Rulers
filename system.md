@@ -1,5 +1,7 @@
 ## Design variables
 
+**Use https://ionic.io/ionicons to reach icons**
+
 ### Default css configuration
 
 ```
