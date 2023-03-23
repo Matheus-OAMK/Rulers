@@ -18,6 +18,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
+  color: #fff;
 }
 ```
 
