@@ -15,11 +15,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../Style Sheets/header.css" />
-    <script src="../Scripts/header.js"></script>
+    <script defer src="../Scripts/header.js"></script>
 
     <title>Document</title>
   </head>
-  <body>
+  <body class="logged-in">
     <header class="header">
       <div class="container header__grid">
         <div class="header__grid--left">
@@ -62,7 +62,7 @@
                 class="header-icon bag-icon filled-icon"
               ></ion-icon>
             </a>
-            <div class="account--nav-el">
+            <div class="account--nav-el account">
               <ion-icon
                 name="person-outline"
                 class="header-icon account-icon outline-icon"
@@ -71,9 +71,14 @@
                 name="person"
                 class="header-icon account-icon filled-icon"
               ></ion-icon>
-              <button class="btn btn-main btn-header">Log in</button>
-              <button class="btn btn-main btn-header">Sign up</button>
             </div>
+            <button class="btn btn-main btn-header hidden login">
+              Log in
+              <!-- <div class="btn-main--shadow"></div> -->
+            </button>
+            <button class="btn btn-main btn-header hidden signup">
+              Sign up
+            </button>
           </div>
         </div>
       </div>
