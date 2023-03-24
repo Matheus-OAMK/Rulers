@@ -4,16 +4,20 @@ const signUpBtn = document.querySelector(`.signup`);
 const logInBtn = document.querySelector(`.login`);
 const accountBtn = document.querySelector(`.account`);
 
+const menuBtn = document.querySelector(`.menu-icon`);
+const menuPopup = document.querySelector(`.header__menu-popup`);
+const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
+
 //Function on account button click
 const accClick = () => {
   accountBtn.addEventListener('click', () => {
     // if signup and login contain hidden class > remove it and start animation to left
     if (
-      logInBtn.classList.contains(`hidden`) &&
-      signUpBtn.classList.contains(`hidden`)
+      logInBtn.classList.contains(`header-btn-hidden`) &&
+      signUpBtn.classList.contains(`header-btn-hidden`)
     ) {
-      logInBtn.classList.remove(`hidden`);
-      signUpBtn.classList.remove(`hidden`);
+      logInBtn.classList.remove(`header-btn-hidden`);
+      signUpBtn.classList.remove(`header-btn-hidden`);
       signUpBtn.classList.add(`toLeftL`);
       logInBtn.classList.add(`toLeftS`);
     } else {
@@ -27,10 +31,44 @@ const accClick = () => {
       setTimeout(() => {
         logInBtn.style.animation = ``;
         signUpBtn.style.animation = ``;
-        logInBtn.classList.add(`hidden`);
-        signUpBtn.classList.add(`hidden`);
+        logInBtn.classList.add(`header-btn-hidden`);
+        signUpBtn.classList.add(`header-btn-hidden`);
       }, 790);
     }
   });
 };
 accClick(); //Call this function if user is NOT logged in
+
+menuBtn.addEventListener('click', () => {
+  if (menuPopup.classList.contains(`no-display`)) {
+    menuPopup.classList.remove(`no-display`);
+    // menuPopup.classList.add(`menu-open`);
+
+    // menuItemBtns.classList.add(`menuItemToRight`);
+    menuItemBtns.forEach(menuItem => {
+      menuItem.classList.add(`menuItemToRight`);
+    });
+  } else {
+    // menuItemBtns.style.animation = 'menuItemToLeft 0.8s ease-in';
+    menuItemBtns.forEach(menuItem => {
+      menuItem.classList.remove(`menuItemToRight`);
+    });
+    // for (let i = 0; i < menuItemBtns.length; i++) {
+    //   menuItemBtns[i].style.animationDelay = `0.${i}s`;
+    //   // console.log(menuItemBtns[i]);
+    // }
+
+    menuItemBtns.forEach(menuItem => {
+      menuItem.style.animation = 'menuItemToLeft 0.8s ease-in';
+    });
+
+    setTimeout(() => {
+      // menuItemBtns.style.animation = ``;
+      menuItemBtns.forEach(menuItem => {
+        menuItem.style.animation = ``;
+      });
+      menuPopup.classList.add(`no-display`);
+      // menuPopup.classList.remove(`menu-open`);
+    }, 790);
+  }
+});

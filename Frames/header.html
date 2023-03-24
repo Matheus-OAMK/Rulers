@@ -21,12 +21,20 @@
   </head>
   <body class="logged-in">
     <header class="header">
-      <div class="container header__grid">
+      <div class="container-header header__grid">
         <div class="header__grid--left">
           <ion-icon
             name="menu-outline"
             class="menu-icon header-icon"
           ></ion-icon>
+          <div class="header__menu-popup no-display">
+            <ul>
+              <li class="header__menu--item"><a href="#">All cards</a></li>
+              <li class="header__menu--item"><a href="#">Guess game</a></li>
+              <li class="header__menu--item"><a href="#">Ruler gems</a></li>
+              <li class="header__menu--item"><a href="#">Card info</a></li>
+            </ul>
+          </div>
         </div>
 
         <div class="header__grid--center">
@@ -72,11 +80,10 @@
                 class="header-icon account-icon filled-icon"
               ></ion-icon>
             </div>
-            <button class="btn btn-main btn-header hidden login">
+            <button class="btn btn-main-header header-btn-hidden login">
               Log in
-              <!-- <div class="btn-main--shadow"></div> -->
             </button>
-            <button class="btn btn-main btn-header hidden signup">
+            <button class="btn btn-main-header header-btn-hidden signup">
               Sign up
             </button>
           </div>
