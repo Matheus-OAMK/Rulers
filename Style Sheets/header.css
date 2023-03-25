@@ -4,6 +4,12 @@
   box-sizing: inherit;
 }
 
+.some {
+  height: 500px;
+  width: 500px;
+  /* background-color: #302e2e; */
+}
+
 html {
   font-size: 62.5%;
 }
@@ -31,6 +37,7 @@ body {
   max-width: 140rem;
   margin: 0 auto;
   padding: 0 4.8rem;
+  position: relative;
 }
 
 .header {
@@ -48,7 +55,10 @@ body {
   align-items: center;
 }
 
-.header__grid--left {
+.menu-nav {
+  padding: 0.4rem 0;
+  border: none;
+  background-color: transparent;
   position: relative;
 }
 
@@ -56,18 +66,36 @@ body {
   height: 3.8rem;
   width: 3.8rem;
   cursor: pointer;
+  transition: all 0.4s;
+}
+
+.menu-filled {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -0.2rem;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.menu-icon:hover ~ .menu-filled {
+  opacity: 1;
+}
+
+.menu-icon:hover {
+  opacity: 0;
 }
 
 .header__menu-popup {
-  /* display: none; */
   position: absolute;
-  /* background-color: #040405; */
+  background-color: #040405;
   top: 7.2rem;
-  /* left: -14.6rem; */
-  left: -3.6rem;
-  /* border-radius: 0 20px 0 20px; */
-  /* overflow: hidden; */
-  /* transform: translateX(-20rem); */
+  left: 1.6rem;
+  border-radius: 0 20px 0 20px;
+  border: 1px solid #fff;
+  overflow: hidden;
 }
 
 .header__menu-popup ul {
@@ -77,43 +105,25 @@ body {
 }
 
 .header__menu--item {
-  background-color: #040405;
   color: #fff;
   font-size: 1.8rem;
-  padding: 1.2rem 4rem;
-  /* animation: menuItemToRight 0.4s ease-out; */
-  /* border: solid 1px #fff; */
+  padding: 1.2rem 4rem 1.2rem 2.4rem;
   opacity: 0;
+  width: max-content;
 }
 
 .menuItemToRight {
   animation: menuItemToRight 0.8s ease-out forwards;
 }
 
-.header__menu--item:first-child {
-  /* animation: menuItemToRight 0.8s ease-out forwards; */
-  border-top: solid 1px #fff;
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
-}
 .header__menu--item:nth-child(2) {
-  /* animation: menuItemToRight 0.8s ease-out forwards; */
   animation-delay: 0.1s;
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
 }
 .header__menu--item:nth-child(3) {
-  /* animation: menuItemToRight 0.8s ease-out forwards; */
   animation-delay: 0.2s;
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
 }
 .header__menu--item:last-child {
-  /* animation: menuItemToRight 0.8s ease-out forwards; */
   animation-delay: 0.3s;
-  border-bottom: solid 1px #fff;
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
 }
 
 .header__menu--item:first-child {
@@ -132,10 +142,16 @@ body {
   padding: 0.4rem 0.8rem;
   border-radius: 0.5rem;
   position: relative;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s;
+  left: 0;
 }
 
-.header__menu--item a:hover {
+.header__menu--item a:hover,
+.header__menu--item a:active {
   background-color: #302e2e;
+  left: 0.8rem;
 }
 
 .header__menu--item a:link::after {
@@ -153,14 +169,41 @@ body {
   box-shadow: 0 8px 0 0 #66fcf1;
 }
 
-@keyframes menuItemToRight {
+.menuExpand {
+  animation: menuExpand 0.8s ease-out;
+}
+
+@keyframes menuExpand {
   0% {
-    transform: translate(-7.2rem, -10rem) scale(0);
-    opacity: 0;
-    border-radius: 30px;
+    max-height: 0;
+    max-width: 0rem;
+    border-radius: 5rem;
   }
   100% {
-    transform: translateY(0);
+    max-height: 20rem;
+    max-width: 18rem;
+  }
+}
+
+@keyframes menuReduce {
+  0% {
+    max-height: 20rem;
+    max-width: 18rem;
+  }
+  100% {
+    max-width: 0rem;
+    max-height: 0;
+    border-radius: 5rem;
+  }
+}
+
+@keyframes menuItemToRight {
+  0% {
+    transform: translateX(-7.2rem) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -168,11 +211,9 @@ body {
 @keyframes menuItemToLeft {
   0% {
     opacity: 1;
-    /* transform: translateX(11rem); */
   }
   100% {
-    transform: translateX(-10rem);
-    /* border-radius: 30px; */
+    transform: translateX(-7.2rem);
     opacity: 0;
   }
 }
@@ -185,11 +226,11 @@ body {
   display: grid;
   align-items: center;
   gap: 0.8rem;
-  grid-template-columns: 65fr 35fr;
+  grid-template-columns: 6fr 4fr;
 }
 
 .header__grid--center a:link,
-a:visited {
+.header__grid--center a:visited {
   display: inline-block;
   margin-left: auto;
   width: fit-content;
@@ -358,7 +399,7 @@ a:visited {
 .btn-main-header::after {
   content: '';
   display: block;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 0.5rem;
   transform: translateX(-12%);
