@@ -7,7 +7,6 @@ const accountBtn = document.querySelector(`.account`);
 const menuBtn = document.querySelector(`.menu-icon`);
 const menuPopup = document.querySelector(`.header__menu-popup`);
 const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
-const menuPageLink = document.querySelectorAll(`.menu-page-link`);
 
 //Function on account icon button click
 const accClick = () => {
@@ -40,45 +39,77 @@ const accClick = () => {
 };
 accClick(); //Call this function if user is NOT logged in
 
-// This function to hide a menu
-const hideMenu = () => {
-  console.log(`Menu hidden`);
-  menuPopup.style.animation = `menuReduce 0.8s ease-in`;
-  menuPopup.classList.remove(`menuExpand`);
-  menuItemBtns.forEach(menuItem => {
-    menuItem.classList.remove(`menuItemToRight`);
-  });
-  menuItemBtns.forEach(menuItem => {
-    menuItem.style.animation = 'menuItemToLeft 0.8s ease-in';
-  });
-  setTimeout(() => {
+class Header {
+  menuIconButton;
+  menuPopupWindow;
+  menuPageLink;
+
+  accountIconButton;
+  accountSignUpButton;
+  accountLogInButton;
+
+  constructor(
+    menuIconButton,
+    menuPopupWindow,
+    menuPageLink,
+    accountIconButton,
+    accountSignUpButton,
+    accountLogInButton
+  ) {
+    this.menuIconButton = menuIconButton;
+    this.menuPopupWindow = menuPopupWindow;
+    this.menuPageLink = menuPageLink;
+
+    this.accountIconButton = accountIconButton;
+    this.accountSignUpButton = accountSignUpButton;
+    this.accountLogInButton = accountLogInButton;
+  }
+
+  openMenu() {
+    menuPopup.classList.remove(`no-display`);
+    menuPopup.classList.add(`menuExpand`);
     menuItemBtns.forEach(menuItem => {
-      menuItem.style.animation = ``;
+      menuItem.classList.add(`menuItemToRight`);
     });
-    menuPopup.style.animation = ``;
-    menuPopup.classList.add(`no-display`);
-  }, 790);
-};
+  }
 
-const openMenu = () => {
-  menuPopup.classList.remove(`no-display`);
-  menuPopup.classList.add(`menuExpand`);
+  hideMenu() {
+    menuPopup.style.animation = `menuReduce 0.8s ease-in`;
+    menuPopup.classList.remove(`menuExpand`);
+    menuItemBtns.forEach(menuItem => {
+      menuItem.classList.remove(`menuItemToRight`);
+    });
+    menuItemBtns.forEach(menuItem => {
+      menuItem.style.animation = 'menuItemToLeft 0.8s ease-in';
+    });
+    setTimeout(() => {
+      menuItemBtns.forEach(menuItem => {
+        menuItem.style.animation = ``;
+      });
+      menuPopup.style.animation = ``;
+      menuPopup.classList.add(`no-display`);
+    }, 790);
+  }
+}
 
-  menuItemBtns.forEach(menuItem => {
-    menuItem.classList.add(`menuItemToRight`);
-  });
-  console.log(`Menu opened`);
-};
+const rulersHeader = new Header(
+  menuBtn,
+  menuPopup,
+  menuItemBtns,
+  accountBtn,
+  signUpBtn,
+  logInBtn
+);
 
 window.onclick = function (event) {
   if (event.target.matches(`.menu-icon`)) {
-    if (menuPopup.classList.contains(`no-display`)) {
-      openMenu();
+    if (rulersHeader.menuPopupWindow.classList.contains(`no-display`)) {
+      rulersHeader.openMenu();
     } else {
-      hideMenu();
+      rulersHeader.hideMenu();
     }
   } else {
-    hideMenu();
+    rulersHeader.hideMenu();
   }
 };
 
@@ -87,22 +118,9 @@ window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
   if (
     prevScrollpos !== currentScrollPos &&
-    !menuPopup.classList.contains(`no-display`)
+    !rulersHeader.menuPopupWindow.classList.contains(`no-display`)
   ) {
-    hideMenu();
+    rulersHeader.hideMenu();
   }
   prevScrollpos = currentScrollPos;
 };
-
-// class Header {
-//   accBtn;
-//   menuBtn2;
-//   constructor(accBtn, menuButton) {
-//     this.accBtn = accBtn;
-//     this.menuBtn2 = menuButton;
-//   }
-// }
-
-// const header = new Header(accountBtn, menuBtn);
-
-// console.log(header.accBtn);
