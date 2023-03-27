@@ -99,7 +99,7 @@ body {
   background-color: #040405;
   border-radius: 20px 0;
   display: inline-block;
-  padding: 3.2rem;
+  padding: 2.4rem;
   margin: 2.4rem 0;
   z-index: 100;
   position: absolute;
@@ -134,7 +134,7 @@ body {
 .testing {
   height: 400rem;
   width: 100%;
-  background-color: red;
+  background-color: #1E1E1E;
 }
 
 #overlay {

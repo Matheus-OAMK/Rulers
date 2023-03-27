@@ -11,7 +11,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
-  color: #fff;
+  color: #ddd;
   background-color: #1e1e1e;
 }
 
@@ -35,8 +35,9 @@ body {
   width: 3.2rem;
   padding: 1.6rem;
   border-radius: 50%;
-  background-color: #5ce3d9;
-  color: #143230;
+  background-color: #66fcf1; /* 0% */
+
+  color: #143230; /* 80% */
   margin-bottom: 3.2rem;
 }
 
@@ -44,7 +45,7 @@ body {
   font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 1.6rem;
-  color: #ddd;
+  color: #fff;
 }
 
 .main--info-text {

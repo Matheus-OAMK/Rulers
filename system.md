@@ -18,7 +18,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
-  color: #fff;
+  color: #ddd;
 }
 ```
 
@@ -95,8 +95,8 @@ body {
   - no yet
 
 - Font color
-
-  - #fff
+  - Main #ddd
+  -Titles #fff
 
 - Background-color
 
