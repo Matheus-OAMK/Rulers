@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
   color: #ddd;
-  background-color: #1e1e1e;
+  background-color: #0D1117;
 }
 
 /* ******************* INFO-ROW ******************* */
@@ -26,7 +26,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 6.4rem;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 3.2rem;
 }
 
@@ -50,6 +50,122 @@ body {
 
 .main--info-text {
   font-size: 1.8rem;
-  line-height: 2.4rem;
+  line-height: 1.2;
+}
+
+
+
+/* ******************* CARD AD SECTION ******************* */
+
+.main--section-card-ad {
+  padding: 4.8rem 0;
+}
+
+.main--card-ad {
+  max-width: 140rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6.4rem;
+  margin: 0 auto;
+}
+
+
+.main--card-ad-img {
+  height: 44rem;
+  border-radius: 20px;
+}
+
+.main--card-ad-textbox {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 3.2rem;
+  position: relative;
+}
+
+.main--card-ad-text {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.main--card-ad-heading {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.main--card-ad-btn:link,
+.main--card-ad-btn:visited {
+  text-decoration: none;
+  background-color: black;
+  color: #fff;
+  font-size:2.4rem;
+  padding: 2.4rem 4.8rem;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -3.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.main--card-ad-btn:hover,
+.main--card-ad-btn:active {
+  background-color: #302E2E;
+}
+
+
+/* ******************* GAME CTA SECTION ******************* */
+
+.main--section-game-cta {
+  padding: 4.8rem 0;
+}
+
+.main--game-cta {
+  margin: 0 auto;
+  max-width: 140rem;
+  height: 72rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/Images/Background visuals/Gold game background.png");
+  background-size: cover;
+ 
+  position: relative;
+}
+
+.main-game-cta-img {
+  background-image: url("/Images/Background visuals/Gold game background.png");
+  background-size: cover;
+  width: 95%;
+  height: 95%;
+  box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main--game-cta-btn:link,
+.main--game-cta-btn:visited {
+  text-decoration: none;
+  
+  
+ 
+  padding: 3.2rem 6.4rem;
+  background-color: #cf95038a;
+  border: 3px solid #000;
+  font-family: 'Wallpoet', cursive;
+  box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+  
+  color: #fff;
+  text-align: center;
+  font-size: 5.2rem;
+  -webkit-text-stroke: 2px #000000;
+  text-stroke: 2px #000000;
+  text-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+
 }
 
