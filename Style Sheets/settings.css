@@ -90,16 +90,29 @@ header {
     right: 3.3rem;
     position: absolute;
     font-size: 4rem;
+    color: white;
+    float: right;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.settings-info-icon:hover {
+    top: 3.3rem;
+    right: 3.3rem;
+    position: absolute;
+    font-size: 4rem;
     color: rgba(102, 252, 241, 1);
     float: right;
     cursor: pointer;
+    color: var(rgba(102, 252, 241, 1));    
 }
+
 
 .settings-title {
     text-align: left;
     font-size: 5.2rem;
     padding-bottom: 3rem;
-    color: rgba(102, 252, 241, 1);
+    color: rgb(255, 255, 255);
 }
 
 .settings-form-box {
@@ -115,6 +128,11 @@ header {
     flex-direction: column;
     align-items: center;
 }
+
+.form-input-box {
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  }
 
 /* NAME INPUT BOX */
 
@@ -356,6 +374,22 @@ header {
     margin-bottom: 2.4rem;
     background: rgb(15, 26, 43);
     border-width: 0.1rem;
+    border-color: white;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    align-self: center;
+    transition: all 0.3s;
+}
+
+.settings-btn:hover {
+    width: 80%;
+    height: 4.5rem;
+    margin-bottom: 2.4rem;
+    background: rgb(15, 26, 43);
+    border-width: 0.1rem;
     border-color: rgba(102, 252, 241, 1);
     border-radius: 0.6rem;
     cursor: pointer;
@@ -363,8 +397,8 @@ header {
     font-weight: 600;
     color: rgba(102, 252, 241, 1);
     align-self: center;
+    box-shadow: 0 0 5px 0 rgba(102, 252, 241, 1);
 }
-
 
 /* FOOTER */
 
