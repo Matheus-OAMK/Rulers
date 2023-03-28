@@ -160,14 +160,16 @@ body {
   display: block;
   position: absolute;
   width: 100%;
+  transform: scaleX(0);
   height: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.3s;
-  box-shadow: 0 4px 0 0 transparent;
+  box-shadow: 0 8px 0 0 transparent;
 }
 
 .header__menu--item a:hover::after {
   box-shadow: 0 8px 0 0 #66fcf1;
+  transform: scaleX(1);
 }
 
 .menuExpand {
@@ -250,165 +252,76 @@ body {
 }
 
 .header__grid--right {
-  padding-top: 0.8rem;
+  padding-top: 1.2rem;
   align-self: start;
 }
 
 .account--nav {
+  float: right;
   display: flex;
-  margin-left: auto;
-  width: fit-content;
   gap: 2.4rem;
 }
 
+.account--nav-el:first-child {
+  height: 1.8rem;
+}
+
 .account--nav-el {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
   text-align: center;
-  height: 5px;
-  border-radius: 5px;
   cursor: pointer;
+}
+
+.account--nav-el::after {
+  content: '';
+  display: block;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  transform: scaleX(0);
   transition: all 0.3s;
-  box-shadow: 0 30px 0 0 transparent;
-  position: relative;
-}
-
-.account--nav-el:link,
-.account--nav-el:visited {
-  text-decoration: none;
-}
-
-.account--nav-el:hover,
-.account--nav-el:active {
-  box-shadow: 0 34px 0 0 #66fcf1;
-}
-
-.account--nav-el:hover .outline-icon {
-  opacity: 0;
-}
-
-.account--nav-el:hover .filled-icon {
-  opacity: 1;
-}
-
-.account--nav .gem-icon {
-  width: 2rem;
-  height: 2rem;
-}
-
-.account--nav .bag-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-
-.account--nav .account-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-
-.account--nav {
-  position: relative;
-}
-
-.outline-icon {
-  transition: all 0.3s;
-}
-
-.filled-icon {
-  position: absolute;
-  top: 0;
-  right: 50%;
-  transform: translateX(50%);
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.toLeftL {
-  animation: toLeftL 0.8s ease-out forwards;
-}
-
-.toLeftS {
-  animation: toLeftS 0.8s ease-out forwards;
-}
-
-@keyframes toLeftL {
-  0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-18rem);
-    opacity: 1;
-  }
-}
-
-@keyframes toLeftS {
-  0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-10rem);
-    opacity: 1;
-  }
-}
-
-@keyframes toRightL {
-  0% {
-    transform: translateX(-18rem);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-}
-
-@keyframes toRightS {
-  0% {
-    transform: translateX(-10rem);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-}
-
-.btn {
-  border: none;
-  border-radius: 0;
   background-color: transparent;
 }
 
-.btn-main-header {
-  width: max-content;
-  font-family: inherit;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  color: #fff;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-
-  position: absolute;
-  right: -100%;
-  transition: all 0.4s;
-}
-
-.btn-main-header:hover {
-  background-color: #302e2e;
-}
-
-.btn-main-header::after {
-  content: '';
-  display: block;
-  position: absolute;
+.account--nav-icon {
   width: 100%;
-  height: 0.5rem;
-  transform: translateX(-12%);
-  border-radius: 0.5rem;
-  transition: all 0.3s;
-  box-shadow: 0 8px 0 0 transparent;
+  height: 100%;
 }
 
-.btn-main-header:hover.btn-main-header::after {
-  box-shadow: 0 12px 0 0 #66fcf1;
+.icon-outline {
+  transition: all 0.3s;
+}
+
+.icon-filled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.account--nav-el:hover .icon-outline {
+  opacity: 0;
+}
+
+.account--nav-el:hover .icon-filled {
+  opacity: 1;
+}
+
+.account--nav-el:hover::after {
+  background-color: #66fcf1;
+  transform: scaleX(1);
+}
+
+.account--menu {
+  position: absolute;
+  top: 7.2rem;
+  right: 1.2rem;
+  /* background-color: #66fcf1; */
+  background-color: #040405;
+  height: 20rem;
+  width: 18rem;
+  border: 1px solid #fff;
+  border-radius: 20px 0 20px 0;
 }

@@ -9,7 +9,7 @@ const menuPopup = document.querySelector(`.header__menu-popup`);
 const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
 
 //Function on account icon button click
-const accClick = () => {
+/* const accClick = () => {
   accountBtn.addEventListener('click', () => {
     // if signup and login contain hidden class > remove it and start animation to left
     if (
@@ -36,8 +36,8 @@ const accClick = () => {
       }, 790);
     }
   });
-};
-accClick(); //Call this function if user is NOT logged in
+}; */
+//Call this function if user is NOT logged in
 
 class Header {
   menuIconButton;
@@ -92,7 +92,7 @@ class Header {
   }
 }
 
-const rulersHeader = new Header(
+const header = new Header(
   menuBtn,
   menuPopup,
   menuItemBtns,
@@ -103,13 +103,13 @@ const rulersHeader = new Header(
 
 window.onclick = function (event) {
   if (event.target.matches(`.menu-icon`)) {
-    if (rulersHeader.menuPopupWindow.classList.contains(`no-display`)) {
-      rulersHeader.openMenu();
+    if (header.menuPopupWindow.classList.contains(`no-display`)) {
+      header.openMenu();
     } else {
-      rulersHeader.hideMenu();
+      header.hideMenu();
     }
   } else {
-    rulersHeader.hideMenu();
+    header.hideMenu();
   }
 };
 
@@ -118,9 +118,9 @@ window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
   if (
     prevScrollpos !== currentScrollPos &&
-    !rulersHeader.menuPopupWindow.classList.contains(`no-display`)
+    !header.menuPopupWindow.classList.contains(`no-display`)
   ) {
-    rulersHeader.hideMenu();
+    header.hideMenu();
   }
   prevScrollpos = currentScrollPos;
 };
