@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+html {
+    font-size: 62.5%;
+}
+
+  
+body {
+    box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+    display: block;
+    background-color:rgba(13, 17, 23, 1); 
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    background-color: #000;
+    max-width: 144rem;
+    height: 7rem;
+    margin: 0 auto;
+}
+
+/* GEMS MAIN CONTAINER */
+
+.gems-main-container {
+    display: flex;
+    max-width: 144rem;
+    height: 70rem;
+    margin: 0 auto;
+    padding: 3.7rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    gap: 3.2rem;
+  }
+
+/* GEMS 3 CHOICE */
+
+.gems-box {
+    width: 40rem;
+    height: 51.2rem;
+    background-color: white;
+    margin-bottom: 4.8rem;
+    margin-top: 4.8rem;
+    background: #040405;
+    box-shadow: 0px 0px 20px rgba(102, 252, 241, 0.25);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.gems-box:hover {
+    box-shadow: 0px 0px 45px rgba(102, 252, 241, 0.45);
+}
+
+.gems-box:hover img {
+    filter: drop-shadow(0px 0px 3rem #FF0000);
+    transition: filter 0.3s ease-in-out;
+  }
+
+.gems-title-box {
+    width: 22.2rem;
+    height: 5.4rem;
+    background-color: red;
+    transform: translateY(-50%);
+    margin: 0 auto; 
+    background: #040405;
+    box-shadow: 0px 0px 20px rgba(102, 252, 241, 0.25);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.gems-title {
+    font-size: 2.4rem;
+    color: white;
+    transform: translateY(40%);
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+}
+
+.gems-free-img {
+    max-width: 80%;
+    transform: translateY(65%);
+}
+
+.gems-popular-img {
+    max-width: 110%;
+    transform: translate(-5%, 67%);
+}
+
+.gems-value-img {
+    max-width: 150%;
+    transform: translateY(43%) translateX(-20%);
+}
+.gems-amount{
+    font-size: 4.8rem;
+    color: white;
+    opacity: 80%;
+    transform: translate(0% , 150%);
+}
+
+.gems-amount-img {
+    max-width: 20%;
+    transform: translateY(10%) translateX(10%);
+}
+
+.gems-free {
+    font-size: 5.2rem;
+    transform: translate(0%, 240%);
+}
+
+.gems-price1 {
+    font-size: 5.2rem;
+    transform: translate(0%, 250%);
+}
+
+.gems-price2 {
+    font-size: 5.2rem;
+    transform: translate(0%, 160%);
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #000;
+    max-width: 144rem;
+    height: 17.3rem;
+    margin: 0 auto;
+}
