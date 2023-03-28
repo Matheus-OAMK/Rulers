@@ -27,7 +27,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 6.4rem;
   margin: 0 auto;
-  padding: 0 3.2rem;
+  padding: 0 4.8rem;
 }
 
 .main--info-icon {
@@ -67,6 +67,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 6.4rem;
   margin: 0 auto;
+  padding: 0 4.8rem;
 }
 
 
@@ -102,7 +103,7 @@ body {
   background-color: black;
   color: #fff;
   font-size:2.4rem;
-  padding: 2.4rem 4.8rem;
+  padding: 2.4rem 4.5rem;
   border-radius: 10px;
   position: absolute;
   bottom: -3.75rem;
@@ -128,6 +129,7 @@ body {
   max-width: 140rem;
   height: 72rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/Images/Background visuals/Gold game background.png");
+  border-radius: 20px;
   background-size: cover;
  
   position: relative;
@@ -135,7 +137,11 @@ body {
 
 .main-game-cta-img {
   background-image: url("/Images/Background visuals/Gold game background.png");
+  border-radius: 20px;
   background-size: cover;
+
+  
+  
   width: 95%;
   height: 95%;
   box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
@@ -143,29 +149,49 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
+  justify-items: center;
+  gap: 3.2rem;
 }
+
+.main--game-cta-cards {
+  margin-top: 3.2rem;
+}
+
+.main--game-cta-card {
+  transform: rotate(-35deg);
+  max-width: 20rem;
+}
+
+
 
 .main--game-cta-btn:link,
 .main--game-cta-btn:visited {
   text-decoration: none;
   
-  
- 
-  padding: 3.2rem 6.4rem;
-  background-color: #cf95038a;
+  padding: 2.4rem 4.8rem;
+  background-color: rgba(207, 149, 3, 0.65);
   border: 3px solid #000;
   font-family: 'Wallpoet', cursive;
   box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
-  
+  max-width: 48rem;
   color: #fff;
   text-align: center;
   font-size: 5.2rem;
   -webkit-text-stroke: 2px #000000;
   text-stroke: 2px #000000;
   text-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
-
+  transition: all 0.3s;
+  border-radius: 15px;
 }
+
+.main--game-cta-btn:hover,
+.main--game-cta-btn:active {
+  background-color: rgba(207, 149, 3, 1);
+  box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+}
+
+
 
