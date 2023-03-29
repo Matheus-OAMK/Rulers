@@ -42,13 +42,13 @@ class Header {
   }
 
   hideMenu() {
-    this.menuPopupWindow.style.animation = `menuReduce 0.8s ease-in`;
+    this.menuPopupWindow.style.animation = `menuReduce 0.6s ease-in`;
     this.menuPopupWindow.classList.remove(`menuExpand`);
     this.menuPageLinks.forEach(menuItem => {
       menuItem.classList.remove(`menuItemToRight`);
     });
     this.menuPageLinks.forEach(menuItem => {
-      menuItem.style.animation = 'menuItemToLeft 0.8s ease-in';
+      menuItem.style.animation = 'menuItemToLeft 0.6s ease-in';
     });
     setTimeout(() => {
       this.menuPageLinks.forEach(menuItem => {
@@ -56,7 +56,7 @@ class Header {
       });
       this.menuPopupWindow.style.animation = ``;
       this.menuPopupWindow.classList.add(`no-display`);
-    }, 790);
+    }, 590);
   }
 
   openAccountMenu() {
@@ -68,14 +68,14 @@ class Header {
   }
 
   hideAccountMenu() {
-    this.accountMenuPopup.style.animation = `accMenuReduce 0.8s ease-in`;
+    this.accountMenuPopup.style.animation = `accMenuReduce 0.6s ease-in`;
     this.accountMenuPopup.classList.remove(`accMenuExpand`);
 
     this.accountMenuItems.forEach(accMenuItem => {
       accMenuItem.classList.remove(`accMenuItemToLeft`);
     });
     this.accountMenuItems.forEach(accMenuItem => {
-      accMenuItem.style.animation = 'accMenuItemToRight 0.8s ease-in';
+      accMenuItem.style.animation = 'accMenuItemToRight 0.6s ease-in';
     });
 
     setTimeout(() => {
@@ -85,7 +85,7 @@ class Header {
 
       this.accountMenuPopup.style.animation = ``;
       this.accountMenuPopup.classList.add(`no-display`);
-    }, 790);
+    }, 590);
   }
 }
 
