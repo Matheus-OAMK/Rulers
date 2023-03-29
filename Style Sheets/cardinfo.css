@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Asap', sans-serif;
+  color: #ddd;
+  background-color: #0D1117;
+}
+
+
+
+ .container {
+  max-width: 140rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  padding: 6.4rem;
+  gap:6.4rem;
+  row-gap: 12.8rem;
+} 
+
+.banner {
+  width: 30rem;
+  height: 62rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 68%, 47% 100%, 0% 69%);
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 2.4rem;
+  align-items: center;
+}
+
+.banner h2 {
+  font-size: 3.6rem;
+  display: inline-block;
+  margin-bottom: 4.8rem;
+  color: #eee;
+  font-weight: 600;
+}
+
+.banner p {
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.icon {
+  width: 14rem;
+  /* height: 17rem; */
+  transform: translateY(35%);
+  filter: drop-shadow(0 0px 3rem  rgb(0, 0, 0));
+}
+.icon-role {
+  width: 14rem;
+  /* height: 14rem; */
+  transform: translateY(35%);
+  filter: drop-shadow(0 0px 3rem  rgb(0, 0, 0));
+}
+
+
+.wrapper {
+  filter: drop-shadow(0 0px 25px   #EFC634);
+}
+
+.banner-rare {
+background-image: linear-gradient(to bottom,#140403,#450B0A,#631312,#000000);
+}
+
+
+.banner-epic {
+
+background: linear-gradient(to bottom,#180418,#460B47,#590f5a,#000000);
+}
+
+.banner-legendary {
+  background: linear-gradient(to bottom, #231402,#703E03,hsl(32, 88%, 31%),#0b0600);
+}
+
+.banner-tank{
+  background: linear-gradient(to bottom,#09081F,#5667A6,#495378,#0b0a2a);
+}
+.banner-support{
+  background: linear-gradient(to bottom, #020E04,#47754C,#688969,#062706);
+}
+.banner-burst {
+  background: linear-gradient(to bottom,#3D1702,#8f2f03b0,#f658096a,#83300000);
+}
