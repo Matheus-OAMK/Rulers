@@ -89,16 +89,19 @@ header {
 .gems-free-img {
     max-width: 80%;
     transform: translateY(65%);
+    transition: filter 0.3s ease-in-out;
 }
 
 .gems-popular-img {
     max-width: 110%;
     transform: translate(-5%, 67%);
+    transition: filter 0.3s ease-in-out;
 }
 
 .gems-value-img {
     max-width: 150%;
     transform: translateY(43%) translateX(-20%);
+    transition: filter 0.3s ease-in-out;
 }
 .gems-amount{
     font-size: 4.8rem;
