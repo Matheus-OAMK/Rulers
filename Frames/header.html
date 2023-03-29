@@ -19,7 +19,8 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <!-- class="logged-in" ADD THIS CLASS IF USER IS LOGGED IN -->
+  <body class="logged-in">
     <header class="header">
       <div class="container-header header__grid">
         <div class="header__menu-popup no-display">
@@ -54,7 +55,7 @@
         </div>
         <div class="header__grid--right">
           <div class="account--nav">
-            <div class="account--nav-el no-display">
+            <div class="account--nav-el">
               <ion-icon
                 name="diamond-outline"
                 class="header-icon account--nav-icon icon-outline"
@@ -65,7 +66,7 @@
               ></ion-icon>
               <p>1000</p>
             </div>
-            <div class="account--nav-el no-display">
+            <div class="account--nav-el">
               <ion-icon
                 name="bag-handle-outline"
                 class="header-icon account--nav-icon icon-outline"
@@ -78,16 +79,35 @@
             <div class="account--nav-el">
               <ion-icon
                 name="person-outline"
-                class="header-icon account--nav-icon icon-outline"
+                class="header-icon account--nav-icon icon-outline account-icon"
               ></ion-icon>
               <ion-icon
                 name="person"
-                class="header-icon account--nav-icon icon-filled"
+                class="header-icon account--nav-icon icon-filled account-icon"
               ></ion-icon>
             </div>
           </div>
         </div>
-        <div class="account--menu"></div>
+        <div class="account--menu-default no-display">
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Log in</a>
+          </div>
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Sign up</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Settings</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Collection</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a class="account--menu-item">Log out</a>
+          </div>
+        </div>
+        <!-- <div class="account--menu-logged-in">
+          
+        </div> -->
       </div>
     </header>
     <div class="some"></div>
@@ -108,3 +128,4 @@
     ></script>
   </body>
 </html>
+logged-in

@@ -1,93 +1,90 @@
 'use strict';
-
-const signUpBtn = document.querySelector(`.signup`);
-const logInBtn = document.querySelector(`.login`);
-const accountBtn = document.querySelector(`.account`);
-
 const menuBtn = document.querySelector(`.menu-icon`);
 const menuPopup = document.querySelector(`.header__menu-popup`);
 const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
 
-//Function on account icon button click
-/* const accClick = () => {
-  accountBtn.addEventListener('click', () => {
-    // if signup and login contain hidden class > remove it and start animation to left
-    if (
-      logInBtn.classList.contains(`header-btn-hidden`) &&
-      signUpBtn.classList.contains(`header-btn-hidden`)
-    ) {
-      logInBtn.classList.remove(`header-btn-hidden`);
-      signUpBtn.classList.remove(`header-btn-hidden`);
-      signUpBtn.classList.add(`toLeftL`);
-      logInBtn.classList.add(`toLeftS`);
-    } else {
-      // if signup and login do not contain hidden class > add it, remove left animation class and
-      // start animation to right
-      signUpBtn.classList.remove(`toLeftL`);
-      logInBtn.classList.remove(`toLeftS`);
-      logInBtn.style.animation = `toRightS 0.8s ease-in`;
-      signUpBtn.style.animation = `toRightL 0.8s ease-in`;
-      // After animation run (a little bit earlier), remove any animation style and add hidden class
-      setTimeout(() => {
-        logInBtn.style.animation = ``;
-        signUpBtn.style.animation = ``;
-        logInBtn.classList.add(`header-btn-hidden`);
-        signUpBtn.classList.add(`header-btn-hidden`);
-      }, 790);
-    }
-  });
-}; */
-//Call this function if user is NOT logged in
+const accountIconButton = document.querySelector(`.account-icon`);
+const accountMenuPopup = document.querySelector(`.account--menu-default`);
+const accountMenuItems = document.querySelectorAll(`.account--menu-box`);
 
 class Header {
   menuIconButton;
   menuPopupWindow;
-  menuPageLink;
+  menuPageLinks;
 
   accountIconButton;
-  accountSignUpButton;
-  accountLogInButton;
+  accountMenuPopup;
+  accountMenuItems;
 
   constructor(
     menuIconButton,
     menuPopupWindow,
-    menuPageLink,
+    menuPageLinks,
     accountIconButton,
-    accountSignUpButton,
-    accountLogInButton
+    accountMenuPopup,
+    accountMenuItems
   ) {
     this.menuIconButton = menuIconButton;
     this.menuPopupWindow = menuPopupWindow;
-    this.menuPageLink = menuPageLink;
+    this.menuPageLinks = menuPageLinks;
 
     this.accountIconButton = accountIconButton;
-    this.accountSignUpButton = accountSignUpButton;
-    this.accountLogInButton = accountLogInButton;
+    this.accountMenuPopup = accountMenuPopup;
+    this.accountMenuItems = accountMenuItems;
   }
 
   openMenu() {
-    menuPopup.classList.remove(`no-display`);
-    menuPopup.classList.add(`menuExpand`);
-    menuItemBtns.forEach(menuItem => {
+    this.menuPopupWindow.classList.remove(`no-display`);
+    this.menuPopupWindow.classList.add(`menuExpand`);
+    this.menuPageLinks.forEach(menuItem => {
       menuItem.classList.add(`menuItemToRight`);
     });
   }
 
   hideMenu() {
-    menuPopup.style.animation = `menuReduce 0.8s ease-in`;
-    menuPopup.classList.remove(`menuExpand`);
-    menuItemBtns.forEach(menuItem => {
+    this.menuPopupWindow.style.animation = `menuReduce 0.8s ease-in`;
+    this.menuPopupWindow.classList.remove(`menuExpand`);
+    this.menuPageLinks.forEach(menuItem => {
       menuItem.classList.remove(`menuItemToRight`);
     });
-    menuItemBtns.forEach(menuItem => {
+    this.menuPageLinks.forEach(menuItem => {
       menuItem.style.animation = 'menuItemToLeft 0.8s ease-in';
     });
     setTimeout(() => {
-      menuItemBtns.forEach(menuItem => {
+      this.menuPageLinks.forEach(menuItem => {
         menuItem.style.animation = ``;
       });
-      menuPopup.style.animation = ``;
-      menuPopup.classList.add(`no-display`);
+      this.menuPopupWindow.style.animation = ``;
+      this.menuPopupWindow.classList.add(`no-display`);
+    }, 790);
+  }
+
+  openAccountMenu() {
+    this.accountMenuPopup.classList.remove(`no-display`);
+    this.accountMenuPopup.classList.add(`accMenuExpand`);
+    this.accountMenuItems.forEach(accMenuItem => {
+      accMenuItem.classList.add(`accMenuItemToLeft`);
+    });
+  }
+
+  hideAccountMenu() {
+    this.accountMenuPopup.style.animation = `accMenuReduce 0.8s ease-in`;
+    this.accountMenuPopup.classList.remove(`accMenuExpand`);
+
+    this.accountMenuItems.forEach(accMenuItem => {
+      accMenuItem.classList.remove(`accMenuItemToLeft`);
+    });
+    this.accountMenuItems.forEach(accMenuItem => {
+      accMenuItem.style.animation = 'accMenuItemToRight 0.8s ease-in';
+    });
+
+    setTimeout(() => {
+      this.accountMenuItems.forEach(accMenuItem => {
+        accMenuItem.style.animation = '';
+      });
+
+      this.accountMenuPopup.style.animation = ``;
+      this.accountMenuPopup.classList.add(`no-display`);
     }, 790);
   }
 }
@@ -96,9 +93,9 @@ const header = new Header(
   menuBtn,
   menuPopup,
   menuItemBtns,
-  accountBtn,
-  signUpBtn,
-  logInBtn
+  accountIconButton,
+  accountMenuPopup,
+  accountMenuItems
 );
 
 window.onclick = function (event) {
@@ -108,8 +105,17 @@ window.onclick = function (event) {
     } else {
       header.hideMenu();
     }
+    header.hideAccountMenu();
+  } else if (event.target.matches(`.account-icon`)) {
+    if (header.accountMenuPopup.classList.contains(`no-display`)) {
+      header.openAccountMenu();
+    } else {
+      header.hideAccountMenu();
+    }
+    header.hideMenu();
   } else {
     header.hideMenu();
+    header.hideAccountMenu();
   }
 };
 
@@ -121,6 +127,11 @@ window.onscroll = function () {
     !header.menuPopupWindow.classList.contains(`no-display`)
   ) {
     header.hideMenu();
+  } else if (
+    prevScrollpos !== currentScrollPos &&
+    !header.accountMenuPopup.classList.contains(`no-display`)
+  ) {
+    header.hideAccountMenu();
   }
   prevScrollpos = currentScrollPos;
 };
