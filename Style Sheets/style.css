@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
   color: #ddd;
-  background-color: #1e1e1e;
+  background-color: #0D1117;
 }
 
 /* ******************* INFO-ROW ******************* */
@@ -26,8 +26,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 6.4rem;
-  margin: auto;
-  padding: 0 3.2rem;
+  margin: 0 auto;
+  padding: 0 4.8rem;
 }
 
 .main--info-icon {
@@ -50,6 +50,152 @@ body {
 
 .main--info-text {
   font-size: 1.8rem;
-  line-height: 2.4rem;
+  line-height: 1.2;
 }
+
+
+
+/* ******************* CARD AD SECTION ******************* */
+
+.main--section-card-ad {
+  padding: 4.8rem 0;
+}
+
+.main--card-ad {
+  max-width: 140rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  column-gap: 6.4rem;
+  margin: 0 auto;
+  padding: 0 4.8rem;
+}
+
+
+.main--card-ad-img {
+  height: 44rem;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.main--card-ad-textbox {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 2.4rem;
+  position: relative;
+}
+
+.main--card-ad-text {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.main--card-ad-heading {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.main--card-ad-btn:link,
+.main--card-ad-btn:visited {
+  text-decoration: none;
+  background-color: black;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size:2.4rem;
+  padding: 2.4rem 4.5rem;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -3.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+
+.main--card-ad-btn:hover,
+.main--card-ad-btn:active {
+  border-color:rgba(102,252,241,1) ;
+ box-shadow: 0 0 5px 0 rgba(102,252,241,1);
+}
+
+
+/* ******************* GAME CTA SECTION ******************* */
+
+.main--section-game-cta {
+  padding: 4.8rem 0;
+}
+
+.main--game-cta {
+  margin: 0 auto;
+  max-width: 140rem;
+  height: 72rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/Images/Background visuals/Gold game background.png");
+  border-radius: 20px;
+  background-size: cover;
+ 
+  position: relative;
+}
+
+.main-game-cta-img {
+  background-image: url("/Images/Background visuals/Gold game background.png");
+  border-radius: 20px;
+  background-size: cover;
+
+  
+  
+  width: 95%;
+  height: 95%;
+  box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 3.2rem;
+}
+
+.main--game-cta-cards {
+  margin-top: 3.2rem;
+}
+
+.main--game-cta-card {
+  transform: rotate(-35deg);
+  max-width: 20rem;
+}
+
+
+
+.main--game-cta-btn:link,
+.main--game-cta-btn:visited {
+  text-decoration: none;
+  
+  padding: 2.4rem 4.8rem;
+  background-color: rgba(207, 149, 3, 0.75);
+  border: 3px solid #000;
+  font-family: 'Wallpoet', cursive;
+  /* box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99); */
+  max-width: 48rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  font-size: 5.2rem;
+  -webkit-text-stroke: 2px #000000;
+  text-stroke: 2px #000000;
+  text-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.main--game-cta-btn:hover,
+.main--game-cta-btn:active {
+  background-color: rgba(207, 149, 3, 1);
+  box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
+}
+
+
 
