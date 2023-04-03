@@ -116,8 +116,7 @@ body {
 
 .main--card-ad-btn:hover,
 .main--card-ad-btn:active {
-  border-color:rgba(102,252,241,1) ;
- box-shadow: 0 0 5px 0 rgba(102,252,241,1);
+ box-shadow: 0 0 5px 0 #fff;
 }
 
 
