@@ -100,7 +100,7 @@ body {
 
 - Background-color
 
-  - Primary: #1E1E1E
+  - Primary: #0D1117
   - Secondary: #040405
 
 - Grey
