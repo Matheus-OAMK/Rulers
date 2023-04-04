@@ -4,10 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Style Sheets/allcards.css" />
-    <script src="../Scripts/allcards.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="../Style Sheets/allcards.css" />
+    <script defer src="../Scripts/allcards.js"></script>
     <title>Rulers</title>
   </head>
-  <body></body>
+  <body>
+    <section class="filtering__section">
+      <div class="filtering-container">
+        <div class="filter">
+          <div class="filter-btn">
+            <ion-icon name="filter-outline" class="filter-icon"></ion-icon
+            ><span>Filter</span>
+          </div>
+          <div class="filtering-options-box"></div>
+        </div>
+        <div class="search-box">
+          <input type="text" name="" class="search-bar" />
+          <ion-icon
+            name="search-outline"
+            class="filter-icon search-icon"
+          ></ion-icon>
+        </div>
+        <div class="sort-by-box">
+          <select name="" class="sort-by">
+            <option value="0">Sort by</option>
+            <option value="">Rarity high to low</option>
+            <option value="">Rarity low to high</option>
+            <option value="">Price high to low</option>
+            <option value="">Price low to high</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="all-cards-catalog__section"></section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
