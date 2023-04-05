@@ -27,10 +27,12 @@ body {
     color:#fff;
     background-color: #040405;
     border:none;
+    transition: all 0.3s;
 }
 
 .modal-close button:hover{
     cursor:pointer;
+    color: #66FCF1;
 }
 /* Signup Modal */
 
@@ -39,7 +41,7 @@ body {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: all 0.3s ease-in-out;
     z-index:10;
     border: 1px solid #ddd;  
     border-radius: 1rem;
@@ -129,6 +131,7 @@ body {
     border-radius: 1.5rem;
     color:#fff;
     background-color: #1e1e1e;
+    transition: all 0.3s;
     cursor:pointer;
 }
 
@@ -152,6 +155,8 @@ body {
     text-decoration: none;
     margin-left: 0.5rem;
     color: #66FCF1;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
 }
 
 .signup-modal-already a:hover{
@@ -162,7 +167,7 @@ body {
     position:fixed;
     opacity: 0;
     background-color: rgba(0, 0, 0, .5);
-    transition: 200ms ease-in-out;
+    transition: all 0.3s ease-in-out;
     top:0;
     bottom:0;
     left:0;
@@ -182,7 +187,7 @@ body {
     opacity: 0;
     background-color: rgba(0, 0, 0, .5);
     background-color: blue;
-    transition: 200ms ease-in-out;
+    transition: all 0.3s ease-in-out;
     top:0;
     bottom:0;
     left:0;
@@ -200,7 +205,7 @@ body {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: all 0.3s ease-in-out;
     z-index:10;
     border: 1px solid #ddd;  
     border-radius: 1rem;
@@ -225,6 +230,7 @@ body {
 
 #login-modal-title{
     font-size: 2.8rem;
+    color: #fff;
     margin-top:2rem;
     margin-bottom: 4rem;
     justify-content: center;
@@ -292,6 +298,7 @@ body {
     border-radius: 1.5rem;
     color:#fff;
     background-color: #1e1e1e;
+    transition: all 0.3s;
     cursor:pointer;
 }
 
@@ -315,8 +322,10 @@ body {
     text-decoration: none;
     margin-left: 0.5rem;
     color: #66FCF1;
+    border-bottom: 2px solid transparent;
 }
 
 .login-modal-noAccount a:hover{
     border-bottom: 2px solid #66FCF1;
+    transition: all 0.3s;
 }
