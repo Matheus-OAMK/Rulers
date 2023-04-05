@@ -23,7 +23,72 @@
             <ion-icon name="filter-outline" class="filter-icon"></ion-icon
             ><span>Filter</span>
           </div>
-          <div class="filtering-options-box"></div>
+          <div class="filtering-options-box">
+            <div>
+              <h2 class="filter-title">Rarity</h2>
+              <div class="filtering-checkbox-box">
+                <label for="rare-filter-checkbox">Rare</label>
+                <input
+                  type="checkbox"
+                  name="rare-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+              <div class="filtering-checkbox-box">
+                <label for="epic-filter-checkbox">Epic</label>
+                <input
+                  type="checkbox"
+                  name="epic-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+              <div class="filtering-checkbox-box">
+                <label for="legendary-filter-checkboxs">Legendary</label>
+                <input
+                  type="checkbox"
+                  name="legendary-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+            </div>
+            <div>
+              <h2 class="filter-title">Role</h2>
+              <div class="filtering-checkbox-box">
+                <label for="burst_dealer-filter-checkbox">Burst dealer</label>
+                <input
+                  type="checkbox"
+                  name="burst_dealer-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+              <div class="filtering-checkbox-box">
+                <label for="tanky_warrior-filter-checkbox" class="filter-label"
+                  >Tanky warrior</label
+                >
+                <input
+                  type="checkbox"
+                  name="tanky_warrior-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+              <div class="filtering-checkbox-box">
+                <label for="life_saver-filter-checkboxs">Life saver</label>
+                <input
+                  type="checkbox"
+                  name="life_saver-filter-checkbox"
+                  id=""
+                  class="filter-checkbox"
+                />
+              </div>
+            </div>
+            <h2 class="filter-title">Maximum price</h2>
+            <input type="range" name="" id="" />
+          </div>
         </div>
         <div class="search-box">
           <input type="text" name="" class="search-bar" />
@@ -33,8 +98,8 @@
           ></ion-icon>
         </div>
         <div class="sort-by-box">
-          <select name="" class="sort-by">
-            <option value="0">Sort by</option>
+          <select class="sort-by">
+            <option value="">Sort by</option>
             <option value="">Rarity high to low</option>
             <option value="">Rarity low to high</option>
             <option value="">Price high to low</option>
