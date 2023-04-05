@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Asap', sans-serif;
+    color: #ddd;
+    /* height: 100vh; */
+    /* background: #040405; */
+}
+
+.modal-close {
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-close button{
+    font-size: 300%;
+    padding: 0 0.5rem;
+    margin:auto 0;
+    color:#fff;
+    background-color: #040405;
+    border:none;
+}
+
+.modal-close button:hover{
+    cursor:pointer;
+}
+/* Signup Modal */
+
+.signup-modal-content {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index:10;
+    border: 1px solid #ddd;  
+    border-radius: 1rem;
+    width: 53rem;
+    height:60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 1rem 0rem;
+    background-color: #040405;
+    max-width: 80%;
+    max-height: 95%;
+}
+
+.signup-modal-content.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+#signup-modal-title, .signup-modal-inputs{
+    width:70%;
+}
+
+#signup-modal-title{
+    font-size: 2.8rem;
+    margin-top:2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.signup-modal-username-field, .signup-modal-email-field, .signup-modal-password-field{
+    font-size: 200%;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+}
+.signup-modal-username-field label, .signup-modal-email-field label, .signup-modal-password-field label{
+    padding-left: 0.5rem;
+}
+#signup-modal-username, #signup-modal-email, #signup-modal-password{
+    width:100%;
+    font-size: 150%;
+    border-radius: 1rem;
+    /* background-color: #040405; */
+    /* border:1px solid #fff; */
+    background-color: #fff;
+    margin-top: 0.2rem;
+    padding: 0.5rem 0.5rem;
+    outline: none;
+}
+
+.signup-modal-showPassword-field{
+    font-size:200%;
+    padding-left:0.2rem;
+    margin-top:2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+
+#signup-modal-showPassword {
+    height:2.5rem;
+    width:2.5rem;
+    cursor:pointer;
+    margin-right: 0.5rem;
+}
+
+.signup-modal-signup-submit{
+    font-size:200%;
+    height:6rem;
+    margin-top:2rem;
+    /* height:3.5rem; */
+}
+
+#signup-modal-submit-button{
+    margin-top: 0 0;
+    font-size: 150%;
+    width:100%;
+    height:100%;
+    border: 1px solid #ddd;
+    border-radius: 1.5rem;
+    color:#fff;
+    background-color: #1e1e1e;
+    cursor:pointer;
+}
+
+#signup-modal-submit-button:hover{
+    /* background-color: #66FCF1; */
+    /* color:#040405; */
+    background-color: #fff;
+    color: #1e1e1e;
+    border:none;
+}
+
+
+.signup-modal-already{
+    display: flex;
+    justify-content: center;
+    margin:auto 0;
+    font-size: 175%;
+}
+
+.signup-modal-already a{
+    text-decoration: none;
+    margin-left: 0.5rem;
+    color: #66FCF1;
+}
+
+.signup-modal-already a:hover{
+    border-bottom: 2px solid #66FCF1;
+}
+
+#signup-modal-overlay {
+    position:fixed;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transition: 200ms ease-in-out;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    pointer-events: none;
+}
+
+#signup-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Login Modal */
+
+#login-modal-overlay {
+    position:fixed;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    background-color: blue;
+    transition: 200ms ease-in-out;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    pointer-events: none;
+}
+
+#login-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+} 
+
+.login-modal-content {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index:10;
+    border: 1px solid #ddd;  
+    border-radius: 1rem;
+    width: 53rem;
+    height:60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 1rem 0rem;
+    background-color: #040405;
+    max-width: 80%;
+    max-height: 95%;
+}
+
+.login-modal-content.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#login-modal-title, .login-modal-inputs{
+    width:70%;
+}
+
+#login-modal-title{
+    font-size: 2.8rem;
+    margin-top:2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.login-modal-username-field, .login-modal-password-field{
+    font-size: 200%;
+    margin-top: 2rem;
+    letter-spacing: 0.1rem;
+}
+.login-modal-username-field label, .login-modal-password-field label{
+    padding-left: 0.5rem;
+}
+#login-modal-username, #login-modal-password{
+    width:100%;
+    font-size: 150%;
+    border-radius: 1rem;
+    /* background-color: #ddd; */
+    background-color: #Fff;
+    margin-top: 0.2rem;
+}
+
+.login-modal-options {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:1rem;
+}
+
+.login-modal-showPassword-field, .login-modal-remember-field{
+    font-size:200%;
+    padding-left:0.2rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+
+}
+
+#login-modal-showPassword, #login-modal-remember {
+    height:2.5rem;
+    width:2.5rem;
+    cursor:pointer;
+    margin-right: 0.5rem;
+}
+
+.login-modal-button-elem{
+    font-size:200%;
+    height:6rem;
+    /* height:3.5rem; */
+    margin-top:3rem;
+}
+
+#login-modal-login-btn{
+    font-size: 150%;
+    width:100%;
+    height:100%;
+    border: 1px solid #ddd;
+    border-radius: 1.5rem;
+    color:#fff;
+    background-color: #1e1e1e;
+    cursor:pointer;
+}
+
+#login-modal-login-btn:hover{
+    /* background-color: #66FCF1; */
+    /* color:#040405; */
+    background-color: #fff;
+    color: #1e1e1e;
+    border:none;
+}
+
+.login-modal-forgot {
+    margin: 1rem 0;
+    width:70%;
+    text-align: end;
+    font-size: 150%;
+    padding-right: 1rem;
+}
+
+.login-modal-forgot a{
+    color: #ddd;
+    text-decoration: none;
+}
+
+.login-modal-noAccount{
+    display: flex;
+    justify-content: center;
+    margin-top:6.5rem;
+    font-size: 175%;
+}
+
+.login-modal-noAccount a{
+    text-decoration: none;
+    margin-left: 0.5rem;
+    color: #66FCF1;
+}
+
+.login-modal-noAccount a:hover{
+    border-bottom: 2px solid #66FCF1;
+}
