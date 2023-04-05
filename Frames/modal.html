@@ -12,14 +12,17 @@
     <a href="#" data-modal-target="#login-modal" class="account--menu-item">
         Log in
     </a>
-    <button data-modal-target="#signup-modal" class="btn btn-main-header header-btn-hidden signup">
+    <a href="#" data-modal-target="#signup-modal" class="account--menu-item">
         Sign up
-    </button>
+    </a>
     <div class="signup-modal-content" id="signup-modal">
         <div class="modal-close">
             <button data-signup-close-button>&times;</button>
         </div>
-        <p id="signup-modal-title">Start Your Own Collection</p>
+        <div id="signup-modal-title">
+            <p>Start Your Own Collection</p>
+            <img src="../Images/Main logo/Ruler logo.png" id="signup-modal-logo">
+        </div>
         <div class="signup-modal-inputs">
             <form class="signup-form">
                 <div class="signup-modal-username-field">
@@ -45,7 +48,7 @@
         </div>
         <div class="signup-modal-already">
             <p>Already have an account?</p>
-            <a href="#">LOG IN</a>
+            <a href="#" data-modal-target="#login-modal" id="modal-login-link">LOG IN</a>
         </div>
     </div>
     <div id="signup-modal-overlay"></div>
@@ -56,7 +59,10 @@
         <div class="modal-close">
             <button data-login-close-button>&times;</button>
         </div>
-        <p id="login-modal-title">Continue Collecting</p>
+        <div id="login-modal-title">
+            <p>Continue Collecting</p>
+            <img src="../Images/Main logo/Ruler logo.png"id="login-modal-logo">
+        </div>
         <div class="login-modal-inputs">
             <form class="login-form">
                 <div class="login-modal-username-field">
@@ -82,9 +88,7 @@
                 </div>
             </form>
         </div>
-        <div class="login-modal-forgot">
-            <a href="">Forgot Password?</a>
-        </div>
+        
         <div class="login-modal-noAccount">
             <p>Don't have an account?</p>
             <a href="#" data-modal-target="#signup-modal" id="modal-register-link">REGISTER</a>

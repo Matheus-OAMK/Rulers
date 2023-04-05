@@ -1,11 +1,10 @@
 const openSignupModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeSignupModalButtons = document.querySelectorAll('[data-signup-close-button]')
 // const closeSignupModalButtons = document.getElementById('signup-modal-close')
-const openLoginModalButtons = document.querySelectorAll('[data-login-modal-target]')
+const openLoginModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeLoginModalButtons = document.querySelectorAll('[data-login-close-button]')
 
 const overlay = document.getElementById('signup-modal-overlay')
-// const loginOverlay = document.getElementById('login-modal-overlay')
 
 
 
@@ -13,8 +12,6 @@ const overlay = document.getElementById('signup-modal-overlay')
 openSignupModalButtons.forEach(button =>{
     button.addEventListener("click", () => {
         const modal = document.querySelector(button.dataset.modalTarget)
-        // const loginModal = document.querySelector('login-modal-content');
-        // loginModal.classList.remove('.active')
         openModal(modal)
     })
 })
@@ -22,8 +19,9 @@ openSignupModalButtons.forEach(button =>{
 
 openLoginModalButtons.forEach(button =>{
     button.addEventListener("click", () => {
-        const modal = document.querySelector(button.dataset.loginModalTarget)
-        openModalLogin(modal)
+        const modal = document.querySelector(button.dataset.modalTarget)
+        console.log(modal)
+        openModal(modal)
     })
 })
 
@@ -42,7 +40,6 @@ closeLoginModalButtons.forEach(button =>{
         const modal = button.closest('.login-modal-content')
         closeModal(modal);
         clearLogin();
-        // closeModalLogin(modal);
     })
 })
 
@@ -72,12 +69,6 @@ function openModal(modal) {
     overlay.classList.add('active')
 }
 
-function openModalLogin(modal) {
-    if(modal == null) return
-    modal.classList.add('active')
-    // loginOverlay.classList.add('active')
-    overlay.classList.add('active')
-}
 
 function closeModal(modal) {
     if(modal == null) return
@@ -128,6 +119,37 @@ const showPasswordLogin = document.getElementById('login-modal-showPassword');
 showPasswordLogin.addEventListener('click', () => {
     const passStatus = document.getElementById('login-modal-password');
     showPassword(passStatus)
+})
+
+//Open login from the signup modal
+function closeModalLink(modal) {
+    if(modal == null) return
+    modal.classList.remove('active')
+}
+
+function openModalLink(modal) {
+    if(modal == null) return
+    modal.classList.add('active')
+}
+
+const alreadyAcc = document.getElementById('modal-login-link');
+
+alreadyAcc.addEventListener('click', ()=>{
+    const openLogin = document.querySelector(alreadyAcc.dataset.modalTarget)
+    const closeSignup = document.querySelector('.signup-modal-content');
+    closeModalLink(closeSignup)
+    openModalLink(openLogin)
+
+})
+
+// Open Signup from Login 
+const registerHere = document.getElementById('modal-register-link')
+
+registerHere.addEventListener('click', () => {
+    const openRegister = document.querySelector(registerHere.dataset.modalTarget)
+    const closeLogin = document.querySelector('.login-modal-content')
+    closeModalLink(closeLogin)
+    openModalLink(openRegister)
 })
 
 

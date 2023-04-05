@@ -68,6 +68,12 @@ body {
     margin-top:2rem;
     margin-bottom: 3rem;
     text-align: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+#signup-modal-logo {
+    height: 3rem;
 }
 
 .signup-modal-username-field, .signup-modal-email-field, .signup-modal-password-field{
@@ -221,7 +227,14 @@ body {
     font-size: 2.8rem;
     margin-top:2rem;
     margin-bottom: 4rem;
-    text-align: center;
+    justify-content: center;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+#login-modal-logo{
+    height:3rem;
+    margin-left: 1.5rem;
 }
 
 .login-modal-username-field, .login-modal-password-field{
@@ -290,23 +303,11 @@ body {
     border:none;
 }
 
-.login-modal-forgot {
-    margin: 1rem 0;
-    width:70%;
-    text-align: end;
-    font-size: 150%;
-    padding-right: 1rem;
-}
-
-.login-modal-forgot a{
-    color: #ddd;
-    text-decoration: none;
-}
 
 .login-modal-noAccount{
     display: flex;
     justify-content: center;
-    margin-top:6.5rem;
+    margin-top:11rem;
     font-size: 175%;
 }
 
