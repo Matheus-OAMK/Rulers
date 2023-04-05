@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Asap', sans-serif;
+  color: #ddd;
+}
+
+.header {
+    height: 7rem;
+    width: 100vw;
+    background-color: #040405;
+    top: 0;
+    padding: 1.2rem 0;
+}
+
+.footer {
+  background-color: #040405;
+  padding: 8rem 0;
+  position: relative;
+  height: 19.2rem;
+}
+
+/* ***************************************************************** */
+
+
+.game--section {
+background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.805), rgba(0, 0, 0, 0.776)) ,url("/Images/Background visuals/Game\ background.png");
+height: calc(100vh - (7rem + 19.2rem));
+background-size:cover ;
+background-position: center;
+padding: 4.8rem 0;
+}
+
+.game--container {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.game--cards-container {
+  max-width: 140rem;
+  height: 42rem;
+  position: relative;
+}
+
+
+.game--card {
+  width: 33rem;
+  height: 100%;
+  position: absolute;
+  transition: all 0.8s ease-in;
+}
+
+.game--card img {
+  width: 20rem;
+  height: auto;
+}
+
+.game--card.card-1 {
+  left:  12rem;
+}
+
+.game--card.card-2 {
+  left:calc(33rem + 12rem);
+}
+.game--card.card-3 {
+  left:calc((33rem * 2) + 12rem);
+}
+.game--card.card-4 {
+  left:calc((33rem * 3) + 12rem);
+}
+
+
+
+
+.game--text-container  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.game--title {
+  font-size: 6.2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  color: #fff;
+  display: inline-block;
+}
+
+.game--text-container p {
+  display: flex;
+  font-size: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.game--btn {
+  font-size: 3.6rem;
+  padding: 2.4rem 4.8rem;
+  border-radius: 20px;
+  background-color: #040405;
+  color: #fff;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.game--btn:hover {
+  box-shadow: 0 0 10px 0 #fff;
+  cursor: pointer;
+}
+
+.game--gems {
+  height: 3.6rem;
+}
+
