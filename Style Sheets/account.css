@@ -24,7 +24,7 @@ header {
 }
 
 .settings-info {
-    background-color: rgb(12, 19, 30);
+    background-color: rgba(4, 4, 5, 1);
     width: 40rem;
     height: 20rem;
     top: 50%;
@@ -78,7 +78,7 @@ header {
    border-radius: 2rem;
    box-shadow: 0 0 1rem rgba(127, 255, 212, 0.53);
    backdrop-filter: blur(5px);
-   background: rgb(12, 19, 30);
+   background: rgba(13, 17, 23, 1);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -372,7 +372,7 @@ header {
     width: 80%;
     height: 4.5rem;
     margin-bottom: 2.4rem;
-    background: rgb(15, 26, 43);
+    background: rgba(0, 0, 0, 0.5);
     border-width: 0.1rem;
     border-color: white;
     border-radius: 0.6rem;
@@ -388,7 +388,7 @@ header {
     width: 80%;
     height: 4.5rem;
     margin-bottom: 2.4rem;
-    background: rgb(15, 26, 43);
+    background: rgba(0, 0, 0, 0.5);
     border-width: 0.1rem;
     border-color: rgba(102, 252, 241, 1);
     border-radius: 0.6rem;
