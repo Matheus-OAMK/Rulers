@@ -19,6 +19,10 @@ body {
 /* Filtering section */
 /* //////////////////////////// */
 
+.filter-options-hidden {
+  display: none;
+}
+
 .filtering__section {
   max-width: 140rem;
   padding: 4.8rem 4.8rem;
@@ -61,12 +65,48 @@ body {
 
 .filtering-options-box {
   position: absolute;
-  top: 110%;
+  left: 0;
+  top: 120%;
   width: 30rem;
   background-color: #040405;
   box-shadow: 0 0 2rem rgba(102, 252, 242, 0.1);
-  border-radius: 10px;
+  border-radius: 0 20px 0 20px;
+  border: 1px solid #fff;
   padding: 3.2rem 1.6rem;
+  transform-origin: top left;
+  animation: filterExpand 0.6s ease-out;
+}
+
+.filter-inner-section {
+  animation: 0.2s filterInnerSectionIn ease-out forwards;
+  opacity: 0;
+}
+
+.filter-inner-section:first-child {
+  animation-delay: 0.15s;
+}
+.filter-inner-section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.filter-inner-section:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+@keyframes filterInnerSectionIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes filterInnerSectionOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .filter-title {
@@ -143,6 +183,81 @@ body {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border-radius: 2px;
+}
+
+.filter-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.filter-slider::after {
+  content: '100';
+  position: absolute;
+  color: #ddd;
+  right: 0;
+  top: 1.2rem;
+}
+
+.filter-slider::before {
+  content: '0';
+  position: absolute;
+  color: #ddd;
+  left: 0;
+  top: 1.2rem;
+}
+
+.filter-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #040405;
+  border: 1px solid #66fcf1;
+  box-shadow: inset 0 0 5px #ddd;
+  cursor: pointer;
+}
+
+.filter-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+@keyframes filterExpand {
+  0% {
+    max-height: 0;
+    max-width: 0;
+    transform: scale(0);
+  }
+  100% {
+    max-height: 52rem;
+    max-width: 30rem;
+    transform: scale(1);
+  }
+}
+
+@keyframes filterReduce {
+  0% {
+    max-height: 52rem;
+    max-width: 30rem;
+    transform: scale(1);
+  }
+  100% {
+    max-height: 0;
+    max-width: 0;
+    transform: scale(0);
+  }
 }
 
 .search-box {

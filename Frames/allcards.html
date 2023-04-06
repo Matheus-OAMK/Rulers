@@ -12,6 +12,7 @@
     />
 
     <link rel="stylesheet" href="../Style Sheets/allcards.css" />
+    <style class="style-for-slider"></style>
     <script defer src="../Scripts/allcards.js"></script>
     <title>Rulers</title>
   </head>
@@ -23,8 +24,8 @@
             <ion-icon name="filter-outline" class="filter-icon"></ion-icon
             ><span>Filter</span>
           </div>
-          <div class="filtering-options-box">
-            <div>
+          <div class="filtering-options-box filter-options-hidden">
+            <div class="filter-inner-section">
               <h2 class="filter-title">Rarity</h2>
               <label class="filtering-option"
                 >Rare
@@ -55,7 +56,7 @@
                 <span class="checkmark"></span>
               </label>
             </div>
-            <div>
+            <div class="filter-inner-section">
               <h2 class="filter-title">Role</h2>
               <label class="filtering-option"
                 >Burst dealer
@@ -85,15 +86,17 @@
                 <span class="checkmark"></span>
               </label>
             </div>
-            <h2 class="filter-title">Maximum price</h2>
-            <input
-              min="1"
-              max="100"
-              value="50"
-              type="range"
-              name=""
-              class="filter-slider"
-            />
+            <div class="filter-inner-section">
+              <h2 class="filter-title">Maximum price</h2>
+              <input
+                min="1"
+                max="100"
+                value="100"
+                type="range"
+                name=""
+                class="filter-slider"
+              />
+            </div>
           </div>
         </div>
         <div class="search-box">
