@@ -11,7 +11,7 @@
 const slider = document.querySelector(`.filter-slider`);
 const sytleTag = document.querySelector(`.style-for-slider`);
 const filterBtn = document.querySelector(`.filter-btn`);
-const filterOptionsBox = document.querySelector(`.filtering-options-box`);
+const filterOptionsBox = document.querySelector(`.filOptions`);
 const filterInnerSectionBox = document.querySelectorAll(
   '.filter-inner-section'
 );
