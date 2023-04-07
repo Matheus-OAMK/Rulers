@@ -25,9 +25,13 @@ body {
 
 .filtering__section {
   max-width: 140rem;
-  padding: 4.8rem 4.8rem;
+  padding: 4.8rem 4.8rem 0 4.8rem;
   margin: 0 auto;
-  /* background-color: #ddd; */
+  background-color: #1e1e1e;
+  position: fixed;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3rem 3rem #1e1e1e;
 }
 
 .filtering-container {
@@ -106,6 +110,7 @@ body {
   padding: 3.2rem 1.6rem;
   transform-origin: top left;
   animation: filterExpand 0.6s ease-out;
+  z-index: 5000;
 }
 
 .filter-inner-section {
@@ -209,7 +214,7 @@ body {
   width: 0.3rem;
   height: 1rem;
   border: solid black;
-  border-width: 0 3px 3px 0;
+  border-width: 0 0.3rem 0.3rem 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -341,8 +346,6 @@ body {
 }
 
 .sort-by-box {
-  /* background-color: #040405; */
-  /* padding: 1.2rem 2.4rem; */
   background-color: #040405;
   border-radius: 10px;
   display: flex;
@@ -369,9 +372,6 @@ body {
   cursor: pointer;
 }
 
-.sort-by:hover {
-}
-
 .sort-by:focus-visible {
   outline: none;
   outline-offset: 0;
@@ -396,3 +396,57 @@ body {
 .sort-by-box:hover .sort-arr-down {
   top: 0.6rem;
 }
+
+/* //////////////////////////////////// */
+/* Catalog section */
+/* //////////////////////////////////// */
+
+.catalog-container {
+  max-width: 140rem;
+  /* background-color: beige; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 4rem;
+  column-gap: 2rem;
+  padding: 2.4rem 4.8rem;
+  padding-top: 18rem;
+}
+
+.card-element {
+  height: 40rem;
+  width: 30rem;
+  background-color: #040405;
+}
+
+/* @media only screen and (max-width: 65em) {
+  html {
+    font-size: 55%;
+  }
+
+  .filtering-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    height: 4.8rem;
+  }
+
+  .catalog-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 23rem;
+  }
+}
+@media only screen and (max-width: 40em) {
+  html {
+    font-size: 50%;
+  }
+
+  .catalog-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */
