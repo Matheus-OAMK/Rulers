@@ -1,0 +1,14 @@
+.filtering-options-box-collection {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 30rem;
+  background-color: #040405;
+  box-shadow: 0 0 2rem rgba(102, 252, 242, 0.1);
+  border-radius: 0 20px 0 20px;
+  border: 1px solid #fff;
+  padding: 3.2rem 1.6rem 0.8rem 1.6rem;
+  transform-origin: top left;
+  animation: filterExpand 0.6s ease-out;
+  z-index: 5000;
+}
