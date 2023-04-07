@@ -4,10 +4,187 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../Style Sheets/collection.css" />
-    <script src="../Scripts/collection.js"></script>
+    <link rel="stylesheet" href="../Style Sheets/allcards.css" />
+    <style class="style-for-slider"></style>
+    <script defer src="../Scripts/collection.js"></script>
+    <script defer src="../Scripts/allcards.js"></script>
 
     <title>Rulers</title>
   </head>
-  <body></body>
+  <body>
+    <section class="filtering__section">
+      <div class="filtering-container">
+        <div class="filter">
+          <div class="filter-btn">
+            <ion-icon name="filter-outline" class="filter-icon"></ion-icon
+            ><span>Filter</span>
+            <div class="filter-arrs">
+              <ion-icon
+                name="chevron-down-outline"
+                class="filter-icon filter-arrow-down filter-arrow"
+              ></ion-icon>
+              <ion-icon
+                name="chevron-up-outline"
+                class="filter-icon filter-arrow-up filter-arrow"
+              ></ion-icon>
+            </div>
+          </div>
+          <div
+            class="filtering-options-box-collection filter-options-hidden filOptions"
+          >
+            <div class="filter-inner-section">
+              <h2 class="filter-title">Rarity</h2>
+              <label class="filtering-option"
+                >Rare
+                <input
+                  name="rare"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="filtering-option"
+                >Epic
+                <input
+                  name="epic"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="filtering-option"
+                >Legendary
+                <input
+                  name="legendary"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="filter-inner-section">
+              <h2 class="filter-title">Role</h2>
+              <label class="filtering-option"
+                >Burst dealer
+                <input
+                  name="burst-dealer"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="filtering-option"
+                >Tanky warrior
+                <input
+                  name="tanky-warrior"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <label class="filtering-option"
+                >Life saver
+                <input
+                  name="life-saver"
+                  type="checkbox"
+                  class="filtering-option--input"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <!-- <div class="filter-inner-section">
+              <h2 class="filter-title">Maximum price</h2>
+              <input
+                min="1"
+                max="100"
+                value="100"
+                type="range"
+                name="filter-max-price-slider"
+                class="filter-slider"
+              />
+            </div> -->
+          </div>
+        </div>
+        <div class="search-box">
+          <input type="text" name="" class="search-bar" />
+          <ion-icon
+            name="search-outline"
+            class="filter-icon search-icon"
+          ></ion-icon>
+        </div>
+        <div class="sort-by-box">
+          <select class="sort-by">
+            <option value="">Sort by</option>
+            <option value="">Rarity high to low</option>
+            <option value="">Rarity low to high</option>
+            <!-- <option value="">Price high to low</option>
+            <option value="">Price low to high</option> -->
+          </select>
+          <div class="sort-arrs">
+            <ion-icon
+              name="chevron-down-outline"
+              class="filter-icon sort-arr sort-arr-down"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="all-cards-catalog__section">
+      <div class="catalog-container">
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+        <div class="grid-cell">
+          <div class="card-element"></div>
+        </div>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
