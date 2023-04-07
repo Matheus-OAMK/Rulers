@@ -15,11 +15,17 @@ const filterOptionsBox = document.querySelector(`.filtering-options-box`);
 const filterInnerSectionBox = document.querySelectorAll(
   '.filter-inner-section'
 );
+const filterArrowDown = document.querySelector('.filter-arrow-down');
+const filterArrowUp = document.querySelector('.filter-arrow-up');
 
 filterBtn.addEventListener('click', () => {
   if (filterOptionsBox.classList.contains('filter-options-hidden')) {
     filterOptionsBox.classList.remove('filter-options-hidden');
+    filterArrowUp.style.opacity = '1';
+    filterArrowDown.style.opacity = '0';
   } else {
+    filterArrowUp.style.opacity = '0';
+    filterArrowDown.style.opacity = '1';
     filterOptionsBox.style.animation = 'filterReduce 0.6s ease-in';
 
     filterInnerSectionBox.forEach(innerBox => {

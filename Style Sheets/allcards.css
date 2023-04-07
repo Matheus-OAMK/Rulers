@@ -63,6 +63,37 @@ body {
   width: 2.4rem;
 }
 
+.filter-arrs {
+  margin-left: auto;
+  position: relative;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.filter-arrow-down {
+  opacity: 1;
+  top: 0;
+}
+
+.filter-arrow-up {
+  opacity: 0;
+  top: 0rem;
+}
+
+.filter-arrow {
+  transition: all 0.3s;
+
+  position: absolute;
+}
+
+.filter-btn:hover .filter-arrow-down {
+  top: 0.6rem;
+}
+
+.filter-btn:hover .filter-arrow-up {
+  top: -0.6rem;
+}
+
 .filtering-options-box {
   position: absolute;
   left: 0;
