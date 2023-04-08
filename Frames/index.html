@@ -5,13 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Images/favicons/Rulers-browser-64px.png" />
-    <link
-      rel="apple-touch-icon"
-      href="/Images/favicons/Rulers-apple-180px.png"
-    />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,12 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="../Style Sheets/style.css" />
-    <script src="../Scripts/script.js"></script>
-
-    <title>Rulers</title>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geo&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -34,9 +26,103 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <link
+      rel="apple-touch-icon"
+      href="/Images/favicons/Rulers-apple-180px.png"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script defer src="../Scripts/header.js"></script>
+    <link rel="stylesheet" href="../Style Sheets/style.css" />
+    <title>Rulers</title>
   </head>
-  <body>
+  <body class="">
+    <!-- class="logged-in" ADD THIS CLASS IF USER IS LOGGED IN (to the body element)-->
+    <header class="header">
+      <div class="container-header header__grid">
+        <div class="header__menu-popup no-display">
+          <ul>
+            <li class="header__menu--item">
+              <a href="#">All cards</a>
+            </li>
+            <li class="header__menu--item"><a href="#">Guess game</a></li>
+            <li class="header__menu--item"><a href="#">Ruler gems</a></li>
+            <li class="header__menu--item"><a href="#">Card info</a></li>
+          </ul>
+        </div>
+        <div class="header__grid--left">
+          <button class="menu-nav">
+            <ion-icon
+              name="menu-outline"
+              class="menu-icon header-icon menu-outline"
+            ></ion-icon>
+            <ion-icon name="menu" class="header-icon menu-filled"></ion-icon>
+          </button>
+        </div>
+
+        <div class="header__grid--center">
+          <div class="logo">
+            <a href="#">rulers</a>
+            <img
+              src="../Images/Main logo/Ruler logo.png"
+              alt=""
+              class="logo-img"
+            />
+          </div>
+        </div>
+        <div class="header__grid--right">
+          <div class="account--nav">
+            <div class="account--nav-el">
+              <ion-icon
+                name="diamond-outline"
+                class="header-icon account--nav-icon icon-outline"
+              ></ion-icon>
+              <ion-icon
+                name="diamond"
+                class="header-icon account--nav-icon icon-filled"
+              ></ion-icon>
+              <p>1000</p>
+            </div>
+            <div class="account--nav-el">
+              <ion-icon
+                name="person-outline"
+                class="header-icon account--nav-icon icon-outline account-icon"
+              ></ion-icon>
+              <ion-icon
+                name="person"
+                class="header-icon account--nav-icon icon-filled account-icon"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="account--menu-default no-display">
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Log in</a>
+          </div>
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Sign up</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Settings</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Collection</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a class="account--menu-item">Log out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ////////////////////////////////////////// -->
+    <!-- ACTUAL PAGE CONTENT START-->
+    <!-- ////////////////////////////////////////// -->
     <main>
+      <section class="hero__section">
+        <div class="hero"></div>
+      </section>
       <!-- INFO ROW -->
       <section class="main--section-info">
         <div class="main--info-row">
@@ -170,5 +256,8 @@
         </div>
       </section>
     </main>
+    <!-- ////////////////////////////////////////// -->
+    <!-- ACTUAL PAGE CONTENT END-->
+    <!-- ////////////////////////////////////////// -->
   </body>
 </html>
