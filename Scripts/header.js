@@ -98,27 +98,67 @@ const header = new Header(
   accountMenuItems
 );
 
+let menuAnimOpenDone = false;
+let accMenuOpenDone = false;
 window.onclick = function (event) {
   if (event.target.matches(`.menu-icon`)) {
-    if (header.menuPopupWindow.classList.contains(`no-display`)) {
+    if (
+      header.menuPopupWindow.classList.contains(`no-display`) &&
+      !menuAnimOpenDone
+    ) {
       header.openMenu();
-    } else {
+      setTimeout(() => {
+        menuAnimOpenDone = true;
+        accMenuOpenDone = false;
+      }, 590);
+    } else if (
+      !header.menuPopupWindow.classList.contains(`no-display`) &&
+      menuAnimOpenDone
+    ) {
       header.hideMenu();
+      setTimeout(() => {
+        menuAnimOpenDone = false;
+      }, 590);
     }
     header.hideAccountMenu();
+    setTimeout(() => {
+      accMenuOpenDone = false;
+    }, 590);
   } else if (event.target.matches(`.account-icon`)) {
-    if (header.accountMenuPopup.classList.contains(`no-display`)) {
+    if (
+      header.accountMenuPopup.classList.contains(`no-display`) &&
+      !accMenuOpenDone
+    ) {
       header.openAccountMenu();
-    } else {
+      setTimeout(() => {
+        menuAnimOpenDone = false;
+        accMenuOpenDone = true;
+      }, 590);
+    } else if (
+      !header.accountMenuPopup.classList.contains(`no-display`) &&
+      accMenuOpenDone
+    ) {
       header.hideAccountMenu();
+      setTimeout(() => {
+        accMenuOpenDone = false;
+      }, 590);
     }
     header.hideMenu();
-  } else {
+    setTimeout(() => {
+      menuAnimOpenDone = false;
+    }, 590);
+  } else if (menuAnimOpenDone || accMenuOpenDone) {
     if (!header.menuPopupWindow.classList.contains(`no-display`)) {
       header.hideMenu();
+      setTimeout(() => {
+        menuAnimOpenDone = false;
+      }, 590);
     }
     if (!header.accountMenuPopup.classList.contains(`no-display`)) {
       header.hideAccountMenu();
+      setTimeout(() => {
+        accMenuOpenDone = false;
+      }, 590);
     }
   }
 };
@@ -128,14 +168,22 @@ window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
   if (
     prevScrollpos !== currentScrollPos &&
-    !header.menuPopupWindow.classList.contains(`no-display`)
+    !header.menuPopupWindow.classList.contains(`no-display`) &&
+    menuAnimOpenDone
   ) {
     header.hideMenu();
+    setTimeout(() => {
+      menuAnimOpenDone = false;
+    }, 590);
   } else if (
     prevScrollpos !== currentScrollPos &&
-    !header.accountMenuPopup.classList.contains(`no-display`)
+    !header.accountMenuPopup.classList.contains(`no-display`) &&
+    accMenuOpenDone
   ) {
     header.hideAccountMenu();
+    setTimeout(() => {
+      accMenuOpenDone = false;
+    }, 590);
   }
   prevScrollpos = currentScrollPos;
 };
