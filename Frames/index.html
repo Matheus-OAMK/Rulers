@@ -5,13 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Images/favicons/Rulers-browser-64px.png" />
-    <link
-      rel="apple-touch-icon"
-      href="/Images/favicons/Rulers-apple-180px.png"
-    />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,12 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="../Style Sheets/style.css" />
-    <script src="../Scripts/script.js"></script>
-
-    <title>Rulers</title>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geo&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -34,9 +26,470 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <link
+      rel="apple-touch-icon"
+      href="/Images/favicons/Rulers-apple-180px.png"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script defer src="../Scripts/header.js"></script>
+    <script defer src="../Scripts/footer.js"></script>
+    <link rel="stylesheet" href="../Style Sheets/style.css" />
+    <title>Rulers</title>
   </head>
-  <body>
+  <body class="">
+    <!-- class="logged-in" ADD THIS CLASS IF USER IS LOGGED IN (to the body element)-->
+    <header class="header">
+      <div class="container-header header__grid">
+        <div class="header__menu-popup no-display">
+          <ul>
+            <li class="header__menu--item">
+              <a href="#">All cards</a>
+            </li>
+            <li class="header__menu--item"><a href="#">Guess game</a></li>
+            <li class="header__menu--item"><a href="#">Ruler gems</a></li>
+            <li class="header__menu--item"><a href="#">Card info</a></li>
+          </ul>
+        </div>
+        <div class="header__grid--left">
+          <button class="menu-nav">
+            <ion-icon
+              name="menu-outline"
+              class="menu-icon header-icon menu-outline"
+            ></ion-icon>
+            <ion-icon name="menu" class="header-icon menu-filled"></ion-icon>
+          </button>
+        </div>
+
+        <div class="header__grid--center">
+          <div class="logo">
+            <a href="#">rulers</a>
+            <img
+              src="../Images/Main logo/Ruler logo.png"
+              alt=""
+              class="logo-img"
+            />
+          </div>
+        </div>
+        <div class="header__grid--right">
+          <div class="account--nav">
+            <div class="account--nav-el">
+              <ion-icon
+                name="diamond-outline"
+                class="header-icon account--nav-icon icon-outline"
+              ></ion-icon>
+              <ion-icon
+                name="diamond"
+                class="header-icon account--nav-icon icon-filled"
+              ></ion-icon>
+              <p>1000</p>
+            </div>
+            <div class="account--nav-el">
+              <ion-icon
+                name="person-outline"
+                class="header-icon account--nav-icon icon-outline account-icon"
+              ></ion-icon>
+              <ion-icon
+                name="person"
+                class="header-icon account--nav-icon icon-filled account-icon"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="account--menu-default no-display">
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Log in</a>
+          </div>
+          <div class="account--menu-box log-sign-btn">
+            <a class="account--menu-item">Sign up</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Settings</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a href="#" class="account--menu-item">Collection</a>
+          </div>
+          <div class="account--menu-box account-item">
+            <a class="account--menu-item">Log out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ////////////////////////////////////////// -->
+    <!-- ACTUAL PAGE CONTENT START-->
+    <!-- ////////////////////////////////////////// -->
     <main>
+      <section class="hero__section">
+        <p class="logo-phrase">
+          The collection of unique and limited league of legends cards
+        </p>
+        <div class="main-anim-cards">
+          <div class="card fifth-card card-p1">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p1">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p1">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p1">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p1">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p1">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p1">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p1"></div> -->
+
+          <div class="card fifth-card card-p2">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p2">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p2">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p2">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p2">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p2">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p2">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p2"></div> -->
+
+          <div class="card fifth-card card-p3">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p3">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p3">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p3">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p3">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p3">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p3">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p3"></div> -->
+
+          <div class="card fifth-card card-p4">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p4">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p4">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p4">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p4">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p4">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p4">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p4"></div> -->
+
+          <div class="card fifth-card card-p5">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p5">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p5">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p5">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p5">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p5">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p5">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p5"></div> -->
+
+          <div class="card fifth-card card-p6">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p6">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p6">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p6">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p6">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p6">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p6">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <!-- <div class="card n8 card-p6"></div> -->
+
+          <div class="card fifth-card card-p7" id="p7-n4">
+            <img
+              src="../Images/Hero section cards/AZIR.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card sixth-card card-p7" id="p7-n3">
+            <img
+              src="../Images/Hero section cards/LEE SIN.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card seventh-card card-p7" id="p7-n2">
+            <img
+              src="../Images/Hero section cards/NILAH.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card first-card card-p7" id="p7-n1">
+            <img
+              src="../Images/Hero section cards/SETT.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card second-card card-p7" id="p7-n7">
+            <img
+              src="../Images/Hero section cards/TRYNDA.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card third-card card-p7" id="p7-n6">
+            <img
+              src="../Images/Hero section cards/VELKOZ.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+          <div class="card forth-card card-p7" id="p7-n5">
+            <img
+              src="../Images/Hero section cards/yuumi.webp"
+              alt=""
+              class="main-anim-img"
+            />
+          </div>
+        </div>
+        <div class="hero-des-box">
+          <p class="hero-des-text">
+            This is the ultimate destination for League of Legends enthusiasts
+            and collectors! We offer a wide selection of League of Legends
+            cards, featuring your favourite champions and various rarities.
+          </p>
+        </div>
+      </section>
       <!-- INFO ROW -->
       <section class="main--section-info">
         <div class="main--info-row">
@@ -170,5 +623,86 @@
         </div>
       </section>
     </main>
+    <!-- ////////////////////////////////////////// -->
+    <!-- ACTUAL PAGE CONTENT END-->
+    <!-- ////////////////////////////////////////// -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links-container">
+          <a href="#" class="footer-links footer-links-text">About us</a>
+        </div>
+        <div class="footer-links-container">
+          <a
+            href="#"
+            data-modal-target="#main--email-container"
+            class="footer-links footer-links-text"
+            >Contact us</a
+          >
+        </div>
+        <div class="footer-links-container">
+          <a href="#" class="footer-links footer-links-text"
+            >General terms and conditions</a
+          >
+        </div>
+        <div class="footer-icons-container">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/leagueoflegends/?hl=en"
+            class="footer-links"
+            ><ion-icon name="logo-instagram" class="footer-icon"></ion-icon
+          ></a>
+          <a
+            target="_blank"
+            href="https://twitter.com/LeagueOfLegends"
+            class="footer-links"
+            ><ion-icon name="logo-twitter" class="footer-icon"></ion-icon
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.facebook.com/leagueoflegends/"
+            class="footer-links"
+            ><ion-icon name="logo-facebook" class="footer-icon"></ion-icon
+          ></a>
+        </div>
+      </div>
+
+      <!-- Pop up for email -->
+      <div class="modal" id="main--email-container">
+        <ul>
+          <li class="main--email">
+            <span class="main--copy-email">mr.oliveira1227@gmail.com</span
+            ><ion-icon
+              class="main--copy-icon"
+              name="clipboard-outline"
+            ></ion-icon>
+          </li>
+
+          <li class="main--email">
+            <span class="main--copy-email">mr.roboto@gmail.com</span
+            ><ion-icon
+              class="main--copy-icon"
+              name="clipboard-outline"
+            ></ion-icon>
+          </li>
+
+          <li class="main--email">
+            <span class="main--copy-email">sakusmalldick@gmail.com</span
+            ><ion-icon
+              class="main--copy-icon"
+              name="clipboard-outline"
+            ></ion-icon>
+          </li>
+
+          <li class="main--email">
+            <span class="main--copy-email">pulsatingasshole@gmail.com</span
+            ><ion-icon
+              class="main--copy-icon"
+              name="clipboard-outline"
+            ></ion-icon>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div id="overlay"></div>
   </body>
 </html>
