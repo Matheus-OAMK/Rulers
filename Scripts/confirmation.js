@@ -48,6 +48,7 @@ window.addEventListener('click', function (event) {
       'purchase-confirmation-modal-hidden'
     );
     purchaseConfirmedModal.classList.add('purchase-confirm-info-hidden');
+    purchaseCanceledModal.classList.add('purchase-cancel-info-hidden');
   }
 });
 
