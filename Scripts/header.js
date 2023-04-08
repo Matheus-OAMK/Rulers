@@ -114,8 +114,12 @@ window.onclick = function (event) {
     }
     header.hideMenu();
   } else {
-    header.hideMenu();
-    header.hideAccountMenu();
+    if (!header.menuPopupWindow.classList.contains(`no-display`)) {
+      header.hideMenu();
+    }
+    if (!header.accountMenuPopup.classList.contains(`no-display`)) {
+      header.hideAccountMenu();
+    }
   }
 };
 
