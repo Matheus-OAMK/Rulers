@@ -18,16 +18,16 @@ playBtn.addEventListener('click', () => {
 
 
   setTimeout(() => {
-    cards[2].style.transform = `translate(8rem,-35rem) rotate(0deg)`;
+    cards[2].style.transform = `translate(8rem,-15vh) rotate(0deg)`;
   }, 0);
 
   setTimeout(() => {
-    cards[1].style.transform = `translate(0rem,-35rem) rotate(0deg)`;
+    cards[1].style.transform = `translate(0rem,-15vh) rotate(0deg)`;
   }, 700);
 
 
   setTimeout(() => {
-    cards[0].style.transform = `translate(-8rem,-35rem) rotate(0deg)`;
+    cards[0].style.transform = `translate(-8rem,-15vh) rotate(0deg)`;
   }, 1400);
 
 

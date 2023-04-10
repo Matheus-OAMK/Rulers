@@ -16,7 +16,6 @@ body {
 
 .header {
   height: 7rem;
-  /* width: 100vw; */
   background-color: #040405;
   top: 0;
   padding: 1.2rem 0;
@@ -41,7 +40,6 @@ body {
   min-height: calc(100vh - 7rem);
   background-size: cover;
   background-position: center;
-  padding: 4.8rem 0;
 }
 
 .game--container {
@@ -55,7 +53,7 @@ body {
 .game--cards-container {
  display: flex;
  justify-content: center;
- padding-top: 50rem;
+ padding-top: 20vh
 
 }
 
@@ -151,6 +149,7 @@ body {
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s;
+  margin-bottom: 6.4rem;
 }
 
 .game--btn:hover {
