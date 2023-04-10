@@ -47,14 +47,15 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 6.4rem;
+  row-gap: 4.8rem;
 }
+
 
 .game--cards-container {
  display: flex;
  justify-content: center;
- padding-top: 20vh
-
+ padding-top: 20vh;
+ position: relative;
 }
 
 .game--card {
@@ -105,17 +106,20 @@ body {
 
 .game--card.card-1 {
   transform: translate(8rem,-1rem) rotate(-10deg);
+  transition: all ease-in-out 0.8s;
   /* box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.741); */
 }
 
 .game--card.card-2 {
   transform: translate(-2rem,-1rem) rotate(0deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
+  transition: all ease-in-out 0.8s;
 }
 
 .game--card.card-3 {
   transform: translate(-12rem,0rem) rotate(10deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
+  transition: all ease-in-out 0.8s;
 }
 
 .game--text-container {
@@ -130,6 +134,10 @@ body {
   margin-bottom: 1.6rem;
   color: #fff;
   display: inline-block;
+  position: absolute;
+  transform: translate(0, -15vh);
+  opacity: 1;
+  transition: all 0.7s ease-in-out;
 }
 
 .game--text-container p {
