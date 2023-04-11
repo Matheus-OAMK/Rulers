@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Asap', sans-serif;
+  color: #ddd;
+}
+
+.header {
+  height: 7rem;
+  background-color: #040405;
+  top: 0;
+  padding: 1.2rem 0;
+}
+
+.footer {
+  background-color: #040405;
+  padding: 8rem 0;
+  position: relative;
+  height: 19.2rem;
+}
+
+/* ***************************************************************** */
+
+.game--section {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.805),
+      rgba(0, 0, 0, 0.776)
+    ),
+    url('/Images/Background visuals/Game\ background.png');
+  min-height: calc(100vh - 7rem);
+  background-size: cover;
+  background-position: center;
+}
+
+.game--container {
+  max-width: 140rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4.8rem;
+}
+
+
+.game--cards-container {
+ display: flex;
+ justify-content: center;
+ padding-top: 20vh;
+ position: relative;
+}
+
+.game--card {
+  transition: all 0.8s ease-in;
+  width: 24rem;
+  height: 34rem;
+  perspective: 1000px; /* Add this to enable the 3D effect */
+  
+  border-radius: 20px;
+}
+
+/* .game--card:hover .game--card-inner {
+  transform: rotateY(180deg);
+} */
+
+.flipped { 
+  transform: rotateY(180deg);}
+
+
+
+/* This container is needed to position the front and back side */
+.game--card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all 0.8s linear;
+  transform-style: preserve-3d;
+}
+
+
+/* Position the front and back side */
+.game--card-front, .game--card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.game--card-back {
+  transform: rotateY(180deg);
+}
+
+
+.game--card img {
+  width: 24rem;
+  height: auto;
+}
+
+.game--card.card-1 {
+  transform: translate(8rem,-1rem) rotate(-10deg);
+  transition: all ease-in-out 0.8s;
+  /* box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.741); */
+}
+
+.game--card.card-2 {
+  transform: translate(-2rem,-1rem) rotate(0deg);
+  /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
+  transition: all ease-in-out 0.8s;
+}
+
+.game--card.card-3 {
+  transform: translate(-12rem,0rem) rotate(10deg);
+  /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
+  transition: all ease-in-out 0.8s;
+}
+
+.game--text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game--title {
+  font-size: 6.2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  transform: translate(0, -15vh);
+  opacity: 1;
+  transition: all 0.7s ease-in-out;
+}
+
+.game--text-container p {
+  display: flex;
+  font-size: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.game--btn {
+  font-size: 3.6rem;
+  padding: 2.4rem 4.8rem;
+  border-radius: 20px;
+  background-color: #040405;
+  color: #fff;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+  margin-bottom: 6.4rem;
+}
+
+.game--btn:hover {
+  box-shadow: 0 0 10px 0 #fff;
+  cursor: pointer;
+}
+
+.game--gems {
+  height: 3.6rem;
+}
+
+
+
+
+
