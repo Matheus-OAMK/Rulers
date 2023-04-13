@@ -36,7 +36,7 @@ body {
       rgba(0, 0, 0, 0.805),
       rgba(0, 0, 0, 0.776)
     ),
-    url('/Images/Background visuals/Game\ background.png');
+    url('/Images/Background-visuals/Game-background.webp');
   min-height: calc(100vh - 7rem);
   background-size: cover;
   background-position: center;
@@ -50,12 +50,11 @@ body {
   row-gap: 4.8rem;
 }
 
-
 .game--cards-container {
- display: flex;
- justify-content: center;
- padding-top: 20vh;
- position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 20vh;
+  position: relative;
 }
 
 .game--card {
@@ -63,7 +62,7 @@ body {
   width: 24rem;
   height: 34rem;
   perspective: 1000px; /* Add this to enable the 3D effect */
-  
+
   border-radius: 20px;
 }
 
@@ -71,10 +70,9 @@ body {
   transform: rotateY(180deg);
 } */
 
-.flipped { 
-  transform: rotateY(180deg);}
-
-
+.flipped {
+  transform: rotateY(180deg);
+}
 
 /* This container is needed to position the front and back side */
 .game--card-inner {
@@ -86,9 +84,9 @@ body {
   transform-style: preserve-3d;
 }
 
-
 /* Position the front and back side */
-.game--card-front, .game--card-back {
+.game--card-front,
+.game--card-back {
   position: absolute;
   backface-visibility: hidden;
 }
@@ -98,26 +96,25 @@ body {
   transform: rotateY(180deg);
 }
 
-
 .game--card img {
   width: 24rem;
   height: auto;
 }
 
 .game--card.card-1 {
-  transform: translate(8rem,-1rem) rotate(-10deg);
+  transform: translate(8rem, -1rem) rotate(-10deg);
   transition: all ease-in-out 0.8s;
   /* box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.741); */
 }
 
 .game--card.card-2 {
-  transform: translate(-2rem,-1rem) rotate(0deg);
+  transform: translate(-2rem, -1rem) rotate(0deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
   transition: all ease-in-out 0.8s;
 }
 
 .game--card.card-3 {
-  transform: translate(-12rem,0rem) rotate(10deg);
+  transform: translate(-12rem, 0rem) rotate(10deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
   transition: all ease-in-out 0.8s;
 }
@@ -168,8 +165,3 @@ body {
 .game--gems {
   height: 3.6rem;
 }
-
-
-
-
-
