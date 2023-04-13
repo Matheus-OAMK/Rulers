@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   font-family: 'Asap', sans-serif;
   color: #ddd;
-  background-color: #1e1e1e;
+  background-color: #0d1117;
 }
 
 /* //////////////////////////// */
@@ -27,11 +27,12 @@ body {
   max-width: 140rem;
   padding: 4.8rem 4.8rem 0 4.8rem;
   margin: 0 auto;
-  background-color: #1e1e1e;
+  background-color: #0d1117;
   position: fixed;
   left: 0;
   right: 0;
-  box-shadow: 0 3rem 3rem #1e1e1e;
+  box-shadow: 0 3rem 3rem #0d1117;
+  z-index: 8000;
 }
 
 .filtering-container {
@@ -409,16 +410,184 @@ body {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
-  row-gap: 4rem;
+
+  row-gap: 24rem;
   column-gap: 2rem;
   padding: 2.4rem 4.8rem;
-  padding-top: 18rem;
+  padding-top: 32rem;
 }
 
-.card-element {
-  height: 40rem;
-  width: 30rem;
-  background-color: #040405;
+.card-element-box {
+  z-index: 1;
+  position: relative;
+  height: 31.7rem;
+  width: 28rem;
+  box-shadow: 0px 4px 20px rgba(102, 252, 241, 0.1);
+  border-radius: 30px 30px 20px 20px;
+  transition: all 0.3s;
+}
+
+.card-element-box[rarity='rare'] {
+  background: linear-gradient(180deg, #572626 25%, #0d1117 75%);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+}
+
+.card-element-box:hover[rarity='rare'] {
+  background-position: 50% 50%;
+  box-shadow: 0px 0px 20px rgba(233, 116, 116, 0.4);
+}
+
+.card-element-box[rarity='legendary'] {
+  background: linear-gradient(180deg, #32271a 25%, #040405 75%);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+}
+
+.card-element-box:hover[rarity='legendary'] {
+  box-shadow: 0px 4px 20px rgba(239, 198, 52, 0.4);
+  background-position: 50% 50%;
+}
+
+.card-element-box[rarity='epic'] {
+  background: linear-gradient(180deg, #571e58 25%, #040405 75%);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+}
+
+.card-element-box:hover[rarity='epic'] {
+  box-shadow: 0px 4px 20px rgba(234, 72, 237, 0.4);
+  background-position: 50% 50%;
+}
+
+.perspective {
+  perspective: 1200px;
+}
+
+.hero-catalog-card-img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-3d-wrap {
+  position: relative;
+  width: 22rem;
+  height: 30.809rem;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  background-color: transparent;
+}
+
+.card-3d-wrap:hover {
+  transform: rotateY(30deg) rotateX(-5deg) rotateZ(-5deg);
+}
+
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease-out;
+  background-color: transparent;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  position: absolute;
+  border-radius: 11px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  position: absolute;
+  border-radius: 11px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rotated {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-catalog-info {
+  padding-top: 50%;
+  text-align: center;
+}
+
+.price {
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1.6rem 0 2rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card-element-gems-img {
+  height: 3rem;
+  width: auto;
+}
+
+.buy-button {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  color: inherit;
+  background-color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.9rem 0 0.9rem 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-bottom: 2.4rem;
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s;
+}
+
+.buy-button:hover {
+  box-shadow: 0 0 5px 0 #fff;
+}
+
+.charachter-link:link,
+.charachter-link:visited {
+  text-decoration: none;
+  color: rgba(221, 221, 221, 0.8);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.charachter-link:hover,
+.charachter-link:active {
+  color: #fff;
 }
 
 /* @media only screen and (max-width: 65em) {
@@ -438,7 +607,7 @@ body {
 
   .catalog-container {
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 23rem;
+    padding-top: 40rem;
   }
 }
 @media only screen and (max-width: 40em) {

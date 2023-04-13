@@ -46,3 +46,11 @@ filterBtn.addEventListener('click', () => {
 slider.addEventListener('input', () => {
   sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;heigth: 6px;}`;
 });
+
+// FUNCTION TO ROTATE CARDS
+function cardRotate(el) {
+  el.classList.toggle(`rotated`);
+}
+
+// const cardProductBox = document.querySelector('[data-card-product-box]');
+// cardProductBox.setAttribute('rarity', 'legendary');

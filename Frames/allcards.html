@@ -134,44 +134,53 @@
       </div>
     </section>
     <section class="all-cards-catalog__section">
-      <div class="catalog-container">
+      <div class="catalog-container"></div>
+      <template data-card-template>
         <div class="grid-cell">
-          <div class="card-element"></div>
+          <div class="card-element">
+            <div class="card-element-box" rarity="" data-card-product-box>
+              <div class="card">
+                <div class="perspective">
+                  <div class="card-3d-wrap">
+                    <div class="card-3d-wrapper" onclick="cardRotate(this)">
+                      <div class="card-front">
+                        <img
+                          src=""
+                          alt=""
+                          class="hero-catalog-card-img"
+                          data-card-img-front
+                        />
+                      </div>
+                      <div class="card-back">
+                        <img
+                          src=""
+                          alt=""
+                          class="hero-catalog-card-img"
+                          data-card-img-back
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-catalog-info">
+                <div class="price">
+                  <p data-card-price>199</p>
+                  <img
+                    src="../Images/Gems/Free gems.png"
+                    alt=""
+                    class="card-element-gems-img"
+                  />
+                </div>
+                <button class="buy-button">Buy now</button>
+                <a href="" class="charachter-link" data-card-charachter-link
+                  >More charachter info &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-        <div class="grid-cell">
-          <div class="card-element"></div>
-        </div>
-      </div>
+      </template>
     </section>
     <script
       type="module"
