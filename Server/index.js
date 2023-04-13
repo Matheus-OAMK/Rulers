@@ -1,28 +1,37 @@
-import cors from 'cors';
-import express from 'express';
-import { Pool } from 'pg';
-
-app.use(cors());
+const cors = require('cors');
+const express = require('express');
+const dotenv = require('dotenv');
 const app = express();
-const port = 3003;
+dotenv.config();
+
+const openDb = require('./openDb');
+app.use(cors());
 
 
-const openDb = () => {
-  const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'demogallery',
-    password: 'root',
-    port: 5435
-  })
-  return pool
-} 
 
-app.get('/', (req, res) => { 
-  const pool = openDb()
+app.get('/', (req, res) => {
+  const pool = openDb();
 
-  pool.query('SELECT * FROM card' , )
+
+  // TEST THE FUNCTION TO ADD CARDS
+const createCards = require('./createcards');
+createCards();
+
+
+  pool.query('SELECT * FROM card', (error, result) => {
+    if (error) {
+      res.statusMessage = 'Something went wrong with the DB. Try again later.';
+      res.status(500).json({ error: error.message });
+      return;
+    }
+    res.status(200).json(result.rows);
+  });
 });
 
+const port = process.env.PORT || 3001;
 app.listen(port);
+
+
+
+
 
