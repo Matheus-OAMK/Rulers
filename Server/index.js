@@ -14,8 +14,6 @@ app.get('/', (req, res) => {
 
 
   // TEST THE FUNCTION TO ADD CARDS
-const createCards = require('./createcards');
-createCards();
 
 
   pool.query('SELECT * FROM card', (error, result) => {

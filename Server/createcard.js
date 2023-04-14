@@ -2,6 +2,7 @@
 const openDb = require('./openDb');
 const fs = require('fs');
 
+//create a class to hold card properties
 class Card {
   name
   rarity
@@ -19,7 +20,7 @@ class Card {
     this.info_link = info_link;
   }
 }
-
+//declare an array to hold all cards
 const allCards = [];
 
 //declare a variable to hold the path to the images folder
@@ -32,7 +33,7 @@ fs.readdir(imageFolder, (err, subfolders) => {
   subfolders.forEach( folder => {
     //check if folder contains '-cards'
     if ( folder.includes('-cards') && !folder.includes('section-cards') ) {
-      //define a path to subfolder
+      //define a path to subfolder here we only use the FRONT folder
       const subfoldersPath = `${imageFolder}/${folder}/FRONT`;
 
       //loop through files in subfolder
@@ -41,21 +42,38 @@ fs.readdir(imageFolder, (err, subfolders) => {
 
         images.forEach(image => {
           if ( image.endsWith('.webp') ) {
-            const name = image.split('.')[0];
+            
+
+
+            //define card properties
+            const name = image.split('.')[0].toLocaleLowerCase();
             const img_front = `${imageFolder}/${folder}/FRONT/${image}`;
             const img_back = `${imageFolder}/${folder}/BACK/${name}-BACK.webp`;
-            const rarity = folder.split('-')[0];
+            const rarity = folder.split('-')[0].toLocaleLowerCase();
             const info_link = `https://www.leagueoflegends.com/en-us/champions/${name}/`;
-            const price = (rarity === 'Legendary') ? 400 : (rarity === 'Epic') ? 200 : (rarity === 'Rare') ? 100 : 0;
+            const price = (rarity === 'legendary') ? 400 : (rarity === 'epic') ? 200 : (rarity === 'rare') ? 100 : 0;
             //push card to allCards array
             const card = new Card(name, rarity, price, img_front, img_back, info_link);
+           
             allCards.push(card);
           };
         });
+
+        // check if this is the last subfolder before calling create cards function
+        const lastFolder = subfolders[subfolders.length - 1];
+        const lastSubfoldersPath = `${imageFolder}/${lastFolder}/FRONT`;
+
+        if (folder === lastFolder) {
+          fs.readdir(lastSubfoldersPath, () => {
+            createCards();
+          });
+        }
       });
     };
   });
 });
+
+
 
 async function createCards() {
   const pool = openDb();
@@ -88,7 +106,7 @@ async function createCards() {
   pool.end();
 }
 
-module.exports =  createCards ;
+
 
 
 
