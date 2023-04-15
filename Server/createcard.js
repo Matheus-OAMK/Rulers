@@ -2,25 +2,29 @@
 const openDb = require('./openDb');
 const fs = require('fs');
 
+//create a class to hold card properties
 class Card {
   name
   rarity
+  role
   price
   img_front
   img_back
   info_link
 
-  constructor(name, rarity, price, img_front, img_back, info_link) {
+  constructor(name, rarity,role , price, img_front, img_back, info_link) {
     this.name = name;
     this.rarity = rarity;
+    this.role = role;
     this.price = price;
     this.img_front = img_front;
     this.img_back = img_back;
     this.info_link = info_link;
   }
 }
-
+//declare an array to hold all cards
 const allCards = [];
+const roles = ['tank', 'support', 'burst dealer']
 
 //declare a variable to hold the path to the images folder
 const imageFolder = '../Images';
@@ -32,7 +36,7 @@ fs.readdir(imageFolder, (err, subfolders) => {
   subfolders.forEach( folder => {
     //check if folder contains '-cards'
     if ( folder.includes('-cards') && !folder.includes('section-cards') ) {
-      //define a path to subfolder
+      //define a path to subfolder here we only use the FRONT folder
       const subfoldersPath = `${imageFolder}/${folder}/FRONT`;
 
       //loop through files in subfolder
@@ -41,21 +45,39 @@ fs.readdir(imageFolder, (err, subfolders) => {
 
         images.forEach(image => {
           if ( image.endsWith('.webp') ) {
-            const name = image.split('.')[0];
+            
+
+
+            //define card properties
+            const name = image.split('.')[0].toLocaleLowerCase();
             const img_front = `${imageFolder}/${folder}/FRONT/${image}`;
             const img_back = `${imageFolder}/${folder}/BACK/${name}-BACK.webp`;
-            const rarity = folder.split('-')[0];
+            const rarity = folder.split('-')[0].toLocaleLowerCase();
+            const role = roles[Math.floor(Math.random() * roles.length)];
             const info_link = `https://www.leagueoflegends.com/en-us/champions/${name}/`;
-            const price = (rarity === 'Legendary') ? 400 : (rarity === 'Epic') ? 200 : (rarity === 'Rare') ? 100 : 0;
+            const price = (rarity === 'legendary') ? 400 : (rarity === 'epic') ? 200 : (rarity === 'rare') ? 100 : 0;
             //push card to allCards array
-            const card = new Card(name, rarity, price, img_front, img_back, info_link);
+            const card = new Card(name, rarity, role, price, img_front, img_back, info_link);
+           
             allCards.push(card);
           };
         });
+
+        // check if this is the last subfolder before calling create cards function
+        const lastFolder = subfolders[subfolders.length - 1];
+        const lastSubfoldersPath = `${imageFolder}/${lastFolder}/FRONT`;
+
+        if (folder === lastFolder) {
+          fs.readdir(lastSubfoldersPath, () => {
+            createCards();
+          });
+        }
       });
     };
   });
 });
+
+
 
 async function createCards() {
   const pool = openDb();
@@ -72,8 +94,8 @@ async function createCards() {
           //if card doesnt exist insert it into db
           if (result.rows.length === 0) {
             const insertQuery = {
-              text: 'INSERT INTO card(name,rarity, price, img_front, img_back,info_link ) VALUES($1,$2,$3,$4,$5,$6)',
-              values: [card.name, card.rarity, card.price, card.img_front, card.img_back, card.info_link],
+              text: 'INSERT INTO card(name,rarity, role, price, img_front, img_back,info_link ) VALUES($1,$2,$3,$4,$5,$6, $7)',
+              values: [card.name, card.rarity, card.role, card.price, card.img_front, card.img_back, card.info_link],
             };
             return pool.query(insertQuery);
           } else {
@@ -88,7 +110,7 @@ async function createCards() {
   pool.end();
 }
 
-module.exports =  createCards ;
+
 
 
 
