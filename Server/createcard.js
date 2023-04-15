@@ -6,14 +6,16 @@ const fs = require('fs');
 class Card {
   name
   rarity
+  role
   price
   img_front
   img_back
   info_link
 
-  constructor(name, rarity, price, img_front, img_back, info_link) {
+  constructor(name, rarity,role , price, img_front, img_back, info_link) {
     this.name = name;
     this.rarity = rarity;
+    this.role = role;
     this.price = price;
     this.img_front = img_front;
     this.img_back = img_back;
@@ -22,6 +24,7 @@ class Card {
 }
 //declare an array to hold all cards
 const allCards = [];
+const roles = ['tank', 'support', 'burst dealer']
 
 //declare a variable to hold the path to the images folder
 const imageFolder = '../Images';
@@ -50,10 +53,11 @@ fs.readdir(imageFolder, (err, subfolders) => {
             const img_front = `${imageFolder}/${folder}/FRONT/${image}`;
             const img_back = `${imageFolder}/${folder}/BACK/${name}-BACK.webp`;
             const rarity = folder.split('-')[0].toLocaleLowerCase();
+            const role = roles[Math.floor(Math.random() * roles.length)];
             const info_link = `https://www.leagueoflegends.com/en-us/champions/${name}/`;
             const price = (rarity === 'legendary') ? 400 : (rarity === 'epic') ? 200 : (rarity === 'rare') ? 100 : 0;
             //push card to allCards array
-            const card = new Card(name, rarity, price, img_front, img_back, info_link);
+            const card = new Card(name, rarity, role, price, img_front, img_back, info_link);
            
             allCards.push(card);
           };
@@ -90,8 +94,8 @@ async function createCards() {
           //if card doesnt exist insert it into db
           if (result.rows.length === 0) {
             const insertQuery = {
-              text: 'INSERT INTO card(name,rarity, price, img_front, img_back,info_link ) VALUES($1,$2,$3,$4,$5,$6)',
-              values: [card.name, card.rarity, card.price, card.img_front, card.img_back, card.info_link],
+              text: 'INSERT INTO card(name,rarity, role, price, img_front, img_back,info_link ) VALUES($1,$2,$3,$4,$5,$6, $7)',
+              values: [card.name, card.rarity, card.role, card.price, card.img_front, card.img_back, card.info_link],
             };
             return pool.query(insertQuery);
           } else {
