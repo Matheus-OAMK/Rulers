@@ -1,18 +1,17 @@
-
-const openDb = require('./openDb');
+const server = require('./server');
 const fs = require('fs');
 
 //create a class to hold card properties
 class Card {
-  name
-  rarity
-  role
-  price
-  img_front
-  img_back
-  info_link
+  name;
+  rarity;
+  role;
+  price;
+  img_front;
+  img_back;
+  info_link;
 
-  constructor(name, rarity,role , price, img_front, img_back, info_link) {
+  constructor(name, rarity, role, price, img_front, img_back, info_link) {
     this.name = name;
     this.rarity = rarity;
     this.role = role;
@@ -24,7 +23,7 @@ class Card {
 }
 //declare an array to hold all cards
 const allCards = [];
-const roles = ['tank', 'support', 'burst dealer']
+const roles = ['tank', 'support', 'burst dealer'];
 
 //declare a variable to hold the path to the images folder
 const imageFolder = '../Images';
@@ -33,9 +32,9 @@ const imageFolder = '../Images';
 fs.readdir(imageFolder, (err, subfolders) => {
   if (err) throw err;
 
-  subfolders.forEach( folder => {
+  subfolders.forEach(folder => {
     //check if folder contains '-cards'
-    if ( folder.includes('-cards') && !folder.includes('section-cards') ) {
+    if (folder.includes('-cards') && !folder.includes('section-cards')) {
       //define a path to subfolder here we only use the FRONT folder
       const subfoldersPath = `${imageFolder}/${folder}/FRONT`;
 
@@ -44,10 +43,7 @@ fs.readdir(imageFolder, (err, subfolders) => {
         if (err) throw err;
 
         images.forEach(image => {
-          if ( image.endsWith('.webp') ) {
-            
-
-
+          if (image.endsWith('.webp')) {
             //define card properties
             const name = image.split('.')[0].toLocaleLowerCase();
             const img_front = `${imageFolder}/${folder}/FRONT/${image}`;
@@ -55,12 +51,27 @@ fs.readdir(imageFolder, (err, subfolders) => {
             const rarity = folder.split('-')[0].toLocaleLowerCase();
             const role = roles[Math.floor(Math.random() * roles.length)];
             const info_link = `https://www.leagueoflegends.com/en-us/champions/${name}/`;
-            const price = (rarity === 'legendary') ? 400 : (rarity === 'epic') ? 200 : (rarity === 'rare') ? 100 : 0;
+            const price =
+              rarity === 'legendary'
+                ? 400
+                : rarity === 'epic'
+                ? 200
+                : rarity === 'rare'
+                ? 100
+                : 0;
             //push card to allCards array
-            const card = new Card(name, rarity, role, price, img_front, img_back, info_link);
-           
+            const card = new Card(
+              name,
+              rarity,
+              role,
+              price,
+              img_front,
+              img_back,
+              info_link
+            );
+
             allCards.push(card);
-          };
+          }
         });
 
         // check if this is the last subfolder before calling create cards function
@@ -73,14 +84,12 @@ fs.readdir(imageFolder, (err, subfolders) => {
           });
         }
       });
-    };
+    }
   });
 });
 
-
-
 async function createCards() {
-  const pool = openDb();
+  const pool = server.openDb();
   const promises = [];
   for (const card of allCards) {
     //check if already exist in db
@@ -89,44 +98,34 @@ async function createCards() {
       values: [card.name],
     };
     promises.push(
-      pool.query(query)
+      pool
+        .query(query)
         .then(result => {
           //if card doesnt exist insert it into db
           if (result.rows.length === 0) {
             const insertQuery = {
               text: 'INSERT INTO card(name,rarity, role, price, img_front, img_back,info_link ) VALUES($1,$2,$3,$4,$5,$6, $7)',
-              values: [card.name, card.rarity, card.role, card.price, card.img_front, card.img_back, card.info_link],
+              values: [
+                card.name,
+                card.rarity,
+                card.role,
+                card.price,
+                card.img_front,
+                card.img_back,
+                card.info_link,
+              ],
             };
             return pool.query(insertQuery);
           } else {
             console.log(`Card ${card.name} already exists in the database.`);
           }
         })
-        .catch(error => { throw error })
+        .catch(error => {
+          throw error;
+        })
     );
   }
   await Promise.all(promises);
   console.log('All cards have been inserted into the database.');
   pool.end();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
