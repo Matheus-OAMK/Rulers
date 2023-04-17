@@ -130,6 +130,7 @@ body {
     - Yasuo https://www.leagueoflegends.com/en-us/champions/yasuo/
     - Zed https://www.leagueoflegends.com/en-us/champions/zed/
     - Fortune https://www.leagueoflegends.com/en-us/champions/miss-fortune/
+    - Garen https://www.leagueoflegends.com/en-us/champions/garen/
     - Nocturne https://www.leagueoflegends.com/en-us/champions/nocturne/
     - Sion https://www.leagueoflegends.com/en-us/champions/sion/
     - Shaco https://www.leagueoflegends.com/en-us/champions/shaco/
