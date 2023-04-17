@@ -525,7 +525,7 @@ body {
   max-width: 140rem;
   height: 72rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/Images/Background visuals/Gold game background.png');
+    url('/Images/Background-visuals/Gold-game-background.webp');
   border-radius: 20px;
   background-size: cover;
 
@@ -533,7 +533,7 @@ body {
 }
 
 .main-game-cta-img {
-  background-image: url('/Images/Background visuals/Gold game background.png');
+  background-image: url('/Images/Background-visuals/Gold-game-background.webp');
   border-radius: 20px;
   background-size: cover;
 

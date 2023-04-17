@@ -12,14 +12,14 @@ playBtn.addEventListener('click', () => {
   playBtn.disabled = true;
 
   //change card images that the users will win
-  card1Img.src = '/Images/Epic cards/FRONT/AHRI.png';
-  card2Img.src = '/Images/Rare cards/FRONT/GAREN.png';
-  card3Img.src = '/Images/Legendary cards/FRONT/AZIR.png';
+  card1Img.src = '/Images/Epic-cards/FRONT/AHRI.webp';
+  card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
+  card3Img.src = '/Images/Legendary-cards/FRONT/AZIR.webp';
 
-  //Hide the title 
+  //Hide the title
   gameTitle.style.opacity = '0';
 
-//Move cards above and to the side at different times
+  //Move cards above and to the side at different times
   setTimeout(() => {
     cards[2].style.transform = `translate(8rem,-15vh) rotate(0deg)`;
   }, 0);
@@ -32,15 +32,14 @@ playBtn.addEventListener('click', () => {
     cards[0].style.transform = `translate(-8rem,-15vh) rotate(0deg)`;
   }, 1400);
 
-
-//flip cards to reveal the images
+  //flip cards to reveal the images
   setTimeout(() => {
     cardsInner.forEach(card => {
-          card.classList.add('flipped');
-        });
-    }, 3000);
+      card.classList.add('flipped');
+    });
+  }, 3000);
 
-    //return cards back to start position 
+  //return cards back to start position
   setTimeout(() => {
     cards.forEach(card => {
       card.style.transform = '';
@@ -59,11 +58,9 @@ playBtn.addEventListener('click', () => {
     gameTitle.style.opacity = '';
   }, 7000);
 
-
-//re enable button
+  //re enable button
   setTimeout(() => {
     gameTitle.style.opacity = '';
     playBtn.disabled = false;
   }, 7500);
-
 });
