@@ -2,43 +2,43 @@
 const inputBoxes = document.querySelectorAll('.form-input-box');
 
 // For each box
-inputBoxes.forEach( box => {
+inputBoxes.forEach(box => {
   // Get input as first child element
   const input = box.firstElementChild;
 
   // add event listener for any change on the input
   input.addEventListener('input', () => {
-    console.log(input.value)
+    console.log(input.value);
 
     // if input is not empty add class filled
     // else remove class filled if is empty
-    input.value ? input.classList.add('filled') : input.classList.remove('filled')
-  })
+    input.value
+      ? input.classList.add('filled')
+      : input.classList.remove('filled');
+  });
 });
 
+const settingsOverlay = document.querySelector(`.settings-overlay`);
+const settingsModalCloseBtn = document.querySelector(
+  `.settings-info-close-modal`
+);
+const settingsModal = document.querySelector(`.settings-info`);
+const settingsModalOpenBtn = document.querySelector(`.settings-info-icon`);
 
-//Get info modal
+const closeInfoModal = () => {
+  settingsOverlay.classList.add('settings-hidden');
+  settingsModal.classList.add('settings-hidden');
+};
 
-const infoModal = document.querySelector('.modal');
-const infoOverlay = document.querySelector('.settings-overlay');
-const infoCloseModalbtn = document.querySelector('.settings-info-close-modal');
+settingsModalOpenBtn.addEventListener('click', () => {
+  settingsOverlay.classList.remove('settings-hidden');
+  settingsModal.classList.remove('settings-hidden');
+});
 
-//Get info open btn
-const infoOpenModalbtn = document.querySelectorAll('.settings-info-icon');
+settingsModalCloseBtn.addEventListener('click', () => {
+  closeInfoModal();
+});
 
-console.log(infoOpenModalbtn);
-
-for (let i = 0; i < infoOpenModalbtn.length; i++) {
-  infoOpenModalbtn[i].addEventListener('click', function () {
-    console.log('clicked');
-    infoModal.classList.remove('hidden'); // <-- fixed typo here
-    infoOverlay.classList.remove('hidden');
-  });
-}
-
-// Add event listener to close modal button
-infoCloseModalbtn.addEventListener('click', () => {
-  console.log('clicked close');
-  infoModal.classList.add('hidden');
-  infoOverlay.classList.add('hidden');
+settingsOverlay.addEventListener('click', () => {
+  closeInfoModal();
 });
