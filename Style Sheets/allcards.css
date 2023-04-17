@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,10 +30,11 @@ body {
   margin: 0 auto;
   background-color: #0d1117;
   position: fixed;
+  top: 7rem;
   left: 0;
   right: 0;
   box-shadow: 0 3rem 3rem #0d1117;
-  z-index: 8000;
+  z-index: 7000;
 }
 
 .filtering-container {
@@ -237,7 +239,6 @@ body {
 }
 
 .filter-slider::after {
-  content: '100';
   position: absolute;
   color: #ddd;
   right: 0;
@@ -402,6 +403,10 @@ body {
 /* Catalog section */
 /* //////////////////////////////////// */
 
+.all-cards-catalog__section {
+  min-height: calc(100vh - 19.2rem);
+}
+
 .catalog-container {
   max-width: 140rem;
   /* background-color: beige; */
@@ -410,11 +415,10 @@ body {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
-
   row-gap: 24rem;
   column-gap: 2rem;
-  padding: 2.4rem 4.8rem;
-  padding-top: 32rem;
+  padding: 2.4rem 4.8rem 9.6rem 4.8rem;
+  padding-top: 39rem;
 }
 
 .card-element-box {
@@ -439,7 +443,7 @@ body {
 }
 
 .card-element-box[rarity='legendary'] {
-  background: linear-gradient(180deg, #32271a 25%, #040405 75%);
+  background: linear-gradient(180deg, #61542e 25%, #040405 75%);
   background-size: 100% 200%;
   background-position: 50% 100%;
 }
@@ -590,9 +594,9 @@ body {
   color: #fff;
 }
 
-/* @media only screen and (max-width: 65em) {
+@media only screen and (max-width: 65em) {
   html {
-    font-size: 55%;
+    font-size: 56.25%;
   }
 
   .filtering-container {
@@ -607,9 +611,10 @@ body {
 
   .catalog-container {
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 40rem;
+    padding-top: 45rem;
   }
 }
+
 @media only screen and (max-width: 40em) {
   html {
     font-size: 50%;
@@ -618,4 +623,4 @@ body {
   .catalog-container {
     grid-template-columns: repeat(1, 1fr);
   }
-} */
+}

@@ -43,8 +43,10 @@ filterBtn.addEventListener('click', () => {
   }
 });
 
+//GET SLIDER INPUT DATA
 slider.addEventListener('input', () => {
-  sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;heigth: 6px;}`;
+  // console.log(slider.value);
+  sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;height: 6px;}`;
 });
 
 // FUNCTION TO ROTATE CARDS

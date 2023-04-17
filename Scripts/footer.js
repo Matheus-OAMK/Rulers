@@ -1,35 +1,35 @@
 'use strict';
 
 // ********** MODALS ********** //
-const link = document.querySelector('[data-modal-target]');
-const overlay = document.querySelector('#overlay');
+const link = document.querySelector('[data-modal-target-footer]');
+const overlay = document.querySelector('#overlay-footer');
 
 //function to close modal
-const closeModal = modal => {
+const closeModalFooter = modal => {
   if (modal == null) return;
   modal.classList.remove('active');
   overlay.classList.remove('active');
 };
 
 //function to open modal
-const openModal = modal => {
+const openModalFooter = modal => {
   if (modal == null) return;
   modal.classList.add('active');
   overlay.classList.add('active');
 };
 
 //open modal when clicking on link
-link.addEventListener('click', link => {
-  link.preventDefault();
-  const target = document.querySelector(link.target.dataset.modalTarget);
-  openModal(target);
+link.addEventListener('click', event => {
+  event.preventDefault();
+  const target = document.querySelector(event.target.dataset.modalTargetFooter);
+  openModalFooter(target);
 });
 
 //close modal when clicking outside of modal (in overlay)
 overlay.addEventListener('click', () => {
   const modals = document.querySelectorAll('.modal.active');
   modals.forEach(modal => {
-    closeModal(modal);
+    closeModalFooter(modal);
   });
 });
 

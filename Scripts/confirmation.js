@@ -24,36 +24,67 @@ const purchaseCanceledModal = document.getElementsByClassName(
   'purchase-canceled-modal'
 )[0];
 
-// open purchase confirmation modal when purchase button is clicked
-purchaseOpenModalBtn.addEventListener('click', function () {
+const resetCardID = () => {
+  choosenCardID = null;
+  console.log(choosenCardID);
+};
+
+let choosenCardID = null;
+const getCardID = button => {
+  //  GET CARD ID
+  choosenCardID = button.parentElement.parentElement.id;
+  console.log(choosenCardID);
+
+  // SHOW THE CONFIRMATION MODAL
   confirmationModalOverlay.classList.remove(
     'confirmation-modal-overlay-hidden'
   );
   purchaseConfirmationModal.classList.remove(
     'purchase-confirmation-modal-hidden'
   );
-});
+};
+
+// open purchase confirmation modal when purchase button is clicked
+// purchaseOpenModalBtn.addEventListener('click', function () {
+// confirmationModalOverlay.classList.remove(
+//   'confirmation-modal-overlay-hidden'
+// );
+// purchaseConfirmationModal.classList.remove(
+//   'purchase-confirmation-modal-hidden'
+// );
+// });
 
 // close purchase confirmation modal when close button is clicked
 purchaseConfirmationCloseModalBtn.addEventListener('click', function () {
   confirmationModalOverlay.classList.add('confirmation-modal-overlay-hidden');
   purchaseConfirmationModal.classList.add('purchase-confirmation-modal-hidden');
+  resetCardID();
 });
 
 // close purchase confirmation modal when user clicks outside of the modal
 window.addEventListener('click', function (event) {
-  if (event.target == confirmationModalOverlay) {
+  if (
+    event.target == confirmationModalOverlay ||
+    event.target == purchaseConfirmedModal ||
+    event.target == purchaseCanceledModal
+  ) {
     confirmationModalOverlay.classList.add('confirmation-modal-overlay-hidden');
     purchaseConfirmationModal.classList.add(
       'purchase-confirmation-modal-hidden'
     );
     purchaseConfirmedModal.classList.add('purchase-confirm-info-hidden');
     purchaseCanceledModal.classList.add('purchase-cancel-info-hidden');
+    resetCardID();
   }
 });
 
 // display purchase confirmed modal when confirm button is clicked
 purchaseConfirmBtn.addEventListener('click', function () {
+  /* //////////////////////////////// */
+  /* HERE IS GONNA BE THE CODE TO PURCHASE THE CARD */
+  /* //////////////////////////////// */
+
+  // RUN THIS CODE WHEN PURCHASE IS DONE
   purchaseConfirmationModal.classList.add('purchase-confirmation-modal-hidden');
   purchaseConfirmedModal.classList.remove('purchase-confirm-info-hidden');
 });
