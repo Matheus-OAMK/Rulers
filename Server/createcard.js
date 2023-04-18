@@ -1,5 +1,17 @@
-const server = require('./server');
+const { Pool } = require('pg');
 const fs = require('fs');
+
+const openDb = () => {
+  const pool = new Pool({
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    ssl: process.env.SSL,
+  });
+  return pool;
+};
 
 //create a class to hold card properties
 class Card {
@@ -89,7 +101,7 @@ fs.readdir(imageFolder, (err, subfolders) => {
 });
 
 async function createCards() {
-  const pool = server.openDb();
+  const pool = openDb();
   const promises = [];
   for (const card of allCards) {
     //check if already exist in db
