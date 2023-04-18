@@ -96,23 +96,48 @@ searchInput.addEventListener('input', input => {
   });
 });
 
-// filtering function to filter cards
+
+//selecting all filter boxes
 const filterBoxes = document.querySelectorAll('.filtering-option--input');
+//creating an object to store the filters
+const filters = {
+  rarity: [],
+  role: [],
+  price: 400
+};
 
 filterBoxes.forEach(filterBox => {
   filterBox.addEventListener('click', () => {
+    //get the rarity or role value
     const value = filterBox.name.toLowerCase();
+    //get the type of filter by looking at the title of the filter box
+    const type = filterBox.parentNode.parentNode.querySelector('.filter-title').textContent.toLowerCase();
+    //check if the filter box is checked or not
+    if (filterBox.checked) {
+      //if it is checked, add the value to the filters object
+      filters[type].push(value);
+    } else {
+      //if it is not checked, remove the value from the filters object
+      const index = filters[type].indexOf(value);
+      if (index >= 0) {
+        filters[type].splice(index, 1);
+      }
+    }
+    //loop through the cards and check if they match the filters
     cards.forEach(card => {
-      const isVisible =
-        card.rarity.toLowerCase().includes(value) ||
-        card.role.toLowerCase().includes(value);
+      //check if the card matches the rarity and role filters ( or if there are no filters selected )
+      const matchesRarity = filters.rarity.length === 0 || filters.rarity.includes(card.rarity.toLowerCase());
+      const matchesRole = filters.role.length === 0 || filters.role.includes(card.role.toLowerCase());
+      const matchesPrice = card.price <= filters.price;
+      //Hide cards that do not match the filters
       card.element.classList.toggle(
         'filter-options-hidden',
-        filterBox.checked ? !isVisible : false
+        !matchesRarity || !matchesRole || !matchesPrice
       );
     });
   });
 });
+
 
 // selecting filter slider
 const slider = document.querySelector(`.filter-slider`);
@@ -122,9 +147,20 @@ slider.addEventListener('input', () => {
   // console.log(slider.value);
   sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;height: 6px;}`;
 
+  //set the price in the filters object  to the slider value
+  filters.price = slider.value;
+
   cards.forEach(card => {
-    const isVisible = card.price <= slider.value;
-    card.element.classList.toggle('filter-options-hidden', !isVisible);
+      //check if the card matches the rarity and role filters ( or if there are no filters selected )
+      //if the array is empty then all cards match (true)
+      const matchesRarity = filters.rarity.length === 0 || filters.rarity.includes(card.rarity.toLowerCase());
+      const matchesRole = filters.role.length === 0 || filters.role.includes(card.role.toLowerCase());
+      const matchesPrice = card.price <= filters.price;
+      //Hide cards that do not match the filters
+      card.element.classList.toggle(
+        'filter-options-hidden',
+        !matchesRarity || !matchesRole || !matchesPrice
+      );
   });
 });
 
