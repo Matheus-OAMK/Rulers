@@ -8,21 +8,15 @@ dotenv.config(
     : { path: './Environment/production_config.env' }
 );
 
+// These modules must be declared after the environment configuration
+const { DBconfig } = require('./DBconfig'); // Requires an existing DBconfig.js file, see DBconfig.example
 const app = require('./app');
 
 exports.openDb = () => {
-  const pool = new Pool({
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
-    ssl: { rejectUnauthorized: false },
-  });
-  return pool;
+  return new Pool(DBconfig);
 };
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App is listening on a port ${port}...`);
 });
