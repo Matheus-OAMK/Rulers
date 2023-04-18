@@ -76,6 +76,7 @@ body {
   padding: 15.2rem 4.8rem 0 4.8rem;
   gap: 3.2rem;
   min-height: calc(100vh - 19.2rem);
+  justify-items: center;
 }
 
 /* GEMS 3 CHOICE */
@@ -164,4 +165,58 @@ body {
 .gems-price2 {
   font-size: 5.2rem;
   transform: translate(0%, 160%);
+}
+
+/* MEDIA QUERIES */
+
+/* |||||||||||  1365PX  ||||||||||||||| */
+
+@media (max-width: 85.25em) {
+  html {
+    font-size: 50.25%;
+  }
+}
+
+/*||||||||  1165PX  ||||||||||||||||||||*/
+
+@media (max-width: 72.8125em) {
+  html {
+    font-size: 42.25%;
+  }
+}
+
+/*||||||||  965PX  ||||||||||||||||||||*/
+
+@media (max-width: 60.3125em) {
+  html {
+    font-size: 52.5%;
+  }
+
+  .gems-main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*||||||||  765PX  ||||||||||||||||||||*/
+
+@media (max-width: 47.8125em) {
+  html {
+    font-size: 38.25%;
+  }
+
+  .gems-main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*||||||||  565PX  ||||||||||||||||||||*/
+
+@media (max-width: 35.3125em) {
+  html {
+    font-size: 45.5%;
+  }
+
+  .gems-main-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
