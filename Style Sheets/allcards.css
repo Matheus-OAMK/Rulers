@@ -431,35 +431,35 @@ body {
   transition: all 0.3s;
 }
 
-.card-element-box[rarity='rare'] {
+.card-element-box[data-card-rarity='rare'] {
   background: linear-gradient(180deg, #572626 25%, #0d1117 75%);
   background-size: 100% 200%;
   background-position: 50% 100%;
 }
 
-.card-element-box:hover[rarity='rare'] {
+.card-element-box:hover[data-card-rarity='rare'] {
   background-position: 50% 50%;
   box-shadow: 0px 0px 20px rgba(233, 116, 116, 0.4);
 }
 
-.card-element-box[rarity='legendary'] {
+.card-element-box[data-card-rarity='legendary'] {
   background: linear-gradient(180deg, #61542e 25%, #040405 75%);
   background-size: 100% 200%;
   background-position: 50% 100%;
 }
 
-.card-element-box:hover[rarity='legendary'] {
+.card-element-box:hover[data-card-rarity='legendary'] {
   box-shadow: 0px 4px 20px rgba(239, 198, 52, 0.4);
   background-position: 50% 50%;
 }
 
-.card-element-box[rarity='epic'] {
+.card-element-box[data-card-rarity='epic'] {
   background: linear-gradient(180deg, #571e58 25%, #040405 75%);
   background-size: 100% 200%;
   background-position: 50% 100%;
 }
 
-.card-element-box:hover[rarity='epic'] {
+.card-element-box:hover[data-card-rarity='epic'] {
   box-shadow: 0px 4px 20px rgba(234, 72, 237, 0.4);
   background-position: 50% 50%;
 }

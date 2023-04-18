@@ -289,16 +289,16 @@
               <label class="filtering-option"
                 >Burst dealer
                 <input
-                  name="burst-dealer"
+                  name="burst dealer"
                   type="checkbox"
                   class="filtering-option--input"
                 />
                 <span class="checkmark"></span>
               </label>
               <label class="filtering-option"
-                >Tanky warrior
+                >Tank
                 <input
-                  name="tanky-warrior"
+                  name="tank"
                   type="checkbox"
                   class="filtering-option--input"
                 />
@@ -328,7 +328,7 @@
           </div>
         </div>
         <div class="search-box">
-          <input type="text" name="" class="search-bar" />
+          <input type="text" name="" class="search-bar" data-search />
           <ion-icon
             name="search-outline"
             class="filter-icon search-icon"
@@ -337,10 +337,10 @@
         <div class="sort-by-box">
           <select class="sort-by">
             <option value="">Sort by</option>
-            <option value="">Rarity high to low</option>
-            <option value="">Rarity low to high</option>
-            <option value="">Price high to low</option>
-            <option value="">Price low to high</option>
+            <option value="rarity-high-to-low">Rarity high to low</option>
+            <option value="rarity-low-to-high">Rarity low to high</option>
+            <option value="price-high-to-low">Price high to low</option>
+            <option value="price-low-to-high">Price low to high</option>
           </select>
           <div class="sort-arrs">
             <ion-icon
@@ -354,7 +354,7 @@
     <section class="all-cards-catalog__section">
       <div class="catalog-container">
         <!-- TO DELETE (START)(EXAMPLES FOR TESTING PURPOSES ONLY) -->
-        <div class="grid-cell">
+        <!-- <div class="grid-cell">
           <div class="card-element">
             <div
               class="card-element-box"
@@ -839,7 +839,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- TO DELETE (END) -->
       </div>
@@ -870,6 +870,7 @@
         Purchase canceled 😔 <br />
         Marketing team will pay for that! 😡
       </div>
+
       <template data-card-template>
         <div class="grid-cell">
           <div class="card-element">
@@ -908,7 +909,7 @@
                   <p data-card-price></p>
                   <img
                     src="../Images/Gems/Free-gems.png"
-                    alt=""
+                    alt="Image of rulers gem"
                     class="card-element-gems-img"
                   />
                 </div>
@@ -918,7 +919,7 @@
                 >
                   Buy now
                 </button>
-                <a href="" class="charachter-link" data-card-charachter-link
+                <a href="" class="charachter-link" data-card-champ-link
                   >More charachter info &rarr;</a
                 >
               </div>
