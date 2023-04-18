@@ -33,10 +33,11 @@ CREATE TABLE card_owner (
 
 
 
-CREATE TABLE test (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  rarity VARCHAR(255) NOT NULL
-);
+-- CREATE TABLE test (
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(255) NOT NULL,
+--   rarity VARCHAR(255) NOT NULL
+-- );
 
-INSERT INTO card(name,rarity, price, img_front, img_back,info_link ) VALUES('queen', 'Common', '100', 'https://i.imgur.com/1ZQZ1Zm.png', 'https://i.imgur.com/1ZQZ1Zm.png', 'https://en.wikipedia.org/wiki/King_(playing_card)');
+insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(1, 'diana', 'epic', 'burst dealer', 200, '../Images/Epic-cards/FRONT/DIANA.webp', '../Images/Epic-cards/BACK/diana-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/diana/');
+
