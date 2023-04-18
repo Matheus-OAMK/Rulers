@@ -1,4 +1,4 @@
 node_modules
 .env
 Environment/production_config.env
-DB_SSL/*
+DB_SSL
