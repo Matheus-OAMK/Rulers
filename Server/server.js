@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const { Pool } = require('pg');
+const fs = require('fs');
 
 dotenv.config({ path: './Environment/state.env' });
 dotenv.config(
@@ -8,12 +9,39 @@ dotenv.config(
     : { path: './Environment/production_config.env' }
 );
 
-// These modules must be declared after the environment configuration
-const { DBconfig } = require('./DBconfig'); // Requires an existing DBconfig.js file, see DBconfig.example
+// This module must be declared after the environment configuration
 const app = require('./app');
 
 exports.openDb = () => {
-  return new Pool(DBconfig);
+  switch (process.env.DB_LOCATION) {
+    case 'local':
+      return new Pool({
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        port: process.env.DB_PORT,
+      });
+
+    case 'remote':
+      return new Pool({
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        port: process.env.DB_PORT,
+        ssl: {
+          rejectUnauthorized: true,
+          ca: fs
+            .readFileSync('/path/to/server-certificates/root.crt')
+            .toString(),
+          key: fs.readFileSync('/path/to/client-key/postgresql.key').toString(),
+          cert: fs
+            .readFileSync('/path/to/client-certificates/postgresql.crt')
+            .toString(),
+        },
+      });
+  }
 };
 
 const port = process.env.PORT || 3000;
