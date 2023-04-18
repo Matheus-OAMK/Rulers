@@ -7,12 +7,14 @@ const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
 
+playBtn.disabled = true; // Disabling the button
+
 playBtn.addEventListener('click', () => {
   //disable button so they cant click it again until game is over
   playBtn.disabled = true;
 
   //change card images that the users will win
-  card1Img.src = '/Images/Epic-cards/FRONT/AHRI.webp';
+  card1Img.src = '/Images/Epic-cards/FRONT/DIANA.webp';
   card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
   card3Img.src = '/Images/Legendary-cards/FRONT/AZIR.webp';
 
