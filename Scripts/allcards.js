@@ -53,7 +53,7 @@ function cardRotate(el) {
 // ************************************* RENDER CARDS *************************************
 const cardTemplate = document.querySelector(`[data-card-template]`);
 const cardContainer = document.querySelector(`.catalog-container`);
-const allcardsRoute = 'http://localhost:3001/api/catalog';
+const allcardsRoute = 'http://localhost:3001/api/catalog/all-cards';
 //define an empty array to store the cards (needed for map function)
 let cards = [];
 fetch(allcardsRoute)

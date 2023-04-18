@@ -3,6 +3,6 @@ const cardControllers = require('../Controllers/cardControllers');
 
 const router = express.Router();
 
-router.route('/').get(cardControllers.getAllCards);
+router.route('/all-cards').get(cardControllers.getAllCards);
 
 module.exports = router;
