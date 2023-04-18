@@ -1,4 +1,4 @@
 node_modules
-.env
+Environment/.env
 Environment/production_config.env
 DB_SSL
