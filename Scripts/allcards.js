@@ -86,9 +86,16 @@ fetch(allcardsRoute)
 
 // ************************************* FILTER FUNCTIONS *************************************
 const searchInput = document.querySelector(`[data-search]`);
+const searchIcon = document.querySelector(`.search-icon`);
 
 //search bar function to filter cards
 searchInput.addEventListener('input', input => {
+  if (searchInput.value) {
+    searchIcon.style.left = 'calc(92% - 2.4rem)';
+  } else {
+    searchIcon.style.left = '';
+  }
+
   const value = input.target.value.toLowerCase();
   cards.forEach(card => {
     const isVisible = card.name.toLowerCase().includes(value);
@@ -96,14 +103,13 @@ searchInput.addEventListener('input', input => {
   });
 });
 
-
 //selecting all filter boxes
 const filterBoxes = document.querySelectorAll('.filtering-option--input');
 //creating an object to store the filters
 const filters = {
   rarity: [],
   role: [],
-  price: 400
+  price: 400,
 };
 
 filterBoxes.forEach(filterBox => {
@@ -111,7 +117,9 @@ filterBoxes.forEach(filterBox => {
     //get the rarity or role value
     const value = filterBox.name.toLowerCase();
     //get the type of filter by looking at the title of the filter box
-    const type = filterBox.parentNode.parentNode.querySelector('.filter-title').textContent.toLowerCase();
+    const type = filterBox.parentNode.parentNode
+      .querySelector('.filter-title')
+      .textContent.toLowerCase();
     //check if the filter box is checked or not
     if (filterBox.checked) {
       //if it is checked, add the value to the filters object
@@ -126,8 +134,12 @@ filterBoxes.forEach(filterBox => {
     //loop through the cards and check if they match the filters
     cards.forEach(card => {
       //check if the card matches the rarity and role filters ( or if there are no filters selected )
-      const matchesRarity = filters.rarity.length === 0 || filters.rarity.includes(card.rarity.toLowerCase());
-      const matchesRole = filters.role.length === 0 || filters.role.includes(card.role.toLowerCase());
+      const matchesRarity =
+        filters.rarity.length === 0 ||
+        filters.rarity.includes(card.rarity.toLowerCase());
+      const matchesRole =
+        filters.role.length === 0 ||
+        filters.role.includes(card.role.toLowerCase());
       const matchesPrice = card.price <= filters.price;
       //Hide cards that do not match the filters
       card.element.classList.toggle(
@@ -137,7 +149,6 @@ filterBoxes.forEach(filterBox => {
     });
   });
 });
-
 
 // selecting filter slider
 const slider = document.querySelector(`.filter-slider`);
@@ -151,16 +162,20 @@ slider.addEventListener('input', () => {
   filters.price = slider.value;
 
   cards.forEach(card => {
-      //check if the card matches the rarity and role filters ( or if there are no filters selected )
-      //if the array is empty then all cards match (true)
-      const matchesRarity = filters.rarity.length === 0 || filters.rarity.includes(card.rarity.toLowerCase());
-      const matchesRole = filters.role.length === 0 || filters.role.includes(card.role.toLowerCase());
-      const matchesPrice = card.price <= filters.price;
-      //Hide cards that do not match the filters
-      card.element.classList.toggle(
-        'filter-options-hidden',
-        !matchesRarity || !matchesRole || !matchesPrice
-      );
+    //check if the card matches the rarity and role filters ( or if there are no filters selected )
+    //if the array is empty then all cards match (true)
+    const matchesRarity =
+      filters.rarity.length === 0 ||
+      filters.rarity.includes(card.rarity.toLowerCase());
+    const matchesRole =
+      filters.role.length === 0 ||
+      filters.role.includes(card.role.toLowerCase());
+    const matchesPrice = card.price <= filters.price;
+    //Hide cards that do not match the filters
+    card.element.classList.toggle(
+      'filter-options-hidden',
+      !matchesRarity || !matchesRole || !matchesPrice
+    );
   });
 });
 
