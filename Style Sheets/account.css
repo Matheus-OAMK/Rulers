@@ -351,3 +351,46 @@ body {
   align-self: center;
   box-shadow: 0 0 5px 0 rgba(102, 252, 241, 1);
 }
+
+/* MEDIA QUERIES */
+
+/* ||||||||||| 1200PX ||||||||||||||| */
+
+@media (max-width: 75em) {
+  html {
+    font-size: 57.5%;
+  }
+}
+
+/* ||||||||||| 900PX ||||||||||||||| */
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 53.5%;
+  }
+}
+
+/* ||||||||||| 600PX ||||||||||||||| */
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+
+  .settings-container {
+    max-width: 48rem;
+  }
+}
+
+/* ||||||||||| 400PX ||||||||||||||| */
+
+@media (max-width: 25em) {
+  html {
+    font-size: 45%;
+  }
+
+  .settings-info p {
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
