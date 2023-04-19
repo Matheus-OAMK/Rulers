@@ -1,4 +1,5 @@
 'use strict';
+
 const cards = document.querySelectorAll('.game--card');
 const playBtn = document.querySelector('.game--btn');
 const card1Img = document.querySelector('#game--card-img-1');
@@ -6,17 +7,36 @@ const card2Img = document.querySelector('#game--card-img-2');
 const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
+const gameCardsRoute = 'http://localhost:3001/api/catalog/game';
+let randomCards = [];
 
-playBtn.disabled = true; // Disabling the button
+//function to set images on the cards from the array of cards users will win
+function setCardImages() {
+  //change card images that the users will win
+  card1Img.src = randomCards[0].img_front;
+  card2Img.src = randomCards[1].img_front;
+  card3Img.src = randomCards[2].img_front;
+}
 
 playBtn.addEventListener('click', () => {
   //disable button so they cant click it again until game is over
   playBtn.disabled = true;
+  //reset the array on every click
+  randomCards = [];
 
+  //fetch the route to 3 random cards and push them into the array
+  fetch(gameCardsRoute)
+  .then(res => res.json())
+  .then(data => {
+    data.forEach(card => randomCards.push(card));
+    //call the function to set the images
+    setCardImages();
+  })
+  
   //change card images that the users will win
-  card1Img.src = '/Images/Epic-cards/FRONT/DIANA.webp';
-  card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
-  card3Img.src = '/Images/Legendary-cards/FRONT/AZIR.webp';
+  // card1Img.src = '/Images/Epic-cards/FRONT/DIANA.webp';
+  // card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
+  // card3Img.src = '/Images/Legendary-cards/FRONT/AZIR.webp';
 
   //Hide the title
   gameTitle.style.opacity = '0';
