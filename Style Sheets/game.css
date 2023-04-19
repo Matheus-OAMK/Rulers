@@ -24,7 +24,7 @@ body {
     ),
     url('/Images/Background-visuals/Game-background.png');
   margin-top: 7rem;
-  min-height: calc(100vh - 19.2rem);
+  min-height: calc(100dvh - 26.25rem);
   background-size: cover;
   background-position: center;
 }
