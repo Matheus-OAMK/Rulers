@@ -145,8 +145,28 @@ body {
 
 /* MEDIA QUERIES */
 
-/* |||||||||||  1524PX  ||||||||||||||| */
+/* |||||||||||  2720PX  ||||||||||||||| */
+@media (max-width: 170em) {
+  html {
+    font-size: 85.25%;
+  }
 
+  .aboutus-container-items {
+    margin-bottom: 10rem;
+  }
+}
+
+/* |||||||||||  1800PX  ||||||||||||||| */
+@media (max-width: 112.5em) {
+  html {
+    font-size: 60.25%;
+  }
+  .aboutus-container-items {
+    margin-bottom: 10rem;
+  }
+}
+
+/* |||||||||||  1524PX  ||||||||||||||| */
 @media (max-width: 95.25em) {
   html {
     font-size: 53.25%;
@@ -154,7 +174,6 @@ body {
 }
 
 /*||||||||  1165PX  ||||||||||||||||||||*/
-
 @media (max-width: 72.8125em) {
   html {
     font-size: 46.25%;
@@ -162,7 +181,6 @@ body {
 }
 
 /*||||||||  965PX  ||||||||||||||||||||*/
-
 @media (max-width: 60.3125em) {
   html {
     font-size: 68.5%;
@@ -170,7 +188,6 @@ body {
 }
 
 /*||||||||  765PX  ||||||||||||||||||||*/
-
 @media (max-width: 47.8125em) {
   html {
     font-size: 50.25%;
@@ -178,7 +195,6 @@ body {
 }
 
 /*||||||||  565PX  ||||||||||||||||||||*/
-
 @media (max-width: 35.3125em) {
   html {
     font-size: 32.5%;
