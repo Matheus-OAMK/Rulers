@@ -25,7 +25,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 3.2rem;
-  padding: 12rem 1% 5% 1%;
+  padding: 10rem 1% 5% 1%;
+  min-height: calc(100dvh - 19.2rem);
+  max-width: 140rem;
+  margin: 0 auto;
 }
 
 /* First row */
@@ -145,58 +148,34 @@ body {
 
 /* MEDIA QUERIES */
 
-/* |||||||||||  2720PX  ||||||||||||||| */
-@media (max-width: 170em) {
-  html {
-    font-size: 85.25%;
-  }
-
-  .aboutus-container-items {
-    margin-bottom: 10rem;
-  }
-}
-
-/* |||||||||||  1800PX  ||||||||||||||| */
-@media (max-width: 112.5em) {
-  html {
-    font-size: 60.25%;
-  }
-  .aboutus-container-items {
-    margin-bottom: 10rem;
-  }
-}
-
-/* |||||||||||  1524PX  ||||||||||||||| */
-@media (max-width: 95.25em) {
-  html {
-    font-size: 53.25%;
-  }
-}
-
 /*||||||||  1165PX  ||||||||||||||||||||*/
-@media (max-width: 72.8125em) {
+
+@media (max-width: 72.8em) {
   html {
-    font-size: 46.25%;
+    font-size: 56.25%;
   }
 }
 
 /*||||||||  965PX  ||||||||||||||||||||*/
-@media (max-width: 60.3125em) {
+
+@media (max-width: 60.3em) {
   html {
-    font-size: 68.5%;
+    font-size: 50%;
   }
 }
 
 /*||||||||  765PX  ||||||||||||||||||||*/
+
 @media (max-width: 47.8125em) {
   html {
-    font-size: 50.25%;
+    font-size: 43.75%;
   }
 }
 
 /*||||||||  565PX  ||||||||||||||||||||*/
-@media (max-width: 35.3125em) {
+
+@media (max-width: 35.3em) {
   html {
-    font-size: 32.5%;
+    font-size: 37.5%;
   }
 }
