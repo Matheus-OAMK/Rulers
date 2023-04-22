@@ -1,4 +1,4 @@
-const server = require('../server');
+const server = require ('../db');
 // const pool = server.openDB()
 
 const queryAll = 'SELECT * FROM card';

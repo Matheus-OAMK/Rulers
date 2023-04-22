@@ -1,5 +1,7 @@
 const fs = require('fs');
-const { openDb } = require('./server.js');
+const { openDb } = require('./db');
+
+
 
 
 //create a class to hold card properties
@@ -98,6 +100,7 @@ async function createCards() {
       text: 'SELECT * FROM card WHERE name = $1',
       values: [card.name],
     };
+
     promises.push(
       pool
         .query(query)
@@ -116,6 +119,7 @@ async function createCards() {
                 card.info_link,
               ],
             };
+            console.log(`Card ${card.name} Has been added to the  database.`);
             return pool.query(insertQuery);
           } else {
             console.log(`Card ${card.name} already exists in the database.`);
