@@ -1,16 +1,5 @@
-const dotenv = require('dotenv');
 const { Pool } = require('pg');
 const fs = require('fs');
-
-dotenv.config({ path: './Environment/state.env' });
-dotenv.config(
-  process.env.NODE_ENV === 'development'
-    ? { path: './Environment/.env' }
-    : { path: './Environment/production_config.env' }
-);
-
-
-
 
 exports.openDb = () => {
   switch (process.env.DB_LOCATION) {
