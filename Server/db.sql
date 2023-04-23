@@ -14,14 +14,16 @@ CREATE TABLE card (
   info_link VARCHAR(255) NOT NULL
 );
 
+DROP TABLE card;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
-  gems SMALLINT NOT NULL
+  gems SMALLINT NOT NULL DEFAULT 0
 );
+
+DROP TABLE users;
 
 CREATE TABLE card_owner (
   user_id INTEGER REFERENCES users(id),
@@ -30,14 +32,8 @@ CREATE TABLE card_owner (
   PRIMARY KEY (user_id, card_id)
 );
 
+DROP TABLE card_owner;
 
-
-
--- CREATE TABLE test (
---   id SERIAL PRIMARY KEY,
---   name VARCHAR(255) NOT NULL,
---   rarity VARCHAR(255) NOT NULL
--- );
 
 insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(1, 'diana', 'epic', 'burst dealer', 200, '../Images/Epic-cards/FRONT/DIANA.webp', '../Images/Epic-cards/BACK/diana-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/diana/');
 insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(11, 'annie', 'rare', 'burst dealer', 100, '../Images/Rare-cards/FRONT/ANNIE.webp', '../Images/Rare-cards/BACK/ANNIE-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/annie/');
