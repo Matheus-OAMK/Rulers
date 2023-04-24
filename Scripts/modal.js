@@ -187,6 +187,8 @@ signupform.addEventListener('submit', async (event) => {
       const modal = document.querySelector('.signup-modal-content');
       closeModalLogSign(modal);
       clearSignUp();
+
+      //If the user already exists
     } else if (result.error.includes('duplicate key value violates unique constraint "users_username_key"')) {
       alert('Username is already in use. Please choose another username.');
     } else {
