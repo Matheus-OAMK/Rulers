@@ -15,6 +15,7 @@ function createToken({ id, username }) {
 
 const protect = async (req, res, next) => {
   // 1) Getting token and check if it is there
+  console.log(req.cookies);
   let token;
   if (req.cookies.access_token) {
     token = req.cookies.access_token;

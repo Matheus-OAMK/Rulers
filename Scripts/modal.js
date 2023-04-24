@@ -1,3 +1,5 @@
+const API_URL = 'http://127.0.0.1:3001';
+
 const openSignupModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeSignupModalButtons = document.querySelectorAll(
   '[data-signup-close-button]'
@@ -144,16 +146,13 @@ registerHere.addEventListener('click', () => {
   openModalLink(openRegister);
 });
 
-
 // ****************** SIGNUP FUNCTION ******************
 
 const signupform = document.querySelector('.signup-form');
 
-const signUpUrl = 'http://localhost:3001/api/user/sign-up';
+const signUpUrl = `${API_URL}/api/user/sign-up`;
 
-
-
-signupform.addEventListener('submit', async (event) => {
+signupform.addEventListener('submit', async event => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const username = formData.get('username');
@@ -165,16 +164,15 @@ signupform.addEventListener('submit', async (event) => {
     return;
   }
 
-
   const data = { username, password };
 
   try {
     const response = await fetch(signUpUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
     const result = await response.json();
 
@@ -189,11 +187,76 @@ signupform.addEventListener('submit', async (event) => {
       clearSignUp();
 
       //If the user already exists
-    } else if (result.error.includes('duplicate key value violates unique constraint "users_username_key"')) {
+    } else if (
+      result.error.includes(
+        'duplicate key value violates unique constraint "users_username_key"'
+      )
+    ) {
       alert('Username is already in use. Please choose another username.');
     } else {
       alert(`Please try again. Error: ${result.error}`);
     }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+/* ////////////////////////////////// */
+/* LOG IN FUNCTION */
+/* ////////////////////////////////// */
+
+const LogInURL = `${API_URL}/api/user/login`;
+
+const logInForm = document.querySelector('.login-form');
+
+logInForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const username = formData.get('username');
+  const password = formData.get('password');
+
+  console.log(username, password);
+  //Alert if username or password is empty
+  if (!username || !password) {
+    alert('Please enter both a username and password.');
+    return;
+  }
+
+  const data = { username, password };
+
+  try {
+    const response = await fetch(LogInURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        withCredantials: true,
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+
+    console.log(result);
+
+    // if (response.ok) {
+    //   alert('Login successful!');
+    //   // redirect to another page, display a message, etc.
+    //   // window.location.href = 'success.html'; // redirect to another page
+
+    //   //close modal and empty
+    //   const modal = document.querySelector('.login-modal-content');
+    //   closeModalLogSign(modal);
+    //   clearLogin();
+
+    //   //If the user already exists
+    // } else if (
+    //   result.error.includes(
+    //     'duplicate key value violates unique constraint "users_username_key"'
+    //   )
+    // ) {
+    //   alert('Username is already in use. Please choose another username.');
+    // } else {
+    //   alert(`Please try again. Error: ${result.error}`);
+    // }
   } catch (error) {
     console.error('Error:', error);
   }
