@@ -1,7 +1,23 @@
+### Sign up new user request
 POST http://localhost:3001/api/user/sign-up
 Content-Type: application/json
 
 {
-  "username": "jac3232k123",
+  "username": "tommy",
   "password": "password"
 }
+
+### Make a Login request
+POST http://localhost:3001/api/user/login
+Content-Type: application/json
+
+{
+  "username": "tommy",
+  "password": "password"
+}
+
+### Fetch without token ( not logged in, shouldnt be able to access )
+GET http://localhost:3001/api/user/test
+### Test with token
+GET http://localhost:3001/api/user/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsInVzZXJuYW1lIjoidG9tbXkiLCJpYXQiOjE2ODIzNDUzNDUsImV4cCI6MTY4MzY0MTM0NX0.EBUsPiaz-VWMKXVvJu2QjXA37qQ6JXNOMRty2K8QZlw
