@@ -94,16 +94,28 @@ body {
   /* box-shadow: -5px 0px 3px rgba(0, 0, 0, 0.741); */
 }
 
+.game--card.card-1-move {
+  transform: translate(-8rem, -15vh) rotate(0deg);
+}
+
 .game--card.card-2 {
   transform: translate(-2rem, -1rem) rotate(0deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
   transition: all ease-in-out 0.8s;
 }
 
+.game--card.card-2-move {
+  transform: translate(0rem, -15vh) rotate(0deg);
+}
+
 .game--card.card-3 {
   transform: translate(-12rem, 0rem) rotate(10deg);
   /* box-shadow: -15px 0px 3px rgba(0, 0, 0, 0.741); */
   transition: all ease-in-out 0.8s;
+}
+
+.game--card.card-3-move {
+  transform: translate(8rem, -15vh) rotate(0deg);
 }
 
 .game--text-container {
@@ -151,4 +163,102 @@ body {
 
 .game--gems {
   height: 3.6rem;
+}
+
+/* MEDIA QUERIES */
+
+/* |||||||||||  1000PX  ||||||||||||||| */
+
+@media (max-width: 62.5em) {
+  html {
+    font-size: 42.25%;
+  }
+
+  .game--title {
+    margin-top: 5rem;
+  }
+  .game--card.card-3-move {
+    transform: translate(5rem, -12vh) rotate(0deg);
+  }
+
+  .game--card.card-2-move {
+    transform: translate(0rem, -12vh) rotate(0deg);
+  }
+  .game--card.card-1-move {
+    transform: translate(-5rem, -12vh) rotate(0deg);
+  }
+}
+
+/* |||||||||||  700PX  ||||||||||||||| */
+
+@media (max-width: 43.75em) {
+  html {
+    font-size: 32.25%;
+  }
+
+  .game--title {
+    font-size: 8rem;
+    margin-top: 8rem;
+  }
+  .game--card.card-3-move {
+    transform: translate(3rem, -10vh) rotate(0deg);
+  }
+
+  .game--card.card-2-move {
+    transform: translate(0rem, -10vh) rotate(0deg);
+  }
+  .game--card.card-1-move {
+    transform: translate(-3rem, -10vh) rotate(0deg);
+  }
+
+  .game--cards-container {
+    margin-top: 10rem;
+  }
+
+  .game--text-container p {
+    font-size: 3rem;
+    margin-top: 10rem;
+  }
+
+  .game--btn {
+    font-size: 6rem;
+    margin-top: 2rem;
+  }
+}
+
+/* |||||||||||  500PX  ||||||||||||||| */
+
+@media (max-width: 31.25em) {
+  html {
+    font-size: 27.25%;
+  }
+
+  .game--title {
+    font-size: 8rem;
+    margin-top: 8rem;
+  }
+  .game--card.card-3-move {
+    transform: translate(2rem, -8vh) rotate(0deg);
+  }
+
+  .game--card.card-2-move {
+    transform: translate(0rem, -8vh) rotate(0deg);
+  }
+  .game--card.card-1-move {
+    transform: translate(-2rem, -8vh) rotate(0deg);
+  }
+
+  .game--cards-container {
+    margin-top: 10rem;
+  }
+
+  .game--text-container p {
+    font-size: 3rem;
+    margin-top: 10rem;
+  }
+
+  .game--btn {
+    font-size: 7rem;
+    margin-top: 3rem;
+  }
 }
