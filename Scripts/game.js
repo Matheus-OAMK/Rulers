@@ -26,13 +26,13 @@ playBtn.addEventListener('click', () => {
 
   //fetch the route to 3 random cards and push them into the array
   fetch(gameCardsRoute)
-  .then(res => res.json())
-  .then(data => {
-    data.forEach(card => randomCards.push(card));
-    //call the function to set the images
-    setCardImages();
-  })
-  
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(card => randomCards.push(card));
+      //call the function to set the images
+      setCardImages();
+    });
+
   //change card images that the users will win
   // card1Img.src = '/Images/Epic-cards/FRONT/DIANA.webp';
   // card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
@@ -43,15 +43,15 @@ playBtn.addEventListener('click', () => {
 
   //Move cards above and to the side at different times
   setTimeout(() => {
-    cards[2].style.transform = `translate(8rem,-15vh) rotate(0deg)`;
+    cards[2].classList.add('card-3-move');
   }, 0);
 
   setTimeout(() => {
-    cards[1].style.transform = `translate(0rem,-15vh) rotate(0deg)`;
+    cards[1].classList.add('card-2-move');
   }, 700);
 
   setTimeout(() => {
-    cards[0].style.transform = `translate(-8rem,-15vh) rotate(0deg)`;
+    cards[0].classList.add('card-1-move');
   }, 1400);
 
   //flip cards to reveal the images
@@ -63,9 +63,12 @@ playBtn.addEventListener('click', () => {
 
   //return cards back to start position
   setTimeout(() => {
-    cards.forEach(card => {
-      card.style.transform = '';
-    });
+    // cards.forEach(card => {
+    //   card.style.transform = '';
+    // });
+    cards[2].classList.remove('card-3-move');
+    cards[1].classList.remove('card-2-move');
+    cards[0].classList.remove('card-1-move');
   }, 6500);
 
   //reset the cards to question mark
