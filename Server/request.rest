@@ -20,4 +20,6 @@ Content-Type: application/json
 GET http://localhost:3001/api/user/test
 ### Test with token
 GET http://localhost:3001/api/user/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsInVzZXJuYW1lIjoidG9tbXkiLCJpYXQiOjE2ODIzNDUzNDUsImV4cCI6MTY4MzY0MTM0NX0.EBUsPiaz-VWMKXVvJu2QjXA37qQ6JXNOMRty2K8QZlw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsInVzZXJuYW1lIjoidG9tbXkiLCJpYXQiOjE2ODIzNDcyNDMsImV4cCI6MTY4MzY0MzI0M30.0UtqzouqBiPKHUnJjVWMc2ISF5gFZWoJd953m-Km3NQ
+### Delete token by logging out
+POST http://localhost:3001/api/user/logout

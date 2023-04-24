@@ -9,6 +9,7 @@ router.route('/sign-up').post(userControllers.signUp);
 
 router.route('/login').post(userControllers.login);
 
+router.route('/logout').post(userControllers.logout);
 
 // This route is ONLY for TESTING purposes delete before deployment
 router.get('/test',authenticateToken, async (req, res) => {
