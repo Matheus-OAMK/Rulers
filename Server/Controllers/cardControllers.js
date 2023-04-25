@@ -19,7 +19,7 @@ exports.getAllCards = async (req, res) => {
 };
 
 
-exports.getThreeCards = async (req, res) => {
+exports.insertCard = async (req, res) => {
   const pool = server.openDb();
   
   pool.query(queryThree, (error, result) => {

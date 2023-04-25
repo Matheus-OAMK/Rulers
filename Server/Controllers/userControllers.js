@@ -44,6 +44,7 @@ exports.login = async (req, res) => {
 
     res.cookie('access_token', token.access_token, {
       httpOnly: true,
+      // comment out this line below to test on postman
        sameSite: 'None', secure: true
     });
     res.json(token);
