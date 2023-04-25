@@ -1,7 +1,7 @@
 const express = require('express');
 const userControllers = require('../Controllers/userControllers');
 const authenticateToken = require('../middleware/authorization.js');
-const server = require ('../db');
+const server = require('../db');
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.route('/login').post(userControllers.login);
 router.route('/logout').post(userControllers.logout);
 
 // This route is ONLY for TESTING purposes delete before deployment
-router.get('/test',authenticateToken, async (req, res) => {
+router.get('/test', authenticateToken, async (req, res) => {
   const pool = server.openDb();
   try {
     const users = await pool.query('SELECT * FROM users');
