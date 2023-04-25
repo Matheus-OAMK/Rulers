@@ -18,6 +18,21 @@ function setCardImages() {
   card3Img.src = randomCards[2].img_front;
 }
 
+function sendCardsToDatabase(card) {
+  fetch(gameCardsRoute, {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(card),
+  })
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+}
+
+
 playBtn.addEventListener('click', () => {
   //disable button so they cant click it again until game is over
   playBtn.disabled = true;
@@ -28,15 +43,17 @@ playBtn.addEventListener('click', () => {
   fetch(gameCardsRoute , {credentials: 'include' })
     .then(res => res.json())
     .then(data => {
-      data.forEach(card => randomCards.push(card));
+      data.forEach(card => {
+        randomCards.push(card)
+        
+      });
       //call the function to set the images
       setCardImages();
+      randomCards.forEach(card => {
+        sendCardsToDatabase(card);
+      });
     });
 
-  //change card images that the users will win
-  // card1Img.src = '/Images/Epic-cards/FRONT/DIANA.webp';
-  // card2Img.src = '/Images/Rare-cards/FRONT/GAREN.webp';
-  // card3Img.src = '/Images/Legendary-cards/FRONT/AZIR.webp';
 
   //Hide the title
   gameTitle.style.opacity = '0';
