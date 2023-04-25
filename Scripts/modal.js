@@ -227,9 +227,9 @@ logInForm.addEventListener('submit', async event => {
   try {
     const response = await fetch(LogInURL, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        withCredantials: true,
       },
       body: JSON.stringify(data),
     });
