@@ -143,3 +143,66 @@ registerHere.addEventListener('click', () => {
   closeModalLink(closeLogin);
   openModalLink(openRegister);
 });
+
+
+
+/* ////////////////////////////////// */
+/* LOG IN FUNCTION */
+/* ////////////////////////////////// */
+
+const LogInURL = 'http://localhost:3001/api/user/login';
+
+const logInForm = document.querySelector('.login-form');
+
+logInForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const username = formData.get('username');
+  const password = formData.get('password');
+
+  console.log(username, password);
+  //Alert if username or password is empty
+  if (!username || !password) {
+    alert('Please enter both a username and password.');
+    return;
+  }
+
+  const data = { username, password };
+
+  try {
+    const response = await fetch(LogInURL, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+
+    console.log(result);
+
+    // if (response.ok) {
+    //   alert('Login successful!');
+    //   // redirect to another page, display a message, etc.
+    //   // window.location.href = 'success.html'; // redirect to another page
+
+    //   //close modal and empty
+    //   const modal = document.querySelector('.login-modal-content');
+    //   closeModalLogSign(modal);
+    //   clearLogin();
+
+    //   //If the user already exists
+    // } else if (
+    //   result.error.includes(
+    //     'duplicate key value violates unique constraint "users_username_key"'
+    //   )
+    // ) {
+    //   alert('Username is already in use. Please choose another username.');
+    // } else {
+    //   alert(`Please try again. Error: ${result.error}`);
+    // }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});

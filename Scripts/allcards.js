@@ -56,7 +56,7 @@ const cardContainer = document.querySelector(`.catalog-container`);
 const allcardsRoute = 'http://localhost:3001/api/catalog/all-cards';
 //define an empty array to store the cards (needed for map function)
 let cards = [];
-fetch(allcardsRoute)
+fetch(allcardsRoute, {credentials: 'include' })
   .then(res => res.json())
   .then(data => {
     cards = data.map(champ => {

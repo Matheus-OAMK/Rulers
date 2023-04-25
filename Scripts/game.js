@@ -25,7 +25,7 @@ playBtn.addEventListener('click', () => {
   randomCards = [];
 
   //fetch the route to 3 random cards and push them into the array
-  fetch(gameCardsRoute)
+  fetch(gameCardsRoute , {credentials: 'include' })
     .then(res => res.json())
     .then(data => {
       data.forEach(card => randomCards.push(card));
