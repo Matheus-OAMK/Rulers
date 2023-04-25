@@ -7,12 +7,19 @@ const userRouter = require('./Routes/userRoutes');
 
 const app = express();
 
+
+
+// comment this out to test on postman
 app.use(
   cors({
     origin: true,
     credentials: true,
   })
 );
+
+// and uncomment this to test on postman (dont forget in usercontroller to comment out sameSite: 'None', secure: true)
+// app.use(cors());
+
 
 app.use(express.json());
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));

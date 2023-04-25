@@ -26,10 +26,8 @@ CREATE TABLE users (
 DROP TABLE users;
 
 CREATE TABLE card_owner (
-  user_id INTEGER REFERENCES users(id),
-  card_id INTEGER REFERENCES card(id),
-  amount INTEGER NOT NULL,
-  PRIMARY KEY (user_id, card_id)
+  user_id INTEGER NOT NULL REFERENCES users(id),
+  card_id INTEGER NOT NULL REFERENCES card(id)
 );
 
 DROP TABLE card_owner;

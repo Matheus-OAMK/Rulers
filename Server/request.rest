@@ -20,6 +20,10 @@ Content-Type: application/json
 GET http://localhost:3001/api/user/test
 ### Test with token
 GET http://localhost:3001/api/user/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsInVzZXJuYW1lIjoidG9tbXkiLCJpYXQiOjE2ODIzNjY1MDgsImV4cCI6MTY4MzY2MjUwOH0.oDgRSd9V1033eUju-DCX7nklIraNf5iaiFyHqpWU79s
+Authorization: Bearer 
 ### Delete token by logging out
 POST http://localhost:3001/api/user/logout
+
+###
+GET http://localhost:3001/api/catalog/all-cards
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzIsInVzZXJuYW1lIjoidG9tbXkiLCJpYXQiOjE2ODI0Mjc3MDYsImV4cCI6MTY4MzcyMzcwNn0.twRZreet83xDiru8Sa3EAoI2u_mQkfQSs337H2EfC5I
