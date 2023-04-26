@@ -1,6 +1,8 @@
 const server = require('../db');
 const bcrypt = require('bcrypt');
 const { createToken } = require('../utils/jwtHelpers');
+const {promisify} = require('util')
+const jwt = require('jsonwebtoken')
 
 //This creates a new user
 exports.signUp = async (req, res) => {
@@ -61,3 +63,34 @@ exports.logout = (req, res) => {
     res.status(401).json({ error: error.message });
   }
 };
+
+exports.checkAuth = async (req, res) =>{
+  try{
+
+    if(!req.cookies.access_token){
+      return res.status(200).json({isLoggedIn: false})
+    }
+
+    const decodedToken = promisify(jwt.verify)(req.cookies.access_token, process.env.ACCESS_TOKEN_SECRET)
+    
+    if(!decodedToken){
+      return res.status(200).json({isLoggedIn: false})
+    }
+
+    const pool = server.openDb()
+    const user = await pool.query('SELECT * FROM users WHERE id = $1', [decodedToken.id])
+
+    console.log(user);
+    if(!user){
+      return res.status(404).json({message: 'user does not exist'})
+    }
+
+    res.status(200).json({isLoggedIn: true})
+  } catch (err){
+    res.status(404).json({message: 'Something went wrong'})
+  }
+
+
+
+
+}
