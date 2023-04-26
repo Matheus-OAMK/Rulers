@@ -66,31 +66,24 @@ exports.logout = (req, res) => {
 
 exports.checkAuth = async (req, res) =>{
   try{
-
     if(!req.cookies.access_token){
       return res.status(200).json({isLoggedIn: false})
     }
-
-    const decodedToken = promisify(jwt.verify)(req.cookies.access_token, process.env.ACCESS_TOKEN_SECRET)
     
-    if(!decodedToken){
-      return res.status(200).json({isLoggedIn: false})
-    }
+    jwt.verify(req.cookies.access_token, process.env.ACCESS_TOKEN_SECRET,  async (err, user)=>{
 
-    const pool = server.openDb()
-    const user = await pool.query('SELECT * FROM users WHERE id = $1', [decodedToken.id])
+      const pool = server.openDb()
+      const userDB = await pool.query('SELECT * FROM users WHERE id = $1', [user.id])
 
-    console.log(user);
-    if(!user){
-      return res.status(404).json({message: 'user does not exist'})
-    }
+      if(!userDB){
+        return res.status(404).json({message: 'user does not exist'})
+      }
 
-    res.status(200).json({isLoggedIn: true})
+      const userGems = userDB.rows[0].gems
+
+      res.status(200).json({isLoggedIn: true, userGems})
+    })
   } catch (err){
     res.status(404).json({message: 'Something went wrong'})
   }
-
-
-
-
 }

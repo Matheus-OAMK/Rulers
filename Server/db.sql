@@ -33,7 +33,7 @@ CREATE TABLE card_owner (
 DROP TABLE card_owner;
 
 
-insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(1, 'diana', 'epic', 'burst dealer', 200, '../Images/Epic-cards/FRONT/DIANA.webp', '../Images/Epic-cards/BACK/diana-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/diana/');
+insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(1, 'diana', 'epic', 'burst dealer', 200, '../Images/Epic-cards/FRONT/DIANA.webp', '../Images/Epic-cards/BACK/DIANA-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/diana/');
 insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(11, 'annie', 'rare', 'burst dealer', 100, '../Images/Rare-cards/FRONT/ANNIE.webp', '../Images/Rare-cards/BACK/ANNIE-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/annie/');
 insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(8, 'azir', 'legendary', 'burst dealer', 400, '../Images/Legendary-cards/FRONT/AZIR.webp', '../Images/Legendary-cards/BACK/AZIR-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/azir/');
 insert into card(id, name, rarity, role, price, img_front, img_back, info_link) values(2, 'ezreal', 'epic', 'support', 200, '../Images/Epic-cards/FRONT/EZREAL.webp', '../Images/Epic-cards/BACK/EZREAL-BACK.webp', 'https://www.leagueoflegends.com/en-us/champions/ezreal/');
