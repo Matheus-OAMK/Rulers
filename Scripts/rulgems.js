@@ -1,3 +1,7 @@
+'use strict';
+
+import { API_URL, requestOptions } from './helper.js';
+
 //Get info modal
 const freeGemsBtn = document.querySelector('#free-gems');
 const infoGemsModal = document.querySelector('.gems-modal');
@@ -26,11 +30,8 @@ infoGemsOverlay.addEventListener('click', () => {
 // Add event listener to free gem
 
 
-import { API_URL, requestOptions } from './helper.js';
 
 const freeGemsRoute = `${API_URL}/api/user/freegems`;
-
-
 
 freeGemsBtn.addEventListener('click', async () => {
   try {
