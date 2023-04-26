@@ -52,7 +52,7 @@ function cardRotate(el) {
 
 // ************************************* RENDER CARDS *************************************
 
-const API_URL = 'http://127.0.0.1:3001'
+const API_URL = 'https://rulers-sh.com'
 const cardTemplate = document.querySelector(`[data-card-template]`);
 const cardContainer = document.querySelector(`.catalog-container`);
 const allcardsRoute = `${API_URL}/api/catalog/all-cards`;

@@ -1,6 +1,7 @@
 const server = require('../db');
 const bcrypt = require('bcrypt');
 const { createToken } = require('../utils/jwtHelpers');
+const jwt = require('jsonwebtoken')
 
 //This creates a new user
 exports.signUp = async (req, res) => {
@@ -64,6 +65,7 @@ exports.logout = (req, res) => {
   }
 };
 
+
 // this is to add gem when user claims free gems
 
 exports.freeGems = async (req, res) => {
@@ -79,3 +81,29 @@ exports.freeGems = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+exports.checkAuth = async (req, res) =>{
+  try{
+    if(!req.cookies.access_token){
+      return res.status(200).json({isLoggedIn: false})
+    }
+    
+    jwt.verify(req.cookies.access_token, process.env.ACCESS_TOKEN_SECRET,  async (err, user)=>{
+
+      const pool = server.openDb()
+      const userDB = await pool.query('SELECT * FROM users WHERE id = $1', [user.id])
+
+      if(!userDB){
+        return res.status(404).json({message: 'user does not exist'})
+      }
+
+      const userGems = userDB.rows[0].gems
+
+      res.status(200).json({isLoggedIn: true, userGems})
+    })
+  } catch (err){
+    res.status(404).json({message: 'Something went wrong'})
+  }
+}
+
