@@ -6,7 +6,7 @@ import server_back from './auth.js';
 const server = new server_back();
 
 //Get info modal
-const freeGemsBtn = document.querySelector('#free-gems');
+// const freeGemsBtn = document.querySelector('#free-gems');
 const infoGemsModal = document.querySelector('.gems-modal');
 const infoGemsOverlay = document.querySelector('.gems-overlay');
 const infoGemsCloseModalbtn = document.querySelector('.gems-info-close-modal');
@@ -31,18 +31,49 @@ infoGemsOverlay.addEventListener('click', () => {
   infoGemsOverlay.classList.add('gems-hidden');
 });
 
-// Add event listener to free gem
+//Get free info modal
+
+const infoFreeGemsModal = document.querySelector('.gems-free-modal');
+const infoFreeGemsOverlay = document.querySelector('.gems-free-overlay');
+const infoFreeGemsCloseModalbtn = document.querySelector(
+  '.gems-free-info-close-modal'
+);
+//Get info open
+const infoFreeGemsOpenModalbtn = document.querySelector(
+  '.gems-free-show-modal'
+);
+
+// infoFreeGemsOpenModalbtn.addEventListener('click', function () {
+//   infoFreeGemsModal.classList.remove('gems-free-hidden'); // <-- fixed typo here
+//   infoFreeGemsOverlay.classList.remove('gems-free-hidden');
+// });
+
 
 const freeGemsRoute = `${server.BACKEND_URL}/api/user/freegems`;
 
-freeGemsBtn.addEventListener('click', async () => {
+// Add event listener to close modal button
+infoFreeGemsCloseModalbtn.addEventListener('click', () => {
+  infoFreeGemsModal.classList.add('gems-free-hidden');
+  infoFreeGemsOverlay.classList.add('gems-free-hidden');
+});
+infoFreeGemsOverlay.addEventListener('click', () => {
+  infoFreeGemsModal.classList.add('gems-free-hidden');
+  infoFreeGemsOverlay.classList.add('gems-free-hidden');
+});
+
+// Add event listener to free gem
+
+infoFreeGemsOpenModalbtn.addEventListener('click', async () => {
   try {
     const response = await fetch(freeGemsRoute, requestOptions);
     const data = await response.json();
     console.log(data);
-    alert(data.message);
 
     server.renderUserGems(userGems);
+
+    infoFreeGemsModal.classList.remove('gems-free-hidden'); // <-- fixed typo here
+    infoFreeGemsOverlay.classList.remove('gems-free-hidden');
+
   } catch (error) {
     alert('An error occurred: ' + error.message);
   }

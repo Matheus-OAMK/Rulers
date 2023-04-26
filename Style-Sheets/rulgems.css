@@ -24,7 +24,7 @@ body {
   height: 20rem;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -130%);
+  transform: translate(-52%, -130%);
   position: absolute;
   z-index: 9999;
   border: rgb(235, 9, 9);
@@ -64,6 +64,53 @@ body {
   backdrop-filter: blur(0.4rem);
 }
 
+/* FREE MODAL */
+
+.gems-free-info {
+  background-color: #040405;
+  width: 40rem;
+  height: 20rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-52%, -130%);
+  position: absolute;
+  z-index: 10000;
+  border: aquamarine;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem aquamarine;
+  color: aquamarine;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 8.3rem;
+  padding-left: 1.3%;
+  padding-right: 1.3%;
+}
+
+.gems-free-info-close-modal {
+  top: 0.3rem;
+  right: 0.4rem;
+  position: absolute;
+  font-size: 3rem;
+  color: aquamarine;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.gems-free-hidden {
+  display: none;
+}
+
+.gems-free-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  /* overflow-y: hidden; */
+  backdrop-filter: blur(0.4rem);
+}
 /* GEMS MAIN CONTAINER */
 
 .gems-main-container {
