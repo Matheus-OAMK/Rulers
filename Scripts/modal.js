@@ -205,7 +205,7 @@ signupform.addEventListener('submit', async event => {
 /* LOG IN FUNCTION */
 /* ////////////////////////////////// */
 
-const LogInURL = 'http://localhost:3001/api/user/login';
+const LogInURL = `${API_URL}/api/user/login`;
 
 const logInForm = document.querySelector('.login-form');
 
