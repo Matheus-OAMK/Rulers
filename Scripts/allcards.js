@@ -1,13 +1,5 @@
 'use strict';
 
-// const new1 = document.querySelectorAll(`.filtering-option--input`);
-
-// new1.forEach(element => {
-//   element.addEventListener('input', () => {
-//     console.log(element.name);
-//   });
-// });
-
 const sytleTag = document.querySelector(`.style-for-slider`);
 const filterBtn = document.querySelector(`.filter-btn`);
 const filterOptionsBox = document.querySelector(`.filOptions`);
@@ -52,13 +44,13 @@ function cardRotate(el) {
 
 // ************************************* RENDER CARDS *************************************
 
-const API_URL = 'https://rulers-sh.com'
+const API_URL = 'https://rulers-sh.com';
 const cardTemplate = document.querySelector(`[data-card-template]`);
 const cardContainer = document.querySelector(`.catalog-container`);
 const allcardsRoute = `${API_URL}/api/catalog/all-cards`;
 //define an empty array to store the cards (needed for map function)
 let cards = [];
-fetch(allcardsRoute, {credentials: 'include' })
+fetch(allcardsRoute, { credentials: 'include' })
   .then(res => res.json())
   .then(data => {
     cards = data.map(champ => {

@@ -1,12 +1,16 @@
 'use strict';
 
-import { API_URL, requestOptions } from './helper.js';
+import { requestOptions } from './helper.js';
+import server_back from './auth.js';
+
+const server = new server_back();
 
 //Get info modal
 // const freeGemsBtn = document.querySelector('#free-gems');
 const infoGemsModal = document.querySelector('.gems-modal');
 const infoGemsOverlay = document.querySelector('.gems-overlay');
 const infoGemsCloseModalbtn = document.querySelector('.gems-info-close-modal');
+const userGems = document.querySelector(`.user-gems-amount`);
 //Get info open
 const infoGemsOpenModalbtn = document.querySelectorAll('.gems-show-modal');
 
@@ -44,6 +48,9 @@ const infoFreeGemsOpenModalbtn = document.querySelector(
 //   infoFreeGemsOverlay.classList.remove('gems-free-hidden');
 // });
 
+
+const freeGemsRoute = `${server.BACKEND_URL}/api/user/freegems`;
+
 // Add event listener to close modal button
 infoFreeGemsCloseModalbtn.addEventListener('click', () => {
   infoFreeGemsModal.classList.add('gems-free-hidden');
@@ -56,16 +63,17 @@ infoFreeGemsOverlay.addEventListener('click', () => {
 
 // Add event listener to free gem
 
-const freeGemsRoute = `${API_URL}/api/user/freegems`;
-
 infoFreeGemsOpenModalbtn.addEventListener('click', async () => {
   try {
     const response = await fetch(freeGemsRoute, requestOptions);
     const data = await response.json();
     console.log(data);
-    // alert(data.message);
+
+    server.renderUserGems(userGems);
+
     infoFreeGemsModal.classList.remove('gems-free-hidden'); // <-- fixed typo here
     infoFreeGemsOverlay.classList.remove('gems-free-hidden');
+
   } catch (error) {
     alert('An error occurred: ' + error.message);
   }

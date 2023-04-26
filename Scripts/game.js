@@ -1,6 +1,9 @@
 'use strict';
 
-import { API_URL, requestOptions } from './helper.js';
+import { requestOptions } from './helper.js';
+import server_back from './auth.js';
+
+const server = new server_back();
 
 const cards = document.querySelectorAll('.game--card');
 const playBtn = document.querySelector('.game--btn');
@@ -10,7 +13,7 @@ const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
 
-const gameCardsRoute = `${API_URL}/api/catalog/game`;
+const gameCardsRoute = `${server.BACKEND_URL}/api/catalog/game`;
 let randomCards = [];
 
 //function to set images on the cards from the array of cards users will win

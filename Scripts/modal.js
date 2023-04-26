@@ -1,6 +1,6 @@
 import server_back from './auth.js';
 
-const server = new server_back()
+const server = new server_back();
 
 const logSignHeaderBtns = document.querySelectorAll(`.log-sign-btn`);
 const accItem = document.querySelectorAll(`.account-item`);
@@ -153,20 +153,20 @@ registerHere.addEventListener('click', () => {
   openModalLink(openRegister);
 });
 
-const getUserStats = () =>{
+const getUserStats = userGemsDOMEl => {
   server.checkAuth().then(res => {
-    if(res.isLoggedIn){
-      userGems.textContent = res.userGems
-      logSignHeaderBtns.forEach(btn=>{
-        btn.style.display = "none"
-      })
-      accItem.forEach(item=>{
-        item.style.display = 'block'
-      })
-      accGemsAmountEl.style.display = 'block'
+    if (res.isLoggedIn) {
+      server.renderUserGems(userGemsDOMEl);
+      logSignHeaderBtns.forEach(btn => {
+        btn.style.display = 'none';
+      });
+      accItem.forEach(item => {
+        item.style.display = 'block';
+      });
+      accGemsAmountEl.style.display = 'block';
     }
-  })
-}
+  });
+};
 
 // ****************** SIGNUP FUNCTION ******************
 
@@ -175,10 +175,6 @@ const signupform = document.querySelector('.signup-form');
 const signUpUrl = `${server.BACKEND_URL}/api/user/sign-up`;
 
 signupform.addEventListener('submit', async event => {
-  // fetch(`${server.BACKEND_URL}/api/user/checkauth`, { credentials: 'include'}).then(res => res.json()).then(res => {
-  //   console.log(res.isLoggedIn)
-  // })
-
   event.preventDefault();
   const formData = new FormData(event.target);
   const username = formData.get('username');
@@ -261,21 +257,17 @@ logInForm.addEventListener('submit', async event => {
     });
     const result = await response.json();
 
-
     console.log(result);
 
-    getUserStats()
+    getUserStats(userGems);
 
     // close and clear login modal
     const modal = document.querySelector('.login-modal-content');
     closeModalLogSign(modal);
     clearLogin();
-
   } catch (error) {
     console.error('Error:', error);
   }
 });
 
-getUserStats()
-
-
+getUserStats(userGems);
