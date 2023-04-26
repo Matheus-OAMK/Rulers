@@ -333,7 +333,7 @@ body {
   font-weight: 600;
   color: white;
   align-self: center;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .settings-btn:hover {
@@ -350,6 +350,7 @@ body {
   color: white;
   align-self: center;
   box-shadow: 0 0 5px 0 rgba(102, 252, 241, 1);
+  transform: scale(1.02);
 }
 
 /* MEDIA QUERIES */

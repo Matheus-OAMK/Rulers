@@ -586,3 +586,84 @@ body {
   background-color: rgba(207, 149, 3, 1);
   box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
 }
+
+/* MEDIA QUERIES */
+
+/* |||||||||||  1350PX  ||||||||||||||| */
+
+@media (max-width: 84.375em) {
+  html {
+    font-size: 48.2%;
+  }
+}
+
+/* |||||||||||  1100PX  ||||||||||||||| */
+
+@media (max-width: 68.75em) {
+  html {
+    font-size: 40%;
+  }
+
+  .main-anim-cards {
+    margin-bottom: 15rem;
+  }
+}
+
+/* |||||||||||  900PX  ||||||||||||||| */
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 32%;
+  }
+}
+
+/* |||||||||||  700PX  ||||||||||||||| */
+
+@media (max-width: 43.75em) {
+  .main--info-row {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 10% 0 10%;
+    column-gap: 20rem;
+    font-size: 14rem;
+  }
+
+  .main--card-ad {
+    display: flex;
+    flex-direction: column;
+    max-width: 90rem;
+  }
+
+  .main--card-ad-img {
+    height: auto;
+    margin-bottom: 7rem;
+    order: 2;
+  }
+
+  .main--card-ad-textbox {
+    padding: 2.4rem;
+    height: 45rem;
+    order: 1;
+  }
+
+  .main--game-cta {
+    background-position: center;
+    max-width: 90%;
+  }
+
+  .main-game-cta-img {
+    max-width: 90%;
+    background-position: center;
+  }
+}
+
+/* |||||||||||  500PX  ||||||||||||||| */
+
+@media (max-width: 31.25em) {
+  html {
+    font-size: 24%;
+  }
+
+  .main-anim-cards {
+    margin-bottom: 20rem;
+  }
+}
