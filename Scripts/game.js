@@ -8,7 +8,7 @@ const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
 
-const API_URL = 'http://127.0.0.1:3001'
+const API_URL = 'https://rulers-sh.com'
 const gameCardsRoute = `${API_URL}/api/catalog/game`;
 let randomCards = [];
 

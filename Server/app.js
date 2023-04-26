@@ -28,4 +28,8 @@ app.use(cookieParser());
 app.use('/api/catalog', cardRouter);
 app.use('/api/user', userRouter);
 
+// PRODUCTION VERSION
+// app.use('/catalog', cardRouter);
+// app.use('/user', userRouter);
+
 module.exports = app;

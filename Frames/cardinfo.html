@@ -34,10 +34,10 @@
       href="/Images/favicons/Rulers-apple-180px.png"
     />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <script defer src="../Scripts/header.js"></script>
-    <script defer src="../Scripts/footer.js"></script>
-    <script defer src="../Scripts/modal.js"></script>
-    <script defer src="../Scripts/cardinfo.js"></script>
+    <script defer type="module" src="../Scripts/header.js"></script>
+    <script defer type="module" src="../Scripts/footer.js"></script>
+    <script defer type="module" src="../Scripts/modal.js"></script>
+    <script defer type="module" src="../Scripts/cardinfo.js"></script>
     <link rel="stylesheet" href="../Style-Sheets/cardinfo.css" />
     <link rel="stylesheet" href="../Style-Sheets/header.css" />
     <link rel="stylesheet" href="../Style-Sheets/footer.css" />
@@ -175,7 +175,7 @@
         </div>
         <div class="header__grid--right">
           <div class="account--nav">
-            <div class="account--nav-el">
+            <div class="account--nav-el gems-amount-icon">
               <a href="./rulgems.html">
                 <ion-icon
                   name="diamond-outline"
@@ -185,7 +185,7 @@
                   name="diamond"
                   class="header-icon account--nav-icon icon-filled"
                 ></ion-icon>
-                <p>1000</p>
+                <p class="user-gems-amount"></p>
               </a>
             </div>
             <div class="account--nav-el">

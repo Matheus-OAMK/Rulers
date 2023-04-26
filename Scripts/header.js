@@ -1,4 +1,6 @@
 'use strict';
+import server_back from './auth.js';
+
 const menuBtn = document.querySelector(`.menu-icon`);
 const menuPopup = document.querySelector(`.header__menu-popup`);
 const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
@@ -6,6 +8,27 @@ const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
 const accountIconButton = document.querySelector(`.account-icon`);
 const accountMenuPopup = document.querySelector(`.account--menu-default`);
 const accountMenuItems = document.querySelectorAll(`.account--menu-box`);
+// const logSignHeaderBtns = document.querySelectorAll(`.log-sign-btn`);
+// const accItem = document.querySelectorAll(`.account-item`);
+// const accGemsAmount = document.querySelector(`.gems-amount`);
+
+// const server = new server_back()
+// let Logged
+
+// server.checkAuth().then(res => {
+//   Logged = res
+  
+//   if(res){
+//     logSignHeaderBtns.forEach(btn=>{
+//       btn.style.display = "none"
+//     })
+//     accItem.forEach(item=>{
+//       item.style.display = 'block'
+//     })
+//     accGemsAmount.style.display = 'block'
+//   }
+// })
+
 
 class Header {
   menuIconButton;
