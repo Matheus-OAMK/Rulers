@@ -13,6 +13,8 @@ router.route('/login').post(userControllers.login);
 
 router.route('/logout').post(userControllers.logout);
 
+router.route('/freegems').post(authenticateToken, userControllers.freeGems);
+
 
 
 module.exports = router;
