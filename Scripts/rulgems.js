@@ -54,10 +54,9 @@ infoFreeGemsCloseModalbtn.addEventListener('click', () => {
 infoFreeGemsOverlay.addEventListener('click', () => {
   infoFreeGemsModal.classList.add('gems-free-hidden');
   infoFreeGemsOverlay.classList.add('gems-free-hidden');
+});
 
 // Add event listener to free gem
-
-
 
 const freeGemsRoute = `${API_URL}/api/user/freegems`;
 
