@@ -1,7 +1,6 @@
 const server = require('../db');
 const bcrypt = require('bcrypt');
 const { createToken } = require('../utils/jwtHelpers');
-const {promisify} = require('util')
 const jwt = require('jsonwebtoken')
 
 //This creates a new user
