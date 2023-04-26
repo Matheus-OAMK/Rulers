@@ -1,4 +1,11 @@
-const API_URL = 'http://127.0.0.1:3001';
+import server_back from './auth.js';
+
+const server = new server_back()
+
+const logSignHeaderBtns = document.querySelectorAll(`.log-sign-btn`);
+const accItem = document.querySelectorAll(`.account-item`);
+const accGemsAmountEl = document.querySelector(`.gems-amount-icon`);
+const userGems = document.querySelector(`.user-gems-amount`);
 
 const openSignupModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeSignupModalButtons = document.querySelectorAll(
@@ -146,13 +153,32 @@ registerHere.addEventListener('click', () => {
   openModalLink(openRegister);
 });
 
+const getUserStats = () =>{
+  server.checkAuth().then(res => {
+    if(res.isLoggedIn){
+      userGems.textContent = res.userGems
+      logSignHeaderBtns.forEach(btn=>{
+        btn.style.display = "none"
+      })
+      accItem.forEach(item=>{
+        item.style.display = 'block'
+      })
+      accGemsAmountEl.style.display = 'block'
+    }
+  })
+}
+
 // ****************** SIGNUP FUNCTION ******************
 
 const signupform = document.querySelector('.signup-form');
 
-const signUpUrl = `${API_URL}/api/user/sign-up`;
+const signUpUrl = `${server.BACKEND_URL}/api/user/sign-up`;
 
 signupform.addEventListener('submit', async event => {
+  // fetch(`${server.BACKEND_URL}/api/user/checkauth`, { credentials: 'include'}).then(res => res.json()).then(res => {
+  //   console.log(res.isLoggedIn)
+  // })
+
   event.preventDefault();
   const formData = new FormData(event.target);
   const username = formData.get('username');
@@ -205,7 +231,7 @@ signupform.addEventListener('submit', async event => {
 /* LOG IN FUNCTION */
 /* ////////////////////////////////// */
 
-const LogInURL = `${API_URL}/api/user/login`;
+const LogInURL = `${server.BACKEND_URL}/api/user/login`;
 
 const logInForm = document.querySelector('.login-form');
 
@@ -235,29 +261,21 @@ logInForm.addEventListener('submit', async event => {
     });
     const result = await response.json();
 
+
     console.log(result);
 
-    // if (response.ok) {
-    //   alert('Login successful!');
-    //   // redirect to another page, display a message, etc.
-    //   // window.location.href = 'success.html'; // redirect to another page
+    getUserStats()
 
-    //   //close modal and empty
-    //   const modal = document.querySelector('.login-modal-content');
-    //   closeModalLogSign(modal);
-    //   clearLogin();
+    // close and clear login modal
+    const modal = document.querySelector('.login-modal-content');
+    closeModalLogSign(modal);
+    clearLogin();
 
-    //   //If the user already exists
-    // } else if (
-    //   result.error.includes(
-    //     'duplicate key value violates unique constraint "users_username_key"'
-    //   )
-    // ) {
-    //   alert('Username is already in use. Please choose another username.');
-    // } else {
-    //   alert(`Please try again. Error: ${result.error}`);
-    // }
   } catch (error) {
     console.error('Error:', error);
   }
 });
+
+getUserStats()
+
+
