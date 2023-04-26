@@ -7,7 +7,9 @@ const card2Img = document.querySelector('#game--card-img-2');
 const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
-const gameCardsRoute = 'http://localhost:3001/api/catalog/game';
+
+const API_URL = 'http://127.0.0.1:3001'
+const gameCardsRoute = `${API_URL}/api/catalog/game`;
 let randomCards = [];
 
 //function to set images on the cards from the array of cards users will win

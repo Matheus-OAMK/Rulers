@@ -51,9 +51,11 @@ function cardRotate(el) {
 // cardProductBox.setAttribute('rarity', 'legendary');
 
 // ************************************* RENDER CARDS *************************************
+
+const API_URL = 'http://127.0.0.1:3001'
 const cardTemplate = document.querySelector(`[data-card-template]`);
 const cardContainer = document.querySelector(`.catalog-container`);
-const allcardsRoute = 'http://localhost:3001/api/catalog/all-cards';
+const allcardsRoute = `${API_URL}/api/catalog/all-cards`;
 //define an empty array to store the cards (needed for map function)
 let cards = [];
 fetch(allcardsRoute, {credentials: 'include' })
