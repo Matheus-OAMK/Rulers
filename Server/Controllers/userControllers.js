@@ -45,7 +45,8 @@ exports.login = async (req, res) => {
     res.cookie('access_token', token.access_token, {
       httpOnly: true,
       // comment out this line below to test on postman
-       sameSite: 'None', secure: true
+      sameSite: 'None',
+      secure: true,
     });
     res.json(token);
   } catch (error) {
@@ -53,11 +54,28 @@ exports.login = async (req, res) => {
   }
 };
 
+// this is to log user out
 exports.logout = (req, res) => {
   try {
     res.clearCookie('access_token');
     return res.status(200).json({ message: 'access token deleted' });
   } catch (error) {
     res.status(401).json({ error: error.message });
+  }
+};
+
+// this is to add gem when user claims free gems
+
+exports.freeGems = async (req, res) => {
+  const pool = server.openDb();
+  const query = 'UPDATE users SET gems = gems + 1000 WHERE id = $1 RETURNING *';
+  
+  try {
+    await pool.query(query, [req.user.id]);
+    res
+      .status(200)
+      .json({ message: `1000 gems added to user ${req.user.username}` });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };

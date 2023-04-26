@@ -19,7 +19,7 @@ exports.getAllCards = async (req, res) => {
 };
 
 
-exports.insertCard = async (req, res) => {
+exports.getThreeCards = async (req, res) => {
   const pool = server.openDb();
   
   pool.query(queryThree, (error, result) => {
@@ -34,15 +34,13 @@ exports.insertCard = async (req, res) => {
   
 };
 
-exports.inserThreeCards = async (req, res) => {
+exports.insertCard = async (req, res) => {
   const pool= server.openDb();
-  try {
-    
-    
+
+  try {  
     await pool.query(queryThreeInsert, [req.user.id, req.body.id])
     res.status(200).json({message: 'Card added to user'})
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-
 };

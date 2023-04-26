@@ -1,5 +1,9 @@
 'use strict';
 
+import { API_URL, requestOptions } from './helper.js';
+
+
+
 const cards = document.querySelectorAll('.game--card');
 const playBtn = document.querySelector('.game--btn');
 const card1Img = document.querySelector('#game--card-img-1');
@@ -8,7 +12,7 @@ const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
 
-const API_URL = 'http://127.0.0.1:3001'
+
 const gameCardsRoute = `${API_URL}/api/catalog/game`;
 let randomCards = [];
 
@@ -20,13 +24,10 @@ function setCardImages() {
   card3Img.src = randomCards[2].img_front;
 }
 
+
 function sendCardsToDatabase(card) {
   fetch(gameCardsRoute, {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    ...requestOptions,
     body: JSON.stringify(card),
   })
     .then(response => response.json())
