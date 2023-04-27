@@ -1,6 +1,6 @@
 class server {
-  // BACKEND_URL = "https://rulers-sh.com";
-  BACKEND_URL = 'http://127.0.0.1:3001';
+  BACKEND_URL = "https://rulers-sh.com";
+  // BACKEND_URL = 'http://127.0.0.1:3001';
 
   checkAuth = async () => {
     return new Promise((resolve, reject) => {
@@ -29,7 +29,6 @@ class server {
   renderUserState = (logSignHeaderBtns, accItems, accGemsAmountEl) => {
     this.checkAuth().then((res) => {
       if (res.isLoggedIn) {
-        // server.renderUserGems(userGemsDOMEl);
         logSignHeaderBtns.forEach((btn) => {
           btn.style.display = "none";
         });

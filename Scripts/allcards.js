@@ -4,6 +4,31 @@ import server_back from "./auth.js";
 
 const server = new server_back();
 
+const purchaseOpenModalBtn = document.getElementsByClassName(
+  "purchase-open-modal"
+)[0];
+const confirmationModalOverlay = document.getElementsByClassName(
+  "confirmation-modal-overlay"
+)[0];
+const purchaseConfirmationModal = document.getElementsByClassName(
+  "purchase-confirmation-modal"
+)[0];
+const purchaseConfirmationCloseModalBtn = document.getElementsByClassName(
+  "purchase-confirmation-close-modal"
+)[0];
+const purchaseConfirmBtn = document.getElementsByClassName(
+  "purchase-confirm-btn"
+)[0];
+const purchaseConfirmedModal = document.getElementsByClassName(
+  "purchase-confirmed-modal"
+)[0];
+const purchaseCancelBtn = document.getElementsByClassName(
+  "purchase-cancel-btn"
+)[0];
+const purchaseCanceledModal = document.getElementsByClassName(
+  "purchase-canceled-modal"
+)[0];
+
 const sytleTag = document.querySelector(`.style-for-slider`);
 const filterBtn = document.querySelector(`.filter-btn`);
 const filterOptionsBox = document.querySelector(`.filOptions`);
@@ -38,15 +63,75 @@ filterBtn.addEventListener("click", () => {
   }
 });
 
-// const cardProductBox = document.querySelector('[data-card-product-box]');
-// cardProductBox.setAttribute('rarity', 'legendary');
-
 // ************************************* RENDER CARDS *************************************
 
-// const API_URL = 'https://rulers-sh.com';
 const cardTemplate = document.querySelector(`[data-card-template]`);
 const cardContainer = document.querySelector(`.catalog-container`);
 const allcardsRoute = `${server.BACKEND_URL}/api/catalog/all-cards`;
+
+let buyBtns = [];
+let choosenCardID = null;
+
+const resetCardID = () => {
+  choosenCardID = null;
+};
+
+function showConfirmationModal() {
+  confirmationModalOverlay.classList.remove(
+    "confirmation-modal-overlay-hidden"
+  );
+  purchaseConfirmationModal.classList.remove(
+    "purchase-confirmation-modal-hidden"
+  );
+}
+
+function closeConfirmationModal() {
+  confirmationModalOverlay.classList.add("confirmation-modal-overlay-hidden");
+  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
+}
+
+function purchaseConfirmed() {
+  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
+  purchaseConfirmedModal.classList.remove("purchase-confirm-info-hidden");
+}
+
+function closePurchaseComment() {
+  confirmationModalOverlay.classList.add("confirmation-modal-overlay-hidden");
+  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
+  purchaseConfirmedModal.classList.add("purchase-confirm-info-hidden");
+  purchaseCanceledModal.classList.add("purchase-cancel-info-hidden");
+}
+// display purchase confirmed modal when confirm button is clicked
+purchaseConfirmBtn.addEventListener("click", function () {
+  /* //////////////////////////////// */
+  /* HERE IS GONNA BE THE CODE TO PURCHASE THE CARD */
+  /* //////////////////////////////// */
+  console.log(choosenCardID);
+  // RUN THIS CODE WHEN PURCHASE IS DONE
+  purchaseConfirmed();
+});
+
+// close purchase confirmation modal when close button is clicked
+purchaseConfirmationCloseModalBtn.addEventListener("click", function () {
+  closeConfirmationModal();
+  resetCardID();
+});
+
+window.addEventListener("click", function (event) {
+  if (
+    event.target == confirmationModalOverlay ||
+    event.target == purchaseConfirmedModal ||
+    event.target == purchaseCanceledModal
+  ) {
+    closePurchaseComment();
+    resetCardID();
+  }
+});
+
+purchaseCancelBtn.addEventListener("click", () => {
+  closeConfirmationModal();
+});
+
 //define an empty array to store the cards (needed for map function)
 let cards = [];
 fetch(allcardsRoute, { credentials: "include" })
@@ -60,7 +145,7 @@ fetch(allcardsRoute, { credentials: "include" })
       const cardImgBack = card.querySelector(`[data-card-img-back]`);
       const cardInfoLink = card.querySelector(`[data-card-champ-link]`);
 
-      cardProduct.setAttribute("data-card-id", champ.id);
+      cardProduct.setAttribute("id", champ.id);
       cardProduct.setAttribute("data-card-rarity", champ.rarity);
       cardPrice.textContent = champ.price;
       cardImgFront.src = champ.img_front;
@@ -74,6 +159,24 @@ fetch(allcardsRoute, { credentials: "include" })
         price: champ.price,
         element: card,
       };
+    });
+
+    buyBtns = document.querySelectorAll(".buy-button");
+    buyBtns.forEach((btn) => {
+      server.checkAuth().then((res) => {
+        if (res.isLoggedIn) {
+          btn.disabled = false;
+          btn.addEventListener("click", () => {
+            choosenCardID = btn.parentElement.parentElement.id;
+
+            showConfirmationModal();
+          });
+        } else {
+          btn.addEventListener("click", () => {
+            alert("Plese log in.");
+          });
+        }
+      });
     });
   });
 
