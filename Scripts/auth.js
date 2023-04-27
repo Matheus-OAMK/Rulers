@@ -39,7 +39,6 @@ class server {
   renderUserState = (logSignHeaderBtns, accItems, accGemsAmountEl) => {
     this.checkAuth().then((res) => {
       if (res.isLoggedIn) {
-        // server.renderUserGems(userGemsDOMEl);
         logSignHeaderBtns.forEach((btn) => {
           btn.style.display = "none";
         });
