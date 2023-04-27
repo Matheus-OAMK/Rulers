@@ -98,9 +98,9 @@ exports.checkAuth = async (req, res) =>{
         return res.status(404).json({message: 'user does not exist'})
       }
 
-      const userGems = userDB.rows[0].gems
+      const userData = userDB.rows[0]
 
-      res.status(200).json({isLoggedIn: true, userGems})
+      res.status(200).json({isLoggedIn: true, userData})
     })
   } catch (err){
     res.status(404).json({message: 'Something went wrong'})
