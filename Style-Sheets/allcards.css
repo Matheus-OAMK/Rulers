@@ -432,7 +432,7 @@ body {
 }
 
 .card-element-box[data-card-rarity='rare'] {
-  background: linear-gradient(180deg, #572626 25%, #0d1117 75%);
+  background: linear-gradient(180deg, #572626 25%, #040405 75%);
   background-size: 100% 200%;
   background-position: 50% 100%;
 }
