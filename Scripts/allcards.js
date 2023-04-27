@@ -173,7 +173,7 @@ fetch(allcardsRoute, { credentials: "include" })
           });
         } else {
           btn.addEventListener("click", () => {
-            alert("Please log in.");
+            alert("Please log in to purchase cards!");
           });
         }
       });

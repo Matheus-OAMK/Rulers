@@ -40,11 +40,18 @@ playBtn.addEventListener('click', async () => {
   playBtn.disabled = true;
 
   const enoughGems = await server.checkIfEnoughGems(200);
-  if (!enoughGems) {
-    alert('You do not have enough gems to play the game');
+  const res = await server.checkAuth();
+  
+  if(res.isLoggedIn === false) {
+  alert('Please log in to play the game!');
+  playBtn.disabled = false;
+  return;
+  } else if (!enoughGems) {
+    alert('Please purchase more gems to play the game!');
     playBtn.disabled = false;
     return;
-  } else {
+    
+  } else{
     //reset the array on every click
     randomCards = [];
 
