@@ -44,7 +44,7 @@
     <script defer type="module" src="../Scripts/header.js"></script>
     <script defer type="module" src="../Scripts/footer.js"></script>
     <script defer type="module" src="../Scripts/allcards.js"></script>
-    <script defer type="module" src="../Scripts/confirmation.js"></script>
+    <!-- <script defer type="module" src="../Scripts/confirmation.js"></script> -->
     <script defer type="module" src="../Scripts/modal.js"></script>
     <link rel="stylesheet" href="../Style-Sheets/modal.css" />
     <link rel="stylesheet" href="../Style-Sheets/confirmation.css" />
@@ -404,7 +404,7 @@
           <div class="card-element">
             <div
               class="card-element-box"
-              data-card-id=""
+              id=""
               data-card-rarity=""
               data-card-product-box
             >
@@ -441,12 +441,7 @@
                     class="card-element-gems-img"
                   />
                 </div>
-                <button
-                  class="buy-button purchase-open-modal"
-                  onclick="getCardID(this)"
-                >
-                  Buy now
-                </button>
+                <button class="buy-button purchase-open-modal">Buy now</button>
                 <a
                   href=""
                   target="_blank"

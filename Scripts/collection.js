@@ -20,8 +20,8 @@ fetch(`${server.BACKEND_URL}/api/catalog/collection`, {
       const cardImgBack = card.querySelector(`[data-card-img-back]`);
       const cardInfoLink = card.querySelector(`[data-card-champ-link]`);
 
-      cardProduct.setAttribute('data-card-id', champ.card_id);
-      cardProduct.setAttribute('data-card-rarity', champ.rarity);
+      cardProduct.setAttribute("id", champ.card_id);
+      cardProduct.setAttribute("data-card-rarity", champ.rarity);
       cardImgFront.src = champ.img_front;
       cardImgBack.src = champ.img_back;
       cardInfoLink.href = champ.info_link;

@@ -262,8 +262,7 @@ logInForm.addEventListener("submit", async (event) => {
     return alert(result.error);
   }
 
-  server.renderUserGems(userGems);
-  server.renderUserState(logSignHeaderBtns, accItems, accGemsAmountEl);
+  location.reload();
 
   // close and clear login modal
   const modal = document.querySelector(".login-modal-content");

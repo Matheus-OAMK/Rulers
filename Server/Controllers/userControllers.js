@@ -38,7 +38,7 @@ exports.login = async (req, res) => {
       users.rows[0].password
     );
     if (!validPassword)
-      return res.status(400).json({ error: 'Invalid password' });
+      return res.status(400).json({ error: 'Invalid username or password' });
     //Jwt
 
     let token = createToken(users.rows[0]);
