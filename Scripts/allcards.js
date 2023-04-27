@@ -184,6 +184,23 @@ fetch(allcardsRoute, { credentials: "include" })
 const searchInput = document.querySelector(`[data-search]`);
 const searchIcon = document.querySelector(`.search-icon`);
 
+//this function will hide cards that do not match the filters or search
+function hideFilterCards(card) {
+  const matchesRarity =
+  filters.rarity.length === 0 ||
+  filters.rarity.includes(card.rarity.toLowerCase());
+const matchesRole =
+  filters.role.length === 0 ||
+  filters.role.includes(card.role.toLowerCase());
+const matchesPrice = card.price <= filters.price;
+const matchesSearch = card.name.toLowerCase().includes(searchInput.value.toLowerCase());
+//Hide cards that do not match the filters
+card.element.classList.toggle(
+  "filter-options-hidden",
+  !matchesRarity || !matchesRole || !matchesPrice || !matchesSearch
+);
+}
+
 //search bar function to filter cards
 searchInput.addEventListener("input", (input) => {
   if (searchInput.value) {
@@ -194,8 +211,7 @@ searchInput.addEventListener("input", (input) => {
 
   const value = input.target.value.toLowerCase();
   cards.forEach((card) => {
-    const isVisible = card.name.toLowerCase().includes(value);
-    card.element.classList.toggle("filter-options-hidden", !isVisible);
+    hideFilterCards(card);
   });
 });
 
@@ -230,18 +246,7 @@ filterBoxes.forEach((filterBox) => {
     //loop through the cards and check if they match the filters
     cards.forEach((card) => {
       //check if the card matches the rarity and role filters ( or if there are no filters selected )
-      const matchesRarity =
-        filters.rarity.length === 0 ||
-        filters.rarity.includes(card.rarity.toLowerCase());
-      const matchesRole =
-        filters.role.length === 0 ||
-        filters.role.includes(card.role.toLowerCase());
-      const matchesPrice = card.price <= filters.price;
-      //Hide cards that do not match the filters
-      card.element.classList.toggle(
-        "filter-options-hidden",
-        !matchesRarity || !matchesRole || !matchesPrice
-      );
+      hideFilterCards(card);
     });
   });
 });
@@ -251,7 +256,6 @@ const slider = document.querySelector(`.filter-slider`);
 
 //GET SLIDER INPUT DATA
 slider.addEventListener("input", () => {
-  // console.log(slider.value);
   sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;height: 6px;}`;
 
   //set the price in the filters object  to the slider value
@@ -260,22 +264,11 @@ slider.addEventListener("input", () => {
   cards.forEach((card) => {
     //check if the card matches the rarity and role filters ( or if there are no filters selected )
     //if the array is empty then all cards match (true)
-    const matchesRarity =
-      filters.rarity.length === 0 ||
-      filters.rarity.includes(card.rarity.toLowerCase());
-    const matchesRole =
-      filters.role.length === 0 ||
-      filters.role.includes(card.role.toLowerCase());
-    const matchesPrice = card.price <= filters.price;
-    //Hide cards that do not match the filters
-    card.element.classList.toggle(
-      "filter-options-hidden",
-      !matchesRarity || !matchesRole || !matchesPrice
-    );
+    hideFilterCards(card);
   });
 });
 
-//sort cards
+// ************************************* SORTING FUNCTIONS *************************************
 // giving a numeric order to the rarity
 const rarityOrder = { rare: 1, epic: 2, legendary: 3 };
 
