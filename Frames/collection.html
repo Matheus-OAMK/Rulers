@@ -37,7 +37,6 @@
     <script defer type="module" src="../Scripts/header.js"></script>
     <script defer type="module" src="../Scripts/footer.js"></script>
     <script defer type="module" src="../Scripts/modal.js"></script>
-    <script defer type="module" src="../Scripts/allcards.js"></script>
     <script defer type="module" src="../Scripts/collection.js"></script>
     <link rel="stylesheet" href="../Style-Sheets/header.css" />
     <link rel="stylesheet" href="../Style-Sheets/footer.css" />
@@ -306,8 +305,8 @@
         <div class="sort-by-box">
           <select class="sort-by">
             <option value="">Sort by</option>
-            <option value="">data-card-Rarity high to low</option>
-            <option value="">data-card-Rarity low to high</option>
+            <option value="">Rarity high to low</option>
+            <option value="">Rarity low to high</option>
           </select>
           <div class="sort-arrs">
             <ion-icon
@@ -325,6 +324,7 @@
             <div class="card-element">
               <div
                 class="card-element-box card-element-box-collection"
+                data-card-id=""
                 data-card-rarity=""
                 data-card-product-box
               >
@@ -353,7 +353,11 @@
                   </div>
                 </div>
                 <div class="card-catalog-info catalog-info-collection">
-                  <a href="" class="charachter-link" data-card-charachter-link
+                  <a
+                    href=""
+                    target="_blank"
+                    class="charachter-link"
+                    data-card-champ-link
                     >More charachter info &rarr;</a
                   >
                 </div>
@@ -453,5 +457,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      function cardRotate(el) {
+        el.classList.toggle(`rotated`);
+      }
+    </script>
   </body>
 </html>

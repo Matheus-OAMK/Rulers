@@ -12,6 +12,7 @@ const card2Img = document.querySelector('#game--card-img-2');
 const card3Img = document.querySelector('#game--card-img-3');
 const cardsInner = document.querySelectorAll('.game--card-inner');
 const gameTitle = document.querySelector('.game--title');
+const userGems = document.querySelector(`.user-gems-amount`);
 
 const gameCardsRoute = `${server.BACKEND_URL}/api/catalog/game`;
 let randomCards = [];
@@ -52,6 +53,7 @@ playBtn.addEventListener('click', () => {
       randomCards.forEach(card => {
         sendCardsToDatabase(card);
       });
+      server.renderUserGems(userGems)
     });
 
   //Hide the title
