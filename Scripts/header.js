@@ -1,5 +1,9 @@
 'use strict';
 
+import { requestOptions } from './helper.js';
+import server_back from './auth.js';
+const server = new server_back();
+
 const menuBtn = document.querySelector(`.menu-icon`);
 const menuPopup = document.querySelector(`.header__menu-popup`);
 const menuItemBtns = document.querySelectorAll(`.header__menu--item`);
@@ -188,3 +192,25 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+
+
+
+// Function to LOGOUT
+const logoutBtn = document.querySelector(`#logout-btn`);
+const logoutRoute = `${server.BACKEND_URL}/api/user/logout`;
+
+logoutBtn.addEventListener(`click`, async () => {
+ try {
+   const response = await fetch(logoutRoute, requestOptions);
+   if (response.ok) {
+     // Logout was successful, do something here
+     alert(`You have been logged out`);
+     window.location.href = '../index.html'; // redirect to another page
+   } else {
+     // Handle the error response here
+     alert(`Something went wrong`);
+   }
+ } catch (error) {
+  console.error('Error:', error);
+ }
+});
