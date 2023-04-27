@@ -1,9 +1,11 @@
 "use strict";
 
 import server_back from "./auth.js";
+import { requestOptions } from "./helper.js";
 
 const server = new server_back();
 
+const userGems = document.querySelector(`.user-gems-amount`);
 const purchaseOpenModalBtn = document.getElementsByClassName(
   "purchase-open-modal"
 )[0];
@@ -101,17 +103,23 @@ function closePurchaseComment() {
   purchaseConfirmedModal.classList.add("purchase-confirm-info-hidden");
   purchaseCanceledModal.classList.add("purchase-cancel-info-hidden");
 }
-// display purchase confirmed modal when confirm button is clicked
 purchaseConfirmBtn.addEventListener("click", function () {
-  /* //////////////////////////////// */
-  /* HERE IS GONNA BE THE CODE TO PURCHASE THE CARD */
-  /* //////////////////////////////// */
-  console.log(choosenCardID);
-  // RUN THIS CODE WHEN PURCHASE IS DONE
-  purchaseConfirmed();
+  fetch(`${server.BACKEND_URL}/api/catalog/${choosenCardID}`, requestOptions)
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === "fail" || res.status === "error") {
+        alert(res.message);
+        closeConfirmationModal();
+        return;
+      }
+      server.renderUserGems(userGems);
+      purchaseConfirmed();
+    })
+    .catch((err) => {
+      alert(err);
+    });
 });
 
-// close purchase confirmation modal when close button is clicked
 purchaseConfirmationCloseModalBtn.addEventListener("click", function () {
   closeConfirmationModal();
   resetCardID();
@@ -187,18 +195,19 @@ const searchIcon = document.querySelector(`.search-icon`);
 //this function will hide cards that do not match the filters or search
 function hideFilterCards(card) {
   const matchesRarity =
-  filters.rarity.length === 0 ||
-  filters.rarity.includes(card.rarity.toLowerCase());
-const matchesRole =
-  filters.role.length === 0 ||
-  filters.role.includes(card.role.toLowerCase());
-const matchesPrice = card.price <= filters.price;
-const matchesSearch = card.name.toLowerCase().includes(searchInput.value.toLowerCase());
-//Hide cards that do not match the filters
-card.element.classList.toggle(
-  "filter-options-hidden",
-  !matchesRarity || !matchesRole || !matchesPrice || !matchesSearch
-);
+    filters.rarity.length === 0 ||
+    filters.rarity.includes(card.rarity.toLowerCase());
+  const matchesRole =
+    filters.role.length === 0 || filters.role.includes(card.role.toLowerCase());
+  const matchesPrice = card.price <= filters.price;
+  const matchesSearch = card.name
+    .toLowerCase()
+    .includes(searchInput.value.toLowerCase());
+  //Hide cards that do not match the filters
+  card.element.classList.toggle(
+    "filter-options-hidden",
+    !matchesRarity || !matchesRole || !matchesPrice || !matchesSearch
+  );
 }
 
 //search bar function to filter cards

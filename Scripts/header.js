@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-import { requestOptions } from './helper.js';
-import server_back from './auth.js';
+import { requestOptions } from "./helper.js";
+import server_back from "./auth.js";
 const server = new server_back();
 
 const menuBtn = document.querySelector(`.menu-icon`);
@@ -41,7 +41,7 @@ class Header {
   openMenu() {
     this.menuPopupWindow.classList.remove(`no-display`);
     this.menuPopupWindow.classList.add(`menuExpand`);
-    this.menuPageLinks.forEach(menuItem => {
+    this.menuPageLinks.forEach((menuItem) => {
       menuItem.classList.add(`menuItemToRight`);
     });
   }
@@ -49,14 +49,14 @@ class Header {
   hideMenu() {
     this.menuPopupWindow.style.animation = `menuReduce 0.6s ease-in`;
     this.menuPopupWindow.classList.remove(`menuExpand`);
-    this.menuPageLinks.forEach(menuItem => {
+    this.menuPageLinks.forEach((menuItem) => {
       menuItem.classList.remove(`menuItemToRight`);
     });
-    this.menuPageLinks.forEach(menuItem => {
-      menuItem.style.animation = 'menuItemToLeft 0.6s ease-in';
+    this.menuPageLinks.forEach((menuItem) => {
+      menuItem.style.animation = "menuItemToLeft 0.6s ease-in";
     });
     setTimeout(() => {
-      this.menuPageLinks.forEach(menuItem => {
+      this.menuPageLinks.forEach((menuItem) => {
         menuItem.style.animation = ``;
       });
       this.menuPopupWindow.style.animation = ``;
@@ -67,7 +67,7 @@ class Header {
   openAccountMenu() {
     this.accountMenuPopup.classList.remove(`no-display`);
     this.accountMenuPopup.classList.add(`accMenuExpand`);
-    this.accountMenuItems.forEach(accMenuItem => {
+    this.accountMenuItems.forEach((accMenuItem) => {
       accMenuItem.classList.add(`accMenuItemToLeft`);
     });
   }
@@ -76,16 +76,16 @@ class Header {
     this.accountMenuPopup.style.animation = `accMenuReduce 0.6s ease-in`;
     this.accountMenuPopup.classList.remove(`accMenuExpand`);
 
-    this.accountMenuItems.forEach(accMenuItem => {
+    this.accountMenuItems.forEach((accMenuItem) => {
       accMenuItem.classList.remove(`accMenuItemToLeft`);
     });
-    this.accountMenuItems.forEach(accMenuItem => {
-      accMenuItem.style.animation = 'accMenuItemToRight 0.6s ease-in';
+    this.accountMenuItems.forEach((accMenuItem) => {
+      accMenuItem.style.animation = "accMenuItemToRight 0.6s ease-in";
     });
 
     setTimeout(() => {
-      this.accountMenuItems.forEach(accMenuItem => {
-        accMenuItem.style.animation = '';
+      this.accountMenuItems.forEach((accMenuItem) => {
+        accMenuItem.style.animation = "";
       });
 
       this.accountMenuPopup.style.animation = ``;
@@ -198,17 +198,16 @@ const logoutBtn = document.querySelector(`#logout-btn`);
 const logoutRoute = `${server.BACKEND_URL}/api/user/logout`;
 
 logoutBtn.addEventListener(`click`, async () => {
- try {
-   const response = await fetch(logoutRoute, requestOptions);
-   if (response.ok) {
-     // Logout was successful, do something here
-     alert(`You have been logged out`);
-     window.location.href = '../index.html'; // redirect to another page
-   } else {
-     // Handle the error response here
-     alert(`Something went wrong`);
-   }
- } catch (error) {
-  console.error('Error:', error);
- }
+  try {
+    const response = await fetch(logoutRoute, requestOptions);
+    if (response.ok) {
+      // Logout was successful, do something here
+      window.location.href = "../index.html"; // redirect to another page
+    } else {
+      // Handle the error response here
+      alert(`Something went wrong`);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });

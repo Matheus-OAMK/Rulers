@@ -1,17 +1,17 @@
-'use strict';
+"use strict";
 
-import { requestOptions } from './helper.js';
-import server_back from './auth.js';
+import { requestOptions } from "./helper.js";
+import server_back from "./auth.js";
 
 const server = new server_back();
 
-const cards = document.querySelectorAll('.game--card');
-const playBtn = document.querySelector('.game--btn');
-const card1Img = document.querySelector('#game--card-img-1');
-const card2Img = document.querySelector('#game--card-img-2');
-const card3Img = document.querySelector('#game--card-img-3');
-const cardsInner = document.querySelectorAll('.game--card-inner');
-const gameTitle = document.querySelector('.game--title');
+const cards = document.querySelectorAll(".game--card");
+const playBtn = document.querySelector(".game--btn");
+const card1Img = document.querySelector("#game--card-img-1");
+const card2Img = document.querySelector("#game--card-img-2");
+const card3Img = document.querySelector("#game--card-img-3");
+const cardsInner = document.querySelectorAll(".game--card-inner");
+const gameTitle = document.querySelector(".game--title");
 const userGems = document.querySelector(`.user-gems-amount`);
 
 const gameCardsRoute = `${server.BACKEND_URL}/api/catalog/game`;
@@ -30,91 +30,90 @@ function sendCardsToDatabase(card) {
     ...requestOptions,
     body: JSON.stringify(card),
   })
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(error => console.error(error));
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((error) => console.error(error));
 }
 
-playBtn.addEventListener('click', async () => {
+playBtn.addEventListener("click", async () => {
   //disable button so they cant click it again until game is over
   playBtn.disabled = true;
 
   const enoughGems = await server.checkIfEnoughGems(200);
   const res = await server.checkAuth();
-  
-  if(res.isLoggedIn === false) {
-  alert('Please log in to play the game!');
-  playBtn.disabled = false;
-  return;
-  } else if (!enoughGems) {
-    alert('Please purchase more gems to play the game!');
+
+  if (res.isLoggedIn === false) {
+    alert("Please log in to play the game!");
     playBtn.disabled = false;
     return;
-    
-  } else{
+  } else if (!enoughGems) {
+    alert("Please purchase more gems to play the game!");
+    playBtn.disabled = false;
+    return;
+  } else {
     //reset the array on every click
     randomCards = [];
 
     //fetch the route to 3 random cards and push them into the array
-    fetch(gameCardsRoute, { credentials: 'include' })
-      .then(res => res.json())
-      .then(data => {
-        data.forEach(card => {
+    fetch(gameCardsRoute, { credentials: "include" })
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((card) => {
           randomCards.push(card);
         });
         //call the function to set the images
         setCardImages();
-        randomCards.forEach(card => {
+        randomCards.forEach((card) => {
           sendCardsToDatabase(card);
         });
         server.renderUserGems(userGems);
       });
 
     //Hide the title
-    gameTitle.style.opacity = '0';
+    gameTitle.style.opacity = "0";
 
     //Move cards above and to the side at different times
     setTimeout(() => {
-      cards[2].classList.add('card-3-move');
+      cards[2].classList.add("card-3-move");
     }, 0);
 
     setTimeout(() => {
-      cards[1].classList.add('card-2-move');
+      cards[1].classList.add("card-2-move");
     }, 700);
 
     setTimeout(() => {
-      cards[0].classList.add('card-1-move');
+      cards[0].classList.add("card-1-move");
     }, 1400);
 
     //flip cards to reveal the images
     setTimeout(() => {
-      cardsInner.forEach(card => {
-        card.classList.add('flipped');
+      cardsInner.forEach((card) => {
+        card.classList.add("flipped");
       });
     }, 3000);
 
     //return cards back to start position
     setTimeout(() => {
-      cards[2].classList.remove('card-3-move');
-      cards[1].classList.remove('card-2-move');
-      cards[0].classList.remove('card-1-move');
+      cards[2].classList.remove("card-3-move");
+      cards[1].classList.remove("card-2-move");
+      cards[0].classList.remove("card-1-move");
     }, 6500);
 
     //reset the cards to question mark
     setTimeout(() => {
-      cardsInner.forEach(card => {
-        card.style.transform = '';
-        card.classList.remove('flipped');
+      cardsInner.forEach((card) => {
+        card.style.transform = "";
+        card.classList.remove("flipped");
       });
     }, 6000);
 
     setTimeout(() => {
-      gameTitle.style.opacity = '';
+      gameTitle.style.opacity = "";
     }, 7000);
 
     //re enable button
     setTimeout(() => {
-      gameTitle.style.opacity = '';
+      gameTitle.style.opacity = "";
       playBtn.disabled = false;
     }, 7500);
   }

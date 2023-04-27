@@ -11,7 +11,6 @@ const openSignupModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeSignupModalButtons = document.querySelectorAll(
   "[data-signup-close-button]"
 );
-// const closeSignupModalButtons = document.getElementById('signup-modal-close')
 const openLoginModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeLoginModalButtons = document.querySelectorAll(
   "[data-login-close-button]"
@@ -30,7 +29,6 @@ openSignupModalButtons.forEach((button) => {
 openLoginModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
-    // console.log(modal);
     openModalLogSign(modal);
   });
 });
@@ -84,8 +82,6 @@ function closeModalLogSign(modal) {
 function clearSignUp() {
   const usernameInput = document.getElementById("signup-modal-username");
   usernameInput.value = "";
-  // const emailInput = document.getElementById('signup-modal-email');
-  // emailInput.value = '';
   const passInput = document.getElementById("signup-modal-password");
   passInput.value = "";
 }
@@ -153,20 +149,6 @@ registerHere.addEventListener("click", () => {
   openModalLink(openRegister);
 });
 
-// const getUserStats = userGemsDOMEl => {
-//   server.checkAuth().then(res => {
-//     if (res.isLoggedIn) {
-//       server.renderUserGems(userGemsDOMEl);
-//       logSignHeaderBtns.forEach(btn => {
-//         btn.style.display = 'none';
-//       });
-//       accItems.forEach(item => {
-//         item.style.display = 'block';
-//       });
-//       accGemsAmountEl.style.display = 'block';
-//     }
-//   });
-// };
 server.renderUserGems(userGems);
 server.renderUserState(logSignHeaderBtns, accItems, accGemsAmountEl);
 
