@@ -30,6 +30,7 @@ exports.getThreeCards = async (req, res) => {
     }
     res.status(200).json(result.rows);
   });
+  await pool.query('UPDATE users SET gems = gems - 200 WHERE id = $1', [req.user.id])
 };
 
 exports.inserThreeCards = async (req, res) => {
@@ -37,8 +38,21 @@ exports.inserThreeCards = async (req, res) => {
 
   try {
     await pool.query(queryThreeInsert, [req.user.id, req.body.id]);
+
     res.status(200).json({ message: 'Card added to user' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.getUserCollection = async (req, res) =>{
+  try{
+    const pool = server.openDb() 
+
+     pool.query('select * from card_owner join card on card_owner.card_id = card.id where user_id = $1', [req.user.id], (err, cards) =>{
+      res.status(200).json({userCards: cards.rows})
+    })
+  } catch(err){
+    res.status(500).json({ error: err.message });
+  }
+}
