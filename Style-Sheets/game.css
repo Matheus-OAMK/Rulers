@@ -22,7 +22,7 @@ body {
       rgba(0, 0, 0, 0.805),
       rgba(0, 0, 0, 0.776)
     ),
-    url('/Images/Background-visuals/Game-background.png');
+    url('/Images/Background-visuals/Game-background.webp');
   margin-top: 7rem;
   min-height: calc(100dvh - 26.25rem);
   background-size: cover;
