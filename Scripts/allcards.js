@@ -38,11 +38,6 @@ filterBtn.addEventListener("click", () => {
   }
 });
 
-// FUNCTION TO ROTATE CARDS
-function cardRotate(el) {
-  el.classList.toggle(`rotated`);
-}
-
 // const cardProductBox = document.querySelector('[data-card-product-box]');
 // cardProductBox.setAttribute('rarity', 'legendary');
 

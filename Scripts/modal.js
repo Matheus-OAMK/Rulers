@@ -1,34 +1,34 @@
-import server_back from './auth.js';
+import server_back from "./auth.js";
 
 const server = new server_back();
 
 const logSignHeaderBtns = document.querySelectorAll(`.log-sign-btn`);
-const accItem = document.querySelectorAll(`.account-item`);
+const accItems = document.querySelectorAll(`.account-item`);
 const accGemsAmountEl = document.querySelector(`.gems-amount-icon`);
 const userGems = document.querySelector(`.user-gems-amount`);
 
-const openSignupModalButtons = document.querySelectorAll('[data-modal-target]');
+const openSignupModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeSignupModalButtons = document.querySelectorAll(
-  '[data-signup-close-button]'
+  "[data-signup-close-button]"
 );
 // const closeSignupModalButtons = document.getElementById('signup-modal-close')
-const openLoginModalButtons = document.querySelectorAll('[data-modal-target]');
+const openLoginModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeLoginModalButtons = document.querySelectorAll(
-  '[data-login-close-button]'
+  "[data-login-close-button]"
 );
 
-const overlayLogSignModal = document.getElementById('signup-modal-overlay');
+const overlayLogSignModal = document.getElementById("signup-modal-overlay");
 
 // Functions to open the signup/login modals
-openSignupModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
+openSignupModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
     openModalLogSign(modal);
   });
 });
 
-openLoginModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
+openLoginModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
     // console.log(modal);
     openModalLogSign(modal);
@@ -37,33 +37,33 @@ openLoginModalButtons.forEach(button => {
 
 // Functions to close signup/login modals from button ands overlay
 
-closeSignupModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.signup-modal-content');
+closeSignupModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".signup-modal-content");
     closeModalLogSign(modal);
     clearSignUp();
   });
 });
 
-closeLoginModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.login-modal-content');
+closeLoginModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".login-modal-content");
     closeModalLogSign(modal);
     clearLogin();
   });
 });
 
-overlayLogSignModal.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.signup-modal-content.active');
-  modals.forEach(modal => {
+overlayLogSignModal.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".signup-modal-content.active");
+  modals.forEach((modal) => {
     closeModalLogSign(modal);
     clearSignUp();
   });
 });
 
-overlayLogSignModal.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.login-modal-content.active');
-  modals.forEach(modal => {
+overlayLogSignModal.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".login-modal-content.active");
+  modals.forEach((modal) => {
     closeModalLogSign(modal);
     clearLogin();
   });
@@ -71,118 +71,120 @@ overlayLogSignModal.addEventListener('click', () => {
 
 function openModalLogSign(modal) {
   if (modal == null) return;
-  modal.classList.add('active');
-  overlayLogSignModal.classList.add('active');
+  modal.classList.add("active");
+  overlayLogSignModal.classList.add("active");
 }
 
 function closeModalLogSign(modal) {
   if (modal == null) return;
-  modal.classList.remove('active');
-  overlayLogSignModal.classList.remove('active');
+  modal.classList.remove("active");
+  overlayLogSignModal.classList.remove("active");
 }
 
 function clearSignUp() {
-  const usernameInput = document.getElementById('signup-modal-username');
-  usernameInput.value = '';
+  const usernameInput = document.getElementById("signup-modal-username");
+  usernameInput.value = "";
   // const emailInput = document.getElementById('signup-modal-email');
   // emailInput.value = '';
-  const passInput = document.getElementById('signup-modal-password');
-  passInput.value = '';
+  const passInput = document.getElementById("signup-modal-password");
+  passInput.value = "";
 }
 
 function clearLogin() {
-  const usernameInput = document.getElementById('login-modal-username');
-  usernameInput.value = '';
-  const passInput = document.getElementById('login-modal-password');
-  passInput.value = '';
+  const usernameInput = document.getElementById("login-modal-username");
+  usernameInput.value = "";
+  const passInput = document.getElementById("login-modal-password");
+  passInput.value = "";
 }
 
 // Showpassword global function
 function showPassword(password) {
-  if (password.type === 'password') {
-    password.type = 'text';
+  if (password.type === "password") {
+    password.type = "text";
   } else {
-    password.type = 'password';
+    password.type = "password";
   }
 }
 
 // SIGNUP SHOW PASSWORD
-const showPasswordSignup = document.getElementById('signup-modal-showPassword');
+const showPasswordSignup = document.getElementById("signup-modal-showPassword");
 
-showPasswordSignup.addEventListener('click', () => {
-  const passStatus = document.getElementById('signup-modal-password');
+showPasswordSignup.addEventListener("click", () => {
+  const passStatus = document.getElementById("signup-modal-password");
   showPassword(passStatus);
 });
 
 // LOGIN SHOW PASSWORD
 
-const showPasswordLogin = document.getElementById('login-modal-showPassword');
+const showPasswordLogin = document.getElementById("login-modal-showPassword");
 
-showPasswordLogin.addEventListener('click', () => {
-  const passStatus = document.getElementById('login-modal-password');
+showPasswordLogin.addEventListener("click", () => {
+  const passStatus = document.getElementById("login-modal-password");
   showPassword(passStatus);
 });
 
 //Open login from the signup modal
 function closeModalLink(modal) {
   if (modal == null) return;
-  modal.classList.remove('active');
+  modal.classList.remove("active");
 }
 
 function openModalLink(modal) {
   if (modal == null) return;
-  modal.classList.add('active');
+  modal.classList.add("active");
 }
 
-const alreadyAcc = document.getElementById('modal-login-link');
+const alreadyAcc = document.getElementById("modal-login-link");
 
-alreadyAcc.addEventListener('click', () => {
+alreadyAcc.addEventListener("click", () => {
   const openLogin = document.querySelector(alreadyAcc.dataset.modalTarget);
-  const closeSignup = document.querySelector('.signup-modal-content');
+  const closeSignup = document.querySelector(".signup-modal-content");
   closeModalLink(closeSignup);
   openModalLink(openLogin);
 });
 
 // Open Signup from Login
-const registerHere = document.getElementById('modal-register-link');
+const registerHere = document.getElementById("modal-register-link");
 
-registerHere.addEventListener('click', () => {
+registerHere.addEventListener("click", () => {
   const openRegister = document.querySelector(registerHere.dataset.modalTarget);
-  const closeLogin = document.querySelector('.login-modal-content');
+  const closeLogin = document.querySelector(".login-modal-content");
   closeModalLink(closeLogin);
   openModalLink(openRegister);
 });
 
-const getUserStats = userGemsDOMEl => {
-  server.checkAuth().then(res => {
-    if (res.isLoggedIn) {
-      server.renderUserGems(userGemsDOMEl);
-      logSignHeaderBtns.forEach(btn => {
-        btn.style.display = 'none';
-      });
-      accItem.forEach(item => {
-        item.style.display = 'block';
-      });
-      accGemsAmountEl.style.display = 'block';
-    }
-  });
-};
+// const getUserStats = userGemsDOMEl => {
+//   server.checkAuth().then(res => {
+//     if (res.isLoggedIn) {
+//       server.renderUserGems(userGemsDOMEl);
+//       logSignHeaderBtns.forEach(btn => {
+//         btn.style.display = 'none';
+//       });
+//       accItems.forEach(item => {
+//         item.style.display = 'block';
+//       });
+//       accGemsAmountEl.style.display = 'block';
+//     }
+//   });
+// };
+server.renderUserGems(userGems);
+server.renderUserState(logSignHeaderBtns, accItems, accGemsAmountEl);
 
 // ****************** SIGNUP FUNCTION ******************
 
-const signupform = document.querySelector('.signup-form');
+const signupform = document.querySelector(".signup-form");
 
 const signUpUrl = `${server.BACKEND_URL}/api/user/sign-up`;
 
-signupform.addEventListener('submit', async event => {
+signupform.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
-  const username = formData.get('username');
-  const password = formData.get('password');
+  const username = formData.get("username");
+  const password = formData.get("password");
 
   //Alert if username or password is empty
   if (!username || !password) {
-    alert('Please enter both a username and password.');
+    alert("Please enter both a username and password.");
     return;
   }
 
@@ -190,21 +192,21 @@ signupform.addEventListener('submit', async event => {
 
   try {
     const response = await fetch(signUpUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
     const result = await response.json();
 
     if (response.ok) {
-      alert('Signup successful!');
+      alert("Signup successful! Please log in.");
       // redirect to another page, display a message, etc.
       // window.location.href = 'success.html'; // redirect to another page
 
       //close modal and empty
-      const modal = document.querySelector('.signup-modal-content');
+      const modal = document.querySelector(".signup-modal-content");
       closeModalLogSign(modal);
       clearSignUp();
 
@@ -214,12 +216,12 @@ signupform.addEventListener('submit', async event => {
         'duplicate key value violates unique constraint "users_username_key"'
       )
     ) {
-      alert('Username is already in use. Please choose another username.');
+      alert("Username is already in use. Please choose another username.");
     } else {
       alert(`Please try again. Error: ${result.error}`);
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error("Error:", error);
   }
 });
 
@@ -229,45 +231,42 @@ signupform.addEventListener('submit', async event => {
 
 const LogInURL = `${server.BACKEND_URL}/api/user/login`;
 
-const logInForm = document.querySelector('.login-form');
+const logInForm = document.querySelector(".login-form");
 
-logInForm.addEventListener('submit', async event => {
+logInForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
-  const username = formData.get('username');
-  const password = formData.get('password');
+  const username = formData.get("username");
+  const password = formData.get("password");
 
   console.log(username, password);
   //Alert if username or password is empty
   if (!username || !password) {
-    alert('Please enter both a username and password.');
+    alert("Please enter both a username and password.");
     return;
   }
 
   const data = { username, password };
 
-  try {
-    const response = await fetch(LogInURL, {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
+  const response = await fetch(LogInURL, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  const result = await response.json();
 
-    console.log(result);
-
-    getUserStats(userGems);
-
-    // close and clear login modal
-    const modal = document.querySelector('.login-modal-content');
-    closeModalLogSign(modal);
-    clearLogin();
-  } catch (error) {
-    console.error('Error:', error);
+  if (result.error) {
+    return alert(result.error);
   }
-});
 
-getUserStats(userGems);
+  server.renderUserGems(userGems);
+  server.renderUserState(logSignHeaderBtns, accItems, accGemsAmountEl);
+
+  // close and clear login modal
+  const modal = document.querySelector(".login-modal-content");
+  closeModalLogSign(modal);
+  clearLogin();
+});
