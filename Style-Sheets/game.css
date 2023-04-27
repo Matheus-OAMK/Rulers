@@ -152,13 +152,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   margin-bottom: 6.4rem;
 }
 
 .game--btn:hover {
-  box-shadow: 0 0 10px 0 #fff;
+  box-shadow: 0 0 10px 0 rgba(102, 252, 241, 1);
+  border: 1px solid rgba(102, 252, 241, 1);
   cursor: pointer;
+  color: rgba(102, 252, 241, 1);
 }
 
 .game--gems {

@@ -347,10 +347,9 @@ body {
   cursor: pointer;
   font-size: 2rem;
   font-weight: 600;
-  color: white;
+  color: rgba(102, 252, 241, 1);
   align-self: center;
   box-shadow: 0 0 5px 0 rgba(102, 252, 241, 1);
-  transform: scale(1.02);
 }
 
 /* MEDIA QUERIES */

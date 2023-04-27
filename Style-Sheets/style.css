@@ -505,12 +505,14 @@ body {
   bottom: -3.75rem;
   left: 50%;
   transform: translateX(-50%);
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .main--card-ad-btn:hover,
 .main--card-ad-btn:active {
-  box-shadow: 0 0 5px 0 #fff;
+  box-shadow: 0 0 5px 0 rgba(102, 252, 241, 1);
+  border: 1px solid rgba(102, 252, 241, 1);
+  color: rgba(102, 252, 241, 1);
 }
 
 /* ******************* GAME CTA SECTION ******************* */
