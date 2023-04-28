@@ -3,20 +3,21 @@ import { requestOptions } from './helper.js';
 const server = new server_back();
 import { blueAlert, redAlert } from './alert.js';
 // Get all .inputBox
-const inputBoxes = document.querySelectorAll('.form-input-box');
+const inputBoxes = document.querySelectorAll(".form-input-box");
+const userName = document.querySelector("#data-user-name");
 
 // For each box
-inputBoxes.forEach(box => {
+inputBoxes.forEach((box) => {
   // Get input as first child element
   const input = box.firstElementChild;
 
   // add event listener for any change on the input
-  input.addEventListener('input', () => {
+  input.addEventListener("input", () => {
     // if input is not empty add class filled
     // else remove class filled if is empty
     input.value
-      ? input.classList.add('filled')
-      : input.classList.remove('filled');
+      ? input.classList.toggle("filled")
+      : input.classList.toggle("filled");
   });
 });
 
@@ -63,5 +64,10 @@ profileForm.addEventListener('submit', async event => {
     }
   } catch (error) {
     console.error(error);
+    }
+
+server.checkAuth().then((res) => {
+  if (res.userData.username) {
+    userName.textContent = res.userData.username;
   }
 });

@@ -246,23 +246,22 @@
 
     <main class="main-account-section">
       <div class="settings-container">
-        <span class="settings-info-icon"
-          ><ion-icon name="information-circle"></ion-icon
-        ></span>
         <div class="settings-form-box">
-          <p class="settings-title">Settings</p>
+          <div class="form--username-title">
+            <!-- <span class="settings-info-icon"
+              ><ion-icon name="information-circle"></ion-icon
+            ></span> -->
+            <p class="settings-title">
+              Change <span id="data-user-name"></span>'s password
+            </p>
+          </div>
           <form class="settings-form1">
-            <div class="settings-inputbox-name form-input-box">
-              <input name="username" type="text" />
-              <span class="user-icon"><ion-icon name="person"></ion-icon></span>
-              <label for="name">Username</label>
-            </div>
             <div class="settings-inputbox-password1 form-input-box">
               <input name="password" type="password" />
               <span class="lock-icon1"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
-              <label for="password">Password</label>
+              <label for="password">Current password</label>
             </div>
             <div class="settings-inputbox-password2 form-input-box">
               <input name="newpassword1" type="password" />
