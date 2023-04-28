@@ -353,3 +353,51 @@
   border-bottom: 2px solid #66fcf1;
   transition: all 0.3s;
 }
+
+@media only screen and (max-width: 37.5em) {
+  .login-modal-content {
+    width: 42rem;
+  }
+
+  .login-modal-username-field,
+  .login-modal-password-field {
+    padding: 0 3.7rem;
+  }
+
+  .login-modal-showPassword-field {
+    padding-left: 4rem;
+  }
+
+  .login-modal-button-elem {
+    width: 32.6rem;
+    margin: 0 auto;
+  }
+
+  #login-modal-username,
+  #login-modal-password {
+    width: 32rem;
+  }
+
+  .signup-modal-content {
+    width: 42rem;
+  }
+
+  .signup-modal-username-field,
+  .signup-modal-password-field {
+    padding: 0 3.7rem;
+  }
+
+  .signup-modal-showPassword-field {
+    padding-left: 4rem;
+  }
+
+  .signup-modal-signup-submit {
+    width: 32.6rem;
+    margin: 0 auto;
+  }
+
+  #signup-modal-username,
+  #signup-modal-password {
+    width: 32rem;
+  }
+}

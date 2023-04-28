@@ -647,9 +647,6 @@ body {
 }
 
 @media only screen and (max-width: 56.25em) {
-  /* html {
-    font-size: 56.25%;
-  } */
   .card-p1 {
     display: none;
   }
@@ -719,10 +716,7 @@ body {
   }
 
   .card-p2 {
-    /* display: none; */
-    height: 19.6rem;
-    width: 14rem;
-    top: calc((28rem - 19.6rem) / 2);
+    display: none;
   }
 
   .card-p3 {
@@ -743,10 +737,7 @@ body {
   }
 
   .card-p6 {
-    /* display: none; */
-    height: 19.6rem;
-    width: 14rem;
-    top: calc((28rem - 19.6rem) / 2);
+    display: none;
   }
 
   .hero-des-box {
