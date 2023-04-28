@@ -3,21 +3,21 @@ import { requestOptions } from './helper.js';
 const server = new server_back();
 import { blueAlert, redAlert } from './alert.js';
 // Get all .inputBox
-const inputBoxes = document.querySelectorAll(".form-input-box");
-const userName = document.querySelector("#data-user-name");
+const inputBoxes = document.querySelectorAll('.form-input-box');
+const userName = document.querySelector('#data-user-name');
 
 // For each box
-inputBoxes.forEach((box) => {
+inputBoxes.forEach(box => {
   // Get input as first child element
   const input = box.firstElementChild;
 
   // add event listener for any change on the input
-  input.addEventListener("input", () => {
+  input.addEventListener('input', () => {
     // if input is not empty add class filled
     // else remove class filled if is empty
     input.value
-      ? input.classList.toggle("filled")
-      : input.classList.toggle("filled");
+      ? input.classList.add('filled')
+      : input.classList.remove('filled');
   });
 });
 
@@ -31,10 +31,6 @@ function clearInputs() {
   newPasswordInput.value = '';
   confirmPasswordInput.value = '';
 }
-
-
-
-
 
 const profileForm = document.querySelector('.settings-form1');
 
@@ -59,22 +55,18 @@ profileForm.addEventListener('submit', async event => {
     if (response.ok) {
       blueAlert(responseData.message); // Password updated successfully
       clearInputs();
-      
     } else if (response.status === 400) {
       redAlert(responseData.message); // Current password incorrect or passwords do not match or new password is too short
-      
     } else if (response.status === 401) {
       alert(responseData.error); // Error message from server
     }
   } catch (error) {
     console.error(error);
-    }
-
-
+  }
 });
 
-
-server.checkAuth().then((res) => {
+server.checkAuth().then(res => {
   if (res.userData.username) {
     userName.textContent = res.userData.username;
-  }});
+  }
+});

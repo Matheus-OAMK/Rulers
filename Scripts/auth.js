@@ -5,20 +5,20 @@ class server {
   checkAuth = async () => {
     return new Promise((resolve, reject) => {
       fetch(`${this.BACKEND_URL}/api/user/checkauth`, {
-        credentials: "include",
+        credentials: 'include',
       })
-        .then((res) => res.json())
-        .then((res) => {
+        .then(res => res.json())
+        .then(res => {
           resolve(res);
         })
-        .catch((err) => {
+        .catch(err => {
           reject(err);
         });
     });
   };
 
-  renderUserGems = async (userGemsDOMEl) => {
-    this.checkAuth().then((res) => {
+  renderUserGems = async userGemsDOMEl => {
+    this.checkAuth().then(res => {
       if (res.isLoggedIn) {
         userGemsDOMEl.textContent = res.userData.gems;
       }
@@ -35,15 +35,15 @@ class server {
   }
 
   renderUserState = (logSignHeaderBtns, accItems, accGemsAmountEl) => {
-    this.checkAuth().then((res) => {
+    this.checkAuth().then(res => {
       if (res.isLoggedIn) {
-        logSignHeaderBtns.forEach((btn) => {
-          btn.style.display = "none";
+        logSignHeaderBtns.forEach(btn => {
+          btn.style.display = 'none';
         });
-        accItems.forEach((item) => {
-          item.style.display = "block";
+        accItems.forEach(item => {
+          item.style.display = 'block';
         });
-        accGemsAmountEl.style.display = "block";
+        accGemsAmountEl.style.display = 'block';
       }
     });
   };
