@@ -24,11 +24,14 @@ inputBoxes.forEach((box) => {
 // **********  PROFILE FUNCTION TO CHANGE PASSWORD**********
 
 function clearInputs() {
-  const usernameInput = document.getElementById('signup-modal-username');
-  usernameInput.value = '';
-  const passInput = document.getElementById('signup-modal-password');
-  passInput.value = '';
+  const passwordInput = document.querySelector('#currentpassword');
+  const newPasswordInput = document.querySelector('#newpassword1');
+  const confirmPasswordInput = document.querySelector('#newpassword2');
+  passwordInput.value = '';
+  newPasswordInput.value = '';
+  confirmPasswordInput.value = '';
 }
+
 
 
 
@@ -55,6 +58,7 @@ profileForm.addEventListener('submit', async event => {
 
     if (response.ok) {
       blueAlert(responseData.message); // Password updated successfully
+      clearInputs();
       
     } else if (response.status === 400) {
       redAlert(responseData.message); // Current password incorrect or passwords do not match or new password is too short
@@ -66,8 +70,11 @@ profileForm.addEventListener('submit', async event => {
     console.error(error);
     }
 
+
+});
+
+
 server.checkAuth().then((res) => {
   if (res.userData.username) {
     userName.textContent = res.userData.username;
-  }
-});
+  }});
