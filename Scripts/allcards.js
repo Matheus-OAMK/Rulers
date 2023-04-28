@@ -2,6 +2,7 @@
 
 import server_back from "./auth.js";
 import { requestOptions } from "./helper.js";
+import { redAlert } from "./alert.js";
 
 const server = new server_back();
 
@@ -108,7 +109,7 @@ purchaseConfirmBtn.addEventListener("click", function () {
     .then((res) => res.json())
     .then((res) => {
       if (res.status === "fail" || res.status === "error") {
-        alert(res.message);
+        redAlert(res.message);
         closeConfirmationModal();
         return;
       }
@@ -181,7 +182,7 @@ fetch(allcardsRoute, { credentials: "include" })
           });
         } else {
           btn.addEventListener("click", () => {
-            alert("Please log in to purchase cards!");
+            redAlert("Please log in to play the game!");
           });
         }
       });
