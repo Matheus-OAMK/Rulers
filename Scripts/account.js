@@ -1,7 +1,7 @@
-import server_back from "./auth.js";
-
+import server_back from './auth.js';
+import { requestOptions } from './helper.js';
 const server = new server_back();
-
+import { blueAlert, redAlert } from './alert.js';
 // Get all .inputBox
 const inputBoxes = document.querySelectorAll(".form-input-box");
 const userName = document.querySelector("#data-user-name");
@@ -21,30 +21,50 @@ inputBoxes.forEach((box) => {
   });
 });
 
-// const settingsOverlay = document.querySelector(`.settings-overlay`);
-// const settingsModalCloseBtn = document.querySelector(
-//   `.settings-info-close-modal`
-// );
-// const settingsModal = document.querySelector(`.settings-info`);
-// const settingsModalOpenBtn = document.querySelector(`.settings-info-icon`);
+// **********  PROFILE FUNCTION TO CHANGE PASSWORD**********
 
-// const closeInfoModal = () => {
-//   settingsOverlay.classList.add("settings-hidden");
-//   settingsModal.classList.add("settings-hidden");
-// };
+function clearInputs() {
+  const usernameInput = document.getElementById('signup-modal-username');
+  usernameInput.value = '';
+  const passInput = document.getElementById('signup-modal-password');
+  passInput.value = '';
+}
 
-// settingsModalOpenBtn.addEventListener("click", () => {
-//   settingsOverlay.classList.remove("settings-hidden");
-//   settingsModal.classList.remove("settings-hidden");
-// });
 
-// settingsModalCloseBtn.addEventListener("click", () => {
-//   closeInfoModal();
-// });
 
-// settingsOverlay.addEventListener("click", () => {
-//   closeInfoModal();
-// });
+
+const profileForm = document.querySelector('.settings-form1');
+
+const profileRoute = `${server.BACKEND_URL}/api/user/profile`;
+
+profileForm.addEventListener('submit', async event => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const currentPassword = formData.get('password');
+  const newPassword = formData.get('newpassword1');
+  const confirmPassword = formData.get('newpassword2');
+  const data = { currentPassword, newPassword, confirmPassword };
+
+  try {
+    const response = await fetch(profileRoute, {
+      ...requestOptions,
+      body: JSON.stringify(data),
+    });
+    const responseData = await response.json();
+
+    if (response.ok) {
+      blueAlert(responseData.message); // Password updated successfully
+      
+    } else if (response.status === 400) {
+      redAlert(responseData.message); // Current password incorrect or passwords do not match or new password is too short
+      
+    } else if (response.status === 401) {
+      alert(responseData.error); // Error message from server
+    }
+  } catch (error) {
+    console.error(error);
+    }
 
 server.checkAuth().then((res) => {
   if (res.userData.username) {

@@ -14,4 +14,6 @@ router.route('/logout').post(userControllers.logout);
 
 router.route('/freegems').post(authenticateToken, userControllers.freeGems);
 
+router.route('/profile').post(authenticateToken, userControllers.changePassword);
+
 module.exports = router;
