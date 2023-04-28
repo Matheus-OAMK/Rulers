@@ -98,7 +98,7 @@ exports.checkAuth = async (req, res) => {
         ]);
 
         if (!userDB) {
-          return res.status(404).json({ message: 'user does not exist' });
+          return res.status(404).json({ message: 'User does not exist' });
         }
 
         const userData = userDB.rows[0];

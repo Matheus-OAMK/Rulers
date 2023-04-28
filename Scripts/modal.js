@@ -1,4 +1,5 @@
 import server_back from './auth.js';
+import { blueAlert, redAlert } from './alert.js';
 
 const server = new server_back();
 
@@ -166,11 +167,14 @@ signupform.addEventListener('submit', async event => {
 
   //Alert if username or password is empty
   if (!username || !password) {
-    alert('Please enter both an username and a password.');
+
+    redAlert('Please enter both an username and a password.');
+
     return;
   } else if (password.length < 4) {
     //Alert password is too short
-    alert('Password must be at least 4 characters long.');
+    redAlert('Password must be at least 4 characters long.');
+
     return;
   }
 
@@ -187,7 +191,7 @@ signupform.addEventListener('submit', async event => {
     const result = await response.json();
 
     if (response.ok) {
-      alert('Signup successful! Please log in.');
+      blueAlert('Signup successful! Welcome to Rulers.');
 
       //close modal and empty
       const modal = document.querySelector('.signup-modal-content');
@@ -200,7 +204,7 @@ signupform.addEventListener('submit', async event => {
         'duplicate key value violates unique constraint "users_username_key"'
       )
     ) {
-      alert('Username is already in use. Please choose another username.');
+      redAlert('Username is already in use. Please choose another username.');
     } else {
       alert(`Please try again. Error: ${result.error}`);
     }
@@ -226,7 +230,7 @@ logInForm.addEventListener('submit', async event => {
   console.log(username, password);
   //Alert if username or password is empty
   if (!username || !password) {
-    alert('Please enter both a username and password.');
+    redAlert('Please enter both a username and password.');
     return;
   }
 
@@ -243,7 +247,7 @@ logInForm.addEventListener('submit', async event => {
   const result = await response.json();
 
   if (result.error) {
-    return alert(result.error);
+    return redAlert(result.error);
   }
 
   location.reload();

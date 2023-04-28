@@ -1,7 +1,7 @@
 import server_back from './auth.js';
 import { requestOptions } from './helper.js';
 const server = new server_back();
-import { blueAlert, redAlert, openInfoModal } from './alert.js';
+import { blueAlert, redAlert } from './alert.js';
 // Get all .inputBox
 const inputBoxes = document.querySelectorAll('.form-input-box');
 
@@ -20,7 +20,17 @@ inputBoxes.forEach(box => {
   });
 });
 
-// **********  PROFILE FUNCTION TO CHANGE PASSWORD **********
+// **********  PROFILE FUNCTION TO CHANGE PASSWORD**********
+
+function clearInputs() {
+  const usernameInput = document.getElementById('signup-modal-username');
+  usernameInput.value = '';
+  const passInput = document.getElementById('signup-modal-password');
+  passInput.value = '';
+}
+
+
+
 
 const profileForm = document.querySelector('.settings-form1');
 
@@ -44,10 +54,10 @@ profileForm.addEventListener('submit', async event => {
 
     if (response.ok) {
       blueAlert(responseData.message); // Password updated successfully
-      openInfoModal();
+      
     } else if (response.status === 400) {
       redAlert(responseData.message); // Current password incorrect or passwords do not match or new password is too short
-      openInfoModal();
+      
     } else if (response.status === 401) {
       alert(responseData.error); // Error message from server
     }
