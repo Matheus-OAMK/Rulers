@@ -11,7 +11,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Asap', sans-serif;
+  font-family: "Asap", sans-serif;
   background-color: #0d1117;
   color: #ddd;
 }
@@ -88,9 +88,6 @@ body {
 }
 
 .settings-info-icon {
-  top: 3.3rem;
-  right: 3.3rem;
-  position: absolute;
   font-size: 4rem;
   color: white;
   float: right;
@@ -99,19 +96,14 @@ body {
 }
 
 .settings-info-icon:hover {
-  top: 3.3rem;
-  right: 3.3rem;
-  position: absolute;
   font-size: 4rem;
   color: rgba(102, 252, 241, 1);
-  float: right;
   cursor: pointer;
   color: var(rgba(102, 252, 241, 1));
 }
 
 .settings-title {
-  text-align: left;
-  font-size: 5.2rem;
+  font-size: 3.6rem;
   padding-bottom: 3rem;
   color: rgb(255, 255, 255);
 }
