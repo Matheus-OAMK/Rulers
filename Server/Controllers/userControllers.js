@@ -12,7 +12,7 @@ exports.signUp = async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = await pool.query(
       'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *',
-      [req.body.username, hashedPassword]
+      [req.body.username.toLowerCase(), hashedPassword]
     );
     res.json({ users: newUser.rows[0] });
   } catch (error) {
