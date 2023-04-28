@@ -10,7 +10,6 @@ class server {
         .then((res) => res.json())
         .then((res) => {
           resolve(res);
-          // console.log(res.isLoggedIn);
         })
         .catch((err) => {
           reject(err);
@@ -34,7 +33,6 @@ class server {
       return false;
     }
   }
-
 
   renderUserState = (logSignHeaderBtns, accItems, accGemsAmountEl) => {
     this.checkAuth().then((res) => {

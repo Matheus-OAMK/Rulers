@@ -3,7 +3,7 @@ const server = require('../db');
 
 const queryAll = 'SELECT * FROM card';
 const queryThree = 'SELECT * FROM card ORDER BY RANDOM() LIMIT 3';
-const queryThreeInsert =
+const queryInsertCard =
   'INSERT INTO card_owner (user_id, card_id) VALUES ($1, $2)';
 
 exports.getAllCards = async (req, res) => {
@@ -33,13 +33,13 @@ exports.getThreeCards = async (req, res) => {
   await pool.query('UPDATE users SET gems = gems - 200 WHERE id = $1', [req.user.id])
 };
 
-exports.inserThreeCards = async (req, res) => {
+exports.insertCard = async (req, res) => {
+  try {
   const pool = server.openDb();
 
-  try {
-    await pool.query(queryThreeInsert, [req.user.id, req.body.id]);
+  await pool.query(queryInsertCard, [req.user.id, req.body.id]);
 
-    res.status(200).json({ message: 'Card added to user' });
+  res.status(200).json({ message: 'done' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -54,5 +54,36 @@ exports.getUserCollection = async (req, res) =>{
     })
   } catch(err){
     res.status(500).json({ error: err.message });
+  }
+}
+
+exports.buyCard = async (req, res) =>{
+  try{
+    const pool = server.openDb()
+    const cardID = req.params.id * 1;
+    const userID = req.user.id;
+
+    const user = await pool.query('SELECT * FROM users WHERE id = $1', [userID])
+    if(!user.rows.length){
+      return res.status(404).json({status: 'fail', message: 'User not found'})
+    }
+    const userBalance = user.rows[0].gems;
+
+    const card = await pool.query('SELECT * FROM card WHERE id = $1',[cardID])
+    if(!card.rows.length){
+      return res.status(404).json({status: 'fail', message: 'Card not found'})
+    }
+    const cardPrice = card.rows[0].price
+
+    if(cardPrice > userBalance){
+      return res.status(405).json({status: 'fail', message: `Please purchase more gems to buy ${card.rows[0].name}`})
+    }
+    pool.query('UPDATE users SET gems = gems - $1 WHERE id = $2', [cardPrice, userID])
+
+    pool.query(queryInsertCard, [userID, cardID], (err, result)=>{
+      res.status(200).json({status: 'success'})
+    })
+  }catch(err){
+    res.status(500).json({status: 'error',message: err.message})
   }
 }

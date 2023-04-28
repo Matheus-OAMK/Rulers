@@ -48,6 +48,7 @@ exports.login = async (req, res) => {
       // comment out this line below to test on postman
       sameSite: 'None',
       secure: true,
+      expires: new Date(Number(new Date()) + 15 * 24 * 60 * 60 * 1000)
     });
     res.json(token);
   } catch (error) {
