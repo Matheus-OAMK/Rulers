@@ -225,9 +225,9 @@
       </div>
     </header>
 
-    <div class="settings-overlay settings-hidden">
-      <div class="settings-info settings-hidden">
-        <button class="settings-info-close-modal">
+    <div class="alert-overlay alert-hidden">
+      <div class="alert-modal alert-hidden">
+        <button class="alert-modal-close-btn">
           <ion-icon name="close"></ion-icon>
         </button>
         <p>
@@ -246,32 +246,32 @@
           <p class="settings-title">Settings</p>
           <form class="settings-form1">
             <div class="settings-inputbox-name form-input-box">
-              <input type="text" />
+              <input name="username" type="text" />
               <span class="user-icon"><ion-icon name="person"></ion-icon></span>
-              <label for="name">Name</label>
+              <label for="name">Username</label>
             </div>
             <div class="settings-inputbox-password1 form-input-box">
-              <input type="password" />
+              <input name="password" type="password" />
               <span class="lock-icon1"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
               <label for="password">Password</label>
             </div>
             <div class="settings-inputbox-password2 form-input-box">
-              <input type="password" />
+              <input name="newpassword1" type="password" />
               <span class="lock-icon2"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
               <label for="new-password">New password</label>
             </div>
             <div class="settings-inputbox-password3 form-input-box">
-              <input type="password" />
+              <input name="newpassword2" type="password" />
               <span class="lock-icon3"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
               <label for="repeat-new-password">Repeat new password</label>
             </div>
-            <button class="settings-btn">Apply</button>
+            <button type="submit" class="settings-btn">Apply</button>
           </form>
         </div>
       </div>
