@@ -462,10 +462,8 @@ a:visited {
 
 /* MEDIA QUERIES */
 
-/* |||||||||||  450PX  ||||||||||||||| */
-
-@media (max-width: 28.125em) {
+@media only screen and (max-width: 37.5em) {
   .container-header {
-    padding: 0 2.8rem;
+    padding: 0 2.4rem;
   }
 }

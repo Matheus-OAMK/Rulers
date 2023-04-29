@@ -11,7 +11,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Asap', sans-serif;
+  font-family: "Asap", sans-serif;
   background-color: #0d1117;
   color: #ddd;
 }
@@ -465,23 +465,32 @@ body {
   padding: 0 4.8rem;
 }
 
-.main--card-ad-img {
-  height: 44rem;
-  width: 100%;
+.main--card-ad-imagebox {
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../Images/Background-visuals/Master-yi-background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: auto 100%; */
+  background-size: cover;
   border-radius: 20px;
 }
+/* 
+.main--card-ad-img {
+} */
 
 .main--card-ad-textbox {
   border: 1px solid #fff;
   border-radius: 20px;
-  padding: 2.4rem;
+  padding: 2.4rem 6.4rem;
+  padding-bottom: 4rem;
   position: relative;
 }
 
 .main--card-ad-text {
   font-size: 1.8rem;
   text-align: center;
-  line-height: 1.8;
+  line-height: 2.1;
 }
 
 .main--card-ad-heading {
@@ -500,6 +509,7 @@ body {
   color: #fff;
   font-size: 2.4rem;
   padding: 2.4rem 4.5rem;
+  text-align: center;
   border-radius: 10px;
   position: absolute;
   bottom: -3.75rem;
@@ -527,18 +537,18 @@ body {
   max-width: 140rem;
   height: 72rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/Images/Background-visuals/Gold-game-background.webp');
+    url("/Images/Background-visuals/Gold-game-background.webp");
   border-radius: 20px;
   background-size: cover;
-
+  background-position: center;
   position: relative;
 }
 
 .main-game-cta-img {
-  background-image: url('/Images/Background-visuals/Gold-game-background.webp');
+  background-image: url("/Images/Background-visuals/Gold-game-background.webp");
   border-radius: 20px;
   background-size: cover;
-
+  background-position: center;
   width: 95%;
   height: 95%;
   box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99);
@@ -569,7 +579,7 @@ body {
   padding: 2.4rem 4.8rem;
   background-color: rgba(207, 149, 3, 0.75);
   border: 3px solid #000;
-  font-family: 'Wallpoet', cursive;
+  font-family: "Wallpoet", cursive;
   /* box-shadow: 0 0rem 2.8rem rgba(0, 0, 0, 0.99); */
   max-width: 48rem;
   color: #fff;
@@ -591,81 +601,197 @@ body {
 
 /* MEDIA QUERIES */
 
-/* |||||||||||  1350PX  ||||||||||||||| */
-
-@media (max-width: 84.375em) {
-  html {
-    font-size: 48.2%;
-  }
-}
-
-/* |||||||||||  1100PX  ||||||||||||||| */
-
-@media (max-width: 68.75em) {
-  html {
-    font-size: 40%;
+@media only screen and (max-width: 83.25em) {
+  .hero-des-box {
+    padding: 3.2rem 3.2rem;
   }
 
-  .main-anim-cards {
-    margin-bottom: 15rem;
-  }
-}
-
-/* |||||||||||  900PX  ||||||||||||||| */
-
-@media (max-width: 56.25em) {
-  html {
-    font-size: 32%;
-  }
-}
-
-/* |||||||||||  700PX  ||||||||||||||| */
-
-@media (max-width: 43.75em) {
   .main--info-row {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 10% 0 10%;
-    column-gap: 20rem;
-    font-size: 14rem;
+    column-gap: 2.4rem;
   }
 
-  .main--card-ad {
-    display: flex;
-    flex-direction: column;
-    max-width: 90rem;
-  }
-
-  .main--card-ad-img {
-    height: auto;
-    margin-bottom: 7rem;
-    order: 2;
+  .main--card-ad-btn:link,
+  .main--card-ad-btn:visited {
+    padding: 2.4rem 2.4rem;
   }
 
   .main--card-ad-textbox {
-    padding: 2.4rem;
-    height: 45rem;
-    order: 1;
-  }
-
-  .main--game-cta {
-    background-position: center;
-    max-width: 90%;
-  }
-
-  .main-game-cta-img {
-    max-width: 90%;
-    background-position: center;
+    padding: 2.4rem 4.8rem;
+    padding-bottom: 4rem;
   }
 }
 
-/* |||||||||||  500PX  ||||||||||||||| */
-
-@media (max-width: 31.25em) {
+@media only screen and (max-width: 69.4em) {
   html {
-    font-size: 24%;
+    font-size: 56.25%;
+  }
+
+  .main--info-row {
+    column-gap: 4.8rem;
+  }
+
+  .main--card-ad-heading {
+    margin-bottom: 1.8rem;
+  }
+
+  .main--card-ad-textbox {
+    padding: 2.4rem 2.4rem;
+    padding-bottom: 4rem;
+  }
+
+  .main--card-ad-btn:link,
+  .main--card-ad-btn:visited {
+    padding: 2.4rem 1rem;
+    width: max-content;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .card-p1 {
+    display: none;
+  }
+
+  .card-p2 {
+    left: 20%;
+  }
+
+  .card-p3 {
+    left: 31%;
+  }
+
+  .card-p5 {
+    left: 69%;
+  }
+
+  .card-p6 {
+    left: 80%;
+  }
+
+  .card-p7 {
+    display: none;
+  }
+
+  .main--info-row {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.2rem;
+  }
+
+  .main--card-ad {
+    grid-template-columns: 1fr;
+  }
+
+  .main--card-ad-textbox {
+    padding: 2.4rem 11rem;
+    padding-bottom: 5rem;
+  }
+
+  .main--card-ad-imagebox {
+    height: 35rem;
+    grid-row: 1/2;
+    margin-bottom: 2.4rem;
+  }
+
+  .main--card-ad-btn:link,
+  .main--card-ad-btn:visited {
+    padding: 2.4rem 4.8rem;
+    width: max-content;
+  }
+
+  .main--game-cta-card {
+    max-width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero__section {
+    padding: 12.8rem 2.4rem 4.8rem 2.4rem;
   }
 
   .main-anim-cards {
-    margin-bottom: 20rem;
+    height: 28rem;
+  }
+
+  .card-p2 {
+    display: none;
+  }
+
+  .card-p3 {
+    height: 23.8rem;
+    width: 17rem;
+    top: calc((28rem - 23.8rem) / 2);
+  }
+
+  .card-p4 {
+    height: 28rem;
+    width: 20rem;
+  }
+
+  .card-p5 {
+    height: 23.8rem;
+    width: 17rem;
+    top: calc((28rem - 23.8rem) / 2);
+  }
+
+  .card-p6 {
+    display: none;
+  }
+
+  .hero-des-box {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .main--info-row {
+    grid-template-columns: 1fr;
+  }
+
+  .main--card-ad {
+    padding: 0 2.4rem;
+  }
+
+  .main--card-ad-textbox {
+    padding: 2.4rem 2.4rem;
+    padding-bottom: 5rem;
+  }
+
+  .main--game-cta-card {
+    max-width: 12rem;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  html {
+    font-size: 43.75%;
+    -webkit-text-size-adjust: none;
+  }
+
+  .card-p2 {
+    display: none;
+  }
+
+  .card-p3 {
+    left: 25%;
+  }
+
+  .card-p5 {
+    left: 75%;
+  }
+
+  .card-p6 {
+    display: none;
+  }
+
+  .main--game-cta-card {
+    max-width: 11rem;
+  }
+
+  .main--game-cta-btn:link,
+  .main--game-cta-btn:visited {
+    padding: 1.8rem 2.4rem;
+    font-size: 3.2rem;
+    -webkit-text-stroke: 1px #000;
   }
 }
