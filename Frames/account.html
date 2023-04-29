@@ -223,19 +223,26 @@
           </div>
         </div>
       </div>
+
+         <!-- ///////////////////////////// -->
+      <!-- ALERT MODAL AND OVERLAY START -->
+      <!-- ///////////////////////////// -->
+  <div class="alert-overlay alert-hidden">
+    <div class="alert-modal alert-hidden">
+      <button class="alert-modal-close-btn">
+        <ion-icon name="close"></ion-icon>
+      </button>
+      <p>
+        Test
+      </p>
+    </div>
+  </div>
+     <!-- ///////////////////////////// -->
+      <!-- ALERT MODAL AND OVERLAY END -->
+      <!-- ///////////////////////////// -->
     </header>
 
-    <div class="settings-overlay settings-hidden">
-      <div class="settings-info settings-hidden">
-        <button class="settings-info-close-modal">
-          <ion-icon name="close"></ion-icon>
-        </button>
-        <p>
-          There is no need to fill each section to change settings. Just fill
-          the settings that you want to change and apply.
-        </p>
-      </div>
-    </div>
+  
 
     <main class="main-account-section">
       <div class="settings-container">
@@ -250,27 +257,27 @@
           </div>
           <form class="settings-form1">
             <div class="settings-inputbox-password1 form-input-box">
-              <input type="password" />
+              <input id="currentpassword" name="password" type="password" />
               <span class="lock-icon1"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
               <label for="password">Current password</label>
             </div>
             <div class="settings-inputbox-password2 form-input-box">
-              <input type="password" />
+              <input id="newpassword1" name="newpassword1" type="password" />
               <span class="lock-icon2"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
               <label for="new-password">New password</label>
             </div>
             <div class="settings-inputbox-password3 form-input-box">
-              <input type="password" />
+              <input id="newpassword2" name="newpassword2" type="password" />
               <span class="lock-icon3"
                 ><ion-icon name="lock-closed"></ion-icon
               ></span>
-              <label for="repeat-new-password">Repeat new password</label>
+              <label for="repeat-new-password">Confirm new password</label>
             </div>
-            <button class="settings-btn">Apply</button>
+            <button type="submit" class="settings-btn">Apply</button>
           </form>
         </div>
       </div>

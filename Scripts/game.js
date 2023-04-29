@@ -1,6 +1,7 @@
 "use strict";
 
 import { requestOptions } from "./helper.js";
+import { blueAlert, redAlert } from './alert.js';
 import server_back from "./auth.js";
 
 const server = new server_back();
@@ -43,11 +44,11 @@ playBtn.addEventListener("click", async () => {
   const res = await server.checkAuth();
 
   if (res.isLoggedIn === false) {
-    alert("Please log in to play the game!");
+    redAlert("Please log in to play the game!");
     playBtn.disabled = false;
     return;
   } else if (!enoughGems) {
-    alert("Please purchase more gems to play the game!");
+    redAlert("Please purchase more gems to play the game!");
     playBtn.disabled = false;
     return;
   } else {
