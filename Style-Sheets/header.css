@@ -137,7 +137,7 @@ a:visited {
 }
 
 .header__menu--item a:link::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 100%;
@@ -224,7 +224,7 @@ a:visited {
   width: fit-content;
   color: #fff;
   text-decoration: none;
-  font-family: "Geo", sans-serif;
+  font-family: 'Geo', sans-serif;
   font-size: 4.4rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -268,7 +268,7 @@ a:visited {
 }
 
 .account--nav-el::after {
-  content: "";
+  content: '';
   display: block;
   height: 0.5rem;
   border-radius: 0.5rem;
@@ -384,7 +384,7 @@ a:visited {
 }
 
 .account--menu-item::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
 
@@ -465,49 +465,5 @@ a:visited {
 @media only screen and (max-width: 37.5em) {
   .container-header {
     padding: 0 2.4rem;
-  }
-
-  .menu-icon:hover ~ .menu-filled {
-    display: none;
-  }
-
-  .menu-icon:hover {
-    opacity: 1;
-  }
-
-  .header__menu--item a:hover,
-  .header__menu--item a:active {
-    background-color: transparent;
-    left: 0;
-  }
-
-  .header__menu--item a:hover::after {
-    box-shadow: none;
-    transform: none;
-  }
-
-  .account--nav-el:hover .icon-outline {
-    opacity: 1;
-  }
-
-  .icon-filled {
-    display: none;
-  }
-
-  .account--nav-el:hover::after {
-    background-color: transparent;
-    transform: none;
-  }
-  .account--menu-item:hover {
-    background-color: transparent;
-    left: 0;
-  }
-
-  .account--menu-item:hover:after {
-    box-shadow: none;
-    transform: none;
-  }
-  .account--menu-box:last-child .account--menu-item:hover:after {
-    box-shadow: none;
   }
 }
