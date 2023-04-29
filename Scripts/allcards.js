@@ -1,66 +1,67 @@
-"use strict";
+'use strict';
 
-import server_back from "./auth.js";
-import { requestOptions } from "./helper.js";
+import server_back from './auth.js';
+import { requestOptions } from './helper.js';
+import { redAlert } from './alert.js';
 
 const server = new server_back();
 
 const userGems = document.querySelector(`.user-gems-amount`);
 const purchaseOpenModalBtn = document.getElementsByClassName(
-  "purchase-open-modal"
+  'purchase-open-modal'
 )[0];
 const confirmationModalOverlay = document.getElementsByClassName(
-  "confirmation-modal-overlay"
+  'confirmation-modal-overlay'
 )[0];
 const purchaseConfirmationModal = document.getElementsByClassName(
-  "purchase-confirmation-modal"
+  'purchase-confirmation-modal'
 )[0];
 const purchaseConfirmationCloseModalBtn = document.getElementsByClassName(
-  "purchase-confirmation-close-modal"
+  'purchase-confirmation-close-modal'
 )[0];
 const purchaseConfirmBtn = document.getElementsByClassName(
-  "purchase-confirm-btn"
+  'purchase-confirm-btn'
 )[0];
 const purchaseConfirmedModal = document.getElementsByClassName(
-  "purchase-confirmed-modal"
+  'purchase-confirmed-modal'
 )[0];
 const purchaseCancelBtn = document.getElementsByClassName(
-  "purchase-cancel-btn"
+  'purchase-cancel-btn'
 )[0];
 const purchaseCanceledModal = document.getElementsByClassName(
-  "purchase-canceled-modal"
+  'purchase-canceled-modal'
 )[0];
 
 const sytleTag = document.querySelector(`.style-for-slider`);
 const filterBtn = document.querySelector(`.filter-btn`);
 const filterOptionsBox = document.querySelector(`.filOptions`);
 const filterInnerSectionBox = document.querySelectorAll(
-  ".filter-inner-section"
+  '.filter-inner-section'
 );
-const filterArrowDown = document.querySelector(".filter-arrow-down");
-const filterArrowUp = document.querySelector(".filter-arrow-up");
+const filterArrowDown = document.querySelector('.filter-arrow-down');
+const filterArrowUp = document.querySelector('.filter-arrow-up');
 
-filterBtn.addEventListener("click", () => {
-  if (filterOptionsBox.classList.contains("filter-options-hidden")) {
-    filterOptionsBox.classList.remove("filter-options-hidden");
-    filterArrowUp.style.opacity = "1";
-    filterArrowDown.style.opacity = "0";
+filterBtn.addEventListener('click', () => {
+  if (filterOptionsBox.classList.contains('filter-options-hidden')) {
+    filterOptionsBox.classList.remove('filter-options-hidden');
+    filterArrowUp.style.opacity = '1';
+    filterArrowDown.style.opacity = '0';
   } else {
-    filterArrowUp.style.opacity = "0";
-    filterArrowDown.style.opacity = "1";
-    filterOptionsBox.style.animation = "filterReduce 0.6s ease-in";
+    filterArrowUp.style.opacity = '0';
+    filterArrowDown.style.opacity = '1';
+    filterOptionsBox.style.animation = 'filterReduce 0.6s ease-in';
 
-    filterInnerSectionBox.forEach((innerBox) => {
-      innerBox.style.animation = "filterInnerSectionOut 0.2s ease-in";
+    filterInnerSectionBox.forEach(innerBox => {
+      innerBox.style.animation = 'filterInnerSectionOut 0.2s ease-in';
     });
 
     setTimeout(() => {
-      filterOptionsBox.style.animation = "";
-      filterInnerSectionBox.forEach((innerBox) => {
-        innerBox.style.animation = "";
+      filterOptionsBox.style.animation = '';
+      filterInnerSectionBox.forEach(innerBox => {
+        innerBox.style.animation = '';
       });
 
-      filterOptionsBox.classList.add("filter-options-hidden");
+      filterOptionsBox.classList.add('filter-options-hidden');
     }, 590);
   }
 });
@@ -80,52 +81,52 @@ const resetCardID = () => {
 
 function showConfirmationModal() {
   confirmationModalOverlay.classList.remove(
-    "confirmation-modal-overlay-hidden"
+    'confirmation-modal-overlay-hidden'
   );
   purchaseConfirmationModal.classList.remove(
-    "purchase-confirmation-modal-hidden"
+    'purchase-confirmation-modal-hidden'
   );
 }
 
 function closeConfirmationModal() {
-  confirmationModalOverlay.classList.add("confirmation-modal-overlay-hidden");
-  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
+  confirmationModalOverlay.classList.add('confirmation-modal-overlay-hidden');
+  purchaseConfirmationModal.classList.add('purchase-confirmation-modal-hidden');
 }
 
 function purchaseConfirmed() {
-  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
-  purchaseConfirmedModal.classList.remove("purchase-confirm-info-hidden");
+  purchaseConfirmationModal.classList.add('purchase-confirmation-modal-hidden');
+  purchaseConfirmedModal.classList.remove('purchase-confirm-info-hidden');
 }
 
 function closePurchaseComment() {
-  confirmationModalOverlay.classList.add("confirmation-modal-overlay-hidden");
-  purchaseConfirmationModal.classList.add("purchase-confirmation-modal-hidden");
-  purchaseConfirmedModal.classList.add("purchase-confirm-info-hidden");
-  purchaseCanceledModal.classList.add("purchase-cancel-info-hidden");
+  confirmationModalOverlay.classList.add('confirmation-modal-overlay-hidden');
+  purchaseConfirmationModal.classList.add('purchase-confirmation-modal-hidden');
+  purchaseConfirmedModal.classList.add('purchase-confirm-info-hidden');
+  purchaseCanceledModal.classList.add('purchase-cancel-info-hidden');
 }
-purchaseConfirmBtn.addEventListener("click", function () {
+purchaseConfirmBtn.addEventListener('click', function () {
   fetch(`${server.BACKEND_URL}/api/catalog/${choosenCardID}`, requestOptions)
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.status === "fail" || res.status === "error") {
-        alert(res.message);
+    .then(res => res.json())
+    .then(res => {
+      if (res.status === 'fail' || res.status === 'error') {
+        redAlert(res.message);
         closeConfirmationModal();
         return;
       }
       server.renderUserGems(userGems);
       purchaseConfirmed();
     })
-    .catch((err) => {
+    .catch(err => {
       alert(err);
     });
 });
 
-purchaseConfirmationCloseModalBtn.addEventListener("click", function () {
+purchaseConfirmationCloseModalBtn.addEventListener('click', function () {
   closeConfirmationModal();
   resetCardID();
 });
 
-window.addEventListener("click", function (event) {
+window.addEventListener('click', function (event) {
   if (
     event.target == confirmationModalOverlay ||
     event.target == purchaseConfirmedModal ||
@@ -136,16 +137,16 @@ window.addEventListener("click", function (event) {
   }
 });
 
-purchaseCancelBtn.addEventListener("click", () => {
+purchaseCancelBtn.addEventListener('click', () => {
   closeConfirmationModal();
 });
 
 //define an empty array to store the cards (needed for map function)
 let cards = [];
-fetch(allcardsRoute, { credentials: "include" })
-  .then((res) => res.json())
-  .then((data) => {
-    cards = data.map((champ) => {
+fetch(allcardsRoute, { credentials: 'include' })
+  .then(res => res.json())
+  .then(data => {
+    cards = data.map(champ => {
       const card = cardTemplate.content.cloneNode(true).children[0];
       const cardProduct = card.querySelector(`[data-card-product-box]`);
       const cardPrice = card.querySelector(`[data-card-price]`);
@@ -153,8 +154,8 @@ fetch(allcardsRoute, { credentials: "include" })
       const cardImgBack = card.querySelector(`[data-card-img-back]`);
       const cardInfoLink = card.querySelector(`[data-card-champ-link]`);
 
-      cardProduct.setAttribute("id", champ.id);
-      cardProduct.setAttribute("data-card-rarity", champ.rarity);
+      cardProduct.setAttribute('id', champ.id);
+      cardProduct.setAttribute('data-card-rarity', champ.rarity);
       cardPrice.textContent = champ.price;
       cardImgFront.src = champ.img_front;
       cardImgBack.src = champ.img_back;
@@ -169,19 +170,19 @@ fetch(allcardsRoute, { credentials: "include" })
       };
     });
 
-    buyBtns = document.querySelectorAll(".buy-button");
-    buyBtns.forEach((btn) => {
-      server.checkAuth().then((res) => {
+    buyBtns = document.querySelectorAll('.buy-button');
+    buyBtns.forEach(btn => {
+      server.checkAuth().then(res => {
         if (res.isLoggedIn) {
           btn.disabled = false;
-          btn.addEventListener("click", () => {
+          btn.addEventListener('click', () => {
             choosenCardID = btn.parentElement.parentElement.id;
 
             showConfirmationModal();
           });
         } else {
-          btn.addEventListener("click", () => {
-            alert("Please log in to purchase cards!");
+          btn.addEventListener('click', () => {
+            redAlert('Please log in to purchase cards!');
           });
         }
       });
@@ -205,27 +206,27 @@ function hideFilterCards(card) {
     .includes(searchInput.value.toLowerCase());
   //Hide cards that do not match the filters
   card.element.classList.toggle(
-    "filter-options-hidden",
+    'filter-options-hidden',
     !matchesRarity || !matchesRole || !matchesPrice || !matchesSearch
   );
 }
 
 //search bar function to filter cards
-searchInput.addEventListener("input", (input) => {
+searchInput.addEventListener('input', input => {
   if (searchInput.value) {
-    searchIcon.style.left = "calc(92% - 2.4rem)";
+    searchIcon.style.left = 'calc(92% - 2.4rem)';
   } else {
-    searchIcon.style.left = "";
+    searchIcon.style.left = '';
   }
 
   const value = input.target.value.toLowerCase();
-  cards.forEach((card) => {
+  cards.forEach(card => {
     hideFilterCards(card);
   });
 });
 
 //selecting all filter boxes
-const filterBoxes = document.querySelectorAll(".filtering-option--input");
+const filterBoxes = document.querySelectorAll('.filtering-option--input');
 //creating an object to store the filters
 const filters = {
   rarity: [],
@@ -233,13 +234,13 @@ const filters = {
   price: 400,
 };
 
-filterBoxes.forEach((filterBox) => {
-  filterBox.addEventListener("click", () => {
+filterBoxes.forEach(filterBox => {
+  filterBox.addEventListener('click', () => {
     //get the rarity or role value
     const value = filterBox.name.toLowerCase();
     //get the type of filter by looking at the title of the filter box
     const type = filterBox.parentNode.parentNode
-      .querySelector(".filter-title")
+      .querySelector('.filter-title')
       .textContent.toLowerCase();
     //check if the filter box is checked or not
     if (filterBox.checked) {
@@ -253,7 +254,7 @@ filterBoxes.forEach((filterBox) => {
       }
     }
     //loop through the cards and check if they match the filters
-    cards.forEach((card) => {
+    cards.forEach(card => {
       //check if the card matches the rarity and role filters ( or if there are no filters selected )
       hideFilterCards(card);
     });
@@ -264,13 +265,13 @@ filterBoxes.forEach((filterBox) => {
 const slider = document.querySelector(`.filter-slider`);
 
 //GET SLIDER INPUT DATA
-slider.addEventListener("input", () => {
+slider.addEventListener('input', () => {
   sytleTag.innerHTML = `.filter-slider::after {content: '${slider.value}';z-index: 3;height: 6px;}`;
 
   //set the price in the filters object  to the slider value
   filters.price = slider.value;
 
-  cards.forEach((card) => {
+  cards.forEach(card => {
     //check if the card matches the rarity and role filters ( or if there are no filters selected )
     //if the array is empty then all cards match (true)
     hideFilterCards(card);
@@ -326,34 +327,34 @@ function sortByPriceHtL() {
 }
 
 //selecting the sort by box
-const sortBySelect = document.querySelector(".sort-by");
+const sortBySelect = document.querySelector('.sort-by');
 
 //adding event listen for each option
-sortBySelect.addEventListener("change", () => {
+sortBySelect.addEventListener('change', () => {
   const selectedOption = sortBySelect.value;
-  if (selectedOption === "rarity-high-to-low") {
+  if (selectedOption === 'rarity-high-to-low') {
     // sort by rarity high to low
     sortByRarityHtL();
-    cards.forEach((card) => {
+    cards.forEach(card => {
       cardContainer.append(card.element);
     });
-  } else if (selectedOption === "rarity-low-to-high") {
+  } else if (selectedOption === 'rarity-low-to-high') {
     // sort by rarity low to high
     sortByRarityLtH();
-    cards.forEach((card) => {
+    cards.forEach(card => {
       cardContainer.append(card.element);
     });
-  } else if (selectedOption === "price-high-to-low") {
+  } else if (selectedOption === 'price-high-to-low') {
     // sort by price high to low
 
     sortByPriceHtL();
-    cards.forEach((card) => {
+    cards.forEach(card => {
       cardContainer.append(card.element);
     });
-  } else if (selectedOption === "price-low-to-high") {
+  } else if (selectedOption === 'price-low-to-high') {
     // sort by price low to high
     sortByPriceLtH();
-    cards.forEach((card) => {
+    cards.forEach(card => {
       cardContainer.append(card.element);
     });
   }
