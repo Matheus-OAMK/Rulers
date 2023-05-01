@@ -578,9 +578,9 @@ body {
 }
 
 .buy-button:hover {
-  box-shadow: 0 0 5px 0 aquamarine;
-  border: 1px solid aquamarine;
-  color: aquamarine;
+  box-shadow: 0 0 5px 0 #66FCF1;
+  border: 1px solid #66FCF1;
+  color: #66FCF1;
 }
 
 .charachter-link:link,
