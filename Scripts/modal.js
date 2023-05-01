@@ -1,5 +1,6 @@
 import server_back from './auth.js';
 import { blueAlert, redAlert } from './alert.js';
+import { requestOptions } from './helper.js';
 
 const server = new server_back();
 
@@ -181,10 +182,7 @@ signupform.addEventListener('submit', async event => {
 
   try {
     const response = await fetch(signUpUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      ...requestOptions,
       body: JSON.stringify(data),
     });
     const result = await response.json();
@@ -243,11 +241,7 @@ logInForm.addEventListener('submit', async event => {
   const data = { username, password };
 
   const response = await fetch(LogInURL, {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    ...requestOptions,
     body: JSON.stringify(data),
   });
   const result = await response.json();

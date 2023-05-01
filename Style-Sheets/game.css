@@ -53,10 +53,6 @@ body {
   border-radius: 20px;
 }
 
-/* .game--card:hover .game--card-inner {
-  transform: rotateY(180deg);
-} */
-
 .flipped {
   transform: rotateY(180deg);
 }
@@ -153,15 +149,35 @@ body {
   margin-bottom: 6.4rem;
 }
 
+.game--btn.claimed {
+  font-size: 3.6rem;
+  padding: 2.4rem 4.8rem;
+  border-radius: 20px;
+  background-color: rgba(102, 252, 241, 0.8);
+  color: black;
+  border: 1px solid rgb(253, 254, 254, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 6.4rem;
+}
+
 .play-price {
   white-space: nowrap;
 }
 
 .game--btn:hover {
   box-shadow: 0 0 10px 0 rgba(102, 252, 241, 1);
-  border: 1px solid rgba(102, 252, 241, 1);
+  border: 1px solid #66fcf1;
   cursor: pointer;
-  color: rgba(102, 252, 241, 1);
+  color: #66fcf1;
+}
+
+.game--btn.claimed:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+  cursor: pointer;
+  color: black;
 }
 
 .game--gems {
