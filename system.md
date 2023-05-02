@@ -95,8 +95,9 @@ body {
   - no yet
 
 - Font color
+
   - Main #ddd
-  -Titles #fff
+    -Titles #fff
 
 - Background-color
 
@@ -104,23 +105,25 @@ body {
   - Secondary: #040405
 
 - Grey
+
   - #302E2E
 
-
   ### Cards
+
   - Legendary
+
     - Master-Yi https://www.leagueoflegends.com/en-us/champions/master-yi/
     - Azir https://www.leagueoflegends.com/en-us/champions/azir/
     - Trynda https://www.leagueoflegends.com/en-us/champions/tryndamere/
 
   - Epic
-   - Ori https://www.leagueoflegends.com/en-us/champions/orianna/
-   - Shyvana https://www.leagueoflegends.com/en-us/champions/shyvana/
-   - Ryze https://www.leagueoflegends.com/en-us/champions/ryze/
-   - Ezreal https://www.leagueoflegends.com/en-us/champions/ezreal/
-   - Shen https://www.leagueoflegends.com/en-us/champions/shen/
-   - Zyra https://www.leagueoflegends.com/en-us/champions/zyra/
-   - Diana https://www.leagueoflegends.com/en-us/champions/diana/
+  - Ori https://www.leagueoflegends.com/en-us/champions/orianna/
+  - Shyvana https://www.leagueoflegends.com/en-us/champions/shyvana/
+  - Ryze https://www.leagueoflegends.com/en-us/champions/ryze/
+  - Ezreal https://www.leagueoflegends.com/en-us/champions/ezreal/
+  - Shen https://www.leagueoflegends.com/en-us/champions/shen/
+  - Zyra https://www.leagueoflegends.com/en-us/champions/zyra/
+  - Diana https://www.leagueoflegends.com/en-us/champions/diana/
 
   - Rare
     - Darius https://www.leagueoflegends.com/en-us/champions/darius/
@@ -136,7 +139,8 @@ body {
     - Shaco https://www.leagueoflegends.com/en-us/champions/shaco/
 
   ### Prices
-    - Legendary : 400
-    - Epic : 200
-    - Rare: 100
-    - Game 700
+
+  - Legendary : 400
+  - Epic : 200
+  - Rare: 100
+  - Game 700
