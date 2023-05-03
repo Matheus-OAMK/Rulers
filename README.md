@@ -1,53 +1,36 @@
-# Rulers project
-
-## Code implementation
-
-### Use the "Hacknplan" tool, for **_development_**:
-
-There're tasks to be done.
-
-### Main rules:
-
-**_1. Each developer works on different pages at the same time_**
-
-**_2. If you started to work on the specific task, page, please don't change anything in other files, that don't need to be changed in your specific task_**
-
-**_3. Create class, id, and attribute names dependently on the page where that classes are located, examples: allcards-filter-box, collection-filter-box_**
-
-### You found the task that you would like to implement, follow these steps:
-
-1.  Drag the task into the "In progress" column.
-2.  Fetch all the changes from the Rules repo (not neccessary). > **git fetch**
-3.  Pulling all changes from Rulers repo. > **git pull**
-4.  Navigate to the "draft" branch. > **git checkout draft**
-5.  Create another branch based on the "draft" branch, name depends on the task you took, but the name should be short. > **git checkout -b header**
-6.  Open that new branch for that specific task in VS code (check if the current branch is correct by looking to the bottom-left corner in VS code window).
-7.  Write your code, and don't be afraid to change old lines of code if it is necessary, you will not face conflicts but remember that any changes to old code may have some side effects. Don't forget to comment on your code to make it more understandable for others.
-8.  Save your changes, make sure you are in your task branch > **git branch** or **git status**, then run > **git add -A** and **git commit -m "Short comment what you've done"**.
-9.  Push your local changes into GitHub. > **git push -u origin header**
-10. Open GitHub in the browser, and check for your pushed branch there.
-11. Create a new pull request from your pushed branch into the "draft" branch. (comment your pull request, create pull only). **_NOTE:_** *don't force a pull request, wait until one of the other developers makes a review of this pull*
-12. Mention in Telegram that you've created a new pull request (not neccessary).
-13. Only when the pull is accepted, delete your local branch for that task > **git branch -D header**. Make sure you have "draft", "main" and "snippets" branches left only > **git branch**, the remote branch will be deleted by reviewer and reviewer drags the task into the "Completed" column.
-
-### You struggled during the coding part and you need somebody to end your taken task (you are on step 7):
-
-8.  Save your changes, make sure you are in your task branch > **git branch** or **git status**, then run > **git add -A** and **git commit -m "Short comment what you've done and where struggled"**.
-9.  Push your local changes into GitHub. > **git push -u origin header**
-10. Open GitHub in the browser, and check for your pushed branch there.
-11. Create new development task marked as a Bug.
-12. Mention your problem in Telegram and somebody will take your task (not neccessary).
-
-### You are taking unfinished task:
-
-1.  Drag the task into the "In progress" column.
-2.  Fetch all the changes from the Rules repo. > **git fetch**
-3.  Pulling all changes from Rulers repo. > **git pull**
-4.  Navigate to the "draft" branch. > **git checkout header**
-5.  Write your code, and don't be afraid to change old lines of code if it is necessary, you will not face conflicts but remember that any changes to old code may have some side effects. Don't forget to comment on your code to make it more understandable for others.
-6.  Save your changes, make sure you are in your task branch > **git branch** or **git status**, then run > **git add -A** and **git commit -m "FIX Short comment what you've done"**.
-7.  Push your local changes into GitHub. > **git push -u origin header**
-8.  Open GitHub in the browser, and check for your pushed branch there.
-9.  Create a new pull request from your pushed branch into the "draft" branch. (comment your pull request, create pull only). **_NOTE:_** *don't force a pull request, wait until one of the other developers makes a review of this pull*
-10. Mention in Telegram that you've created a new pull request (not neccessary).
-11. Only when the pull is accepted, delete your local branch for that task > **git branch -D header**. Make sure you have "draft", "main" and "snippets" branches left only > **git branch**, the remote branch will be deleted by reviewer and reviewer drags the task into the "Completed" column.
+<h1> <a href="https://rulers-sh.com/index.html">Rulers</a> </h1>
+<h3> This project is made for OAMK web development project course, as final project of first year. </h3>
+<br>
+<h3> Contributors </h3>
+<p>
+  <ul>
+    <li> <a href="https://github.com/ChpoCko">Iurii Gaitrov</a></li>
+    <li> <a href="https://github.com/Matheus-OAMK">Matheus Oliveira</a></li>
+    <li> <a href="https://github.com/partandeee">Saku partanen</a></li>
+    <li> <a href="https://github.com/Hakan-Asmaoglu">Hakan Asmaoglu</a></li>
+   </ul>
+ </p>
+ <br>
+ <h3> Description </h3>
+ <p>Main aim of the project was to make a small scale web-application that users can sign up, interact, and store data. Considering the aim we build <a href="https://rulers-sh.com/index.html">Rulers</a> which users can log-in, purchase cards, play a card game and store their cards in their own collection.</p>
+ <br>
+ <h3> The process </h3>
+  <p>The total project duration was 7 week. Each contributor worked 5-8 hours per day. We started with creating a user-centered backlog and proceeded with defining requirements based on the backlog. We followed Scrum as a project development system and used Hacknplan as the project development tool. Each week one of us took the lead and acted as Scrum master. We started the sprints by defining the tasks every Monday and ended the sprint on Sunday with a sprint review. We had a meeting every weekday, meeting durations were flexible. Please consider our <a href="https://app.hacknplan.com/p/183399/kanban?categoryId=0&boardId=506202">hacknplan</a> to see the project development process in detail.</p>
+  <br>
+  <h3> Tools and resources </h3>
+  <p>
+    <ul>
+      <li>UI/UX</li>
+      <p>-Figma<br>-Sqoosh (For image type and size settings)<br>-Ionicons (For icons)<br>-League of Legends (For charachter visuals and informations)</p>
+      <li>Version control</li>
+      <p>-Git<br>-Github</p>
+      <li>Project development</li>
+      <p>-Hacknplan<br>-Scrum</p>
+      <li>Front-end</li>
+      <p>-HTML<br>-CSS<br>-JAVASCRIPT</p>
+      <li>Back-end</li>
+      <p>-Node.js<br>-Express<br>-Postgresql<br>-Linux<br></p>
+    </ul>
+  </p>
+  <br>
+  <p><strong>Note: This project is only made for OAMK as a school project. None of the components were used or can be used for trade purposes.</strong></p>
