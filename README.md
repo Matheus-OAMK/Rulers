@@ -21,7 +21,7 @@
   <p>
     <ul>
       <li>UI/UX</li>
-      <p>-Figma<br>-Sqoosh (For image type and size settings)<br>-Ionicons (For icons)<br>-League of Legends (For charachter visuals and informations)</p>
+      <p>-Figma<br>-Sqoosh (For image type and size settings)<br>-Ionicons (For icons)<br>-League of Legends (For character visuals and informations)</p>
       <li>Version control</li>
       <p>-Git<br>-Github</p>
       <li>Project development</li>
