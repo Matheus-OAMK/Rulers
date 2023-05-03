@@ -3,10 +3,15 @@
 
 
 ## Description 
-The aim of the project was to make a small scale web-application that users can sign up, interact, and store data. Considering the requirements we built **Rulers** a webapp where users can log-in, purchase cards, play a card game and store their cards in their own collection.</p>
+
+The objective of this project was to develop a compact web-based application that enables users to register, engage with the platform, and preserve their information. In accordance with the specified criteria, we have created ***Rulers*** - a web application that offers users the ability to authenticate, acquire cards, participate in card games, and manage their own collection of cards.
  
 ## The process
-The total project duration was 7 week. We started with creating a user-centered backlog and proceeded with defining requirements based on the backlog. We followed Scrum as a project development system and used Hacknplan as the project development tool. Each week one of us took the role of Scrum master. We started the sprints by defining the tasks every Monday and ended the sprint on Sunday with a sprint review. We had a meeting every weekday, meeting durations were flexible. You can visit our [hacknPlan](https://app.hacknplan.com/p/183399/kanban?categoryId=0&boardId=506202) to see the project development process in detail.
+The project duration was 7 week. Our process began with the creation of a user-centered backlog, followed by the establishment of requirements derived from said backlog. We followed Scrum as a project development system and used Hacknplan as the project development tool. Each week one of us took the role of Scrum master. We started the sprints by defining the tasks ended the sprint with a sprint review. We had a meeting every weekday and meeting durations were flexible. You can visit our [hacknPlan](https://app.hacknplan.com/p/183399/kanban?categoryId=0&boardId=506202) to see the project development process in detail.
+
+### You can visit Rulers by clicking [here](https://rulers-sh.com/).
+
+---
 
 ## Tools and resources
 
