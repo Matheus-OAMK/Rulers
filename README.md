@@ -7,7 +7,7 @@
 The objective of this project was to develop a compact web-based application that enables users to register, engage with the platform, and preserve their information. Following the specified criteria, we have created ***Rulers*** - a web application that offers users the ability to authenticate, acquire cards, participate in card games, and manage their own collection of cards.
  
 ## The process
-The project duration was 7 week. Our process began with the creation of a user-centred backlog, followed by the establishment of requirements derived from the said backlog. We followed Scrum as a project development system and used Hacknplan as the project development tool. Each week one of us took the role of Scrum master. We started the sprints by defining the tasks and ended the sprint with a sprint review. We had a meeting every weekday and meeting durations were flexible. You can visit our [hacknPlan](https://app.hacknplan.com/p/183399/kanban?categoryId=0&boardId=506202) to see the project development process in detail.
+The project duration was 7 weeks. Our process began with the creation of a user-centred backlog, followed by the establishment of requirements derived from the said backlog. We followed Scrum as a project development system and used Hacknplan as the project development tool. Each week one of us took the role of Scrum master. We started the sprints by defining the tasks and ended the sprint with a sprint review. We had a meeting every weekday and meeting durations were flexible. You can visit our [hacknPlan](https://app.hacknplan.com/p/183399/kanban?categoryId=0&boardId=506202) to see the project development process in detail.
 
 ### You can visit Rulers by clicking [here](https://rulers-sh.com/).
 
@@ -36,7 +36,7 @@ The project duration was 7 week. Our process began with the creation of a user-c
 
 ### UI/UX
 - Figma
-- Squoosh (For image type and size settings)
+- Squoosh (For image optimization)
 - Ionicons (For icons)
 - League of Legends (For character visuals and information)
 
